@@ -21,7 +21,7 @@
             </intent-filter>			                   
         </activity>
 
-	<activity android:name="org.thoughtcrime.securesms.AutoInitiateActivity" android:theme="@android:style/Theme.Dialog" android:label="TextSecure Messaging Detected" android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"></activity>
+	<activity android:name="org.thoughtcrime.securesms.AutoInitiateActivity" android:theme="@android:style/Theme.Dialog" android:label="TbTxt Messaging Detected" android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"></activity>
 	<activity android:name="org.thoughtcrime.securesms.ApplicationPreferencesActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"></activity>
     <activity android:name="org.thoughtcrime.securesms.ComposeMessageActivity" android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"></activity>
 	<activity android:name="org.thoughtcrime.securesms.PassphraseCreateActivity" android:theme="@android:style/Theme.Dialog" android:label="Create Passphrase" android:launchMode="singleInstance" android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"></activity>
@@ -81,7 +81,7 @@
 <uses-sdk android:minSdkVersion="4" />
 
 <permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"
-	        android:label="Access to TextSecure Secrets"
+	        android:label="Access to TbTxt Secrets"
 	        android:protectionLevel="signature" />    
 
 <uses-permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"></uses-permission>

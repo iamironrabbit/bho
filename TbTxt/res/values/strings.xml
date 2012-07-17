@@ -2,7 +2,7 @@
 <resources>
 
   <!--  ENGLISH STRINGS -->
-    <string name="app_name">TextSecure</string>
+    <string name="app_name">TbTxt</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="you_don_t_have_an_identity_key">You don\'t have an identity key!</string>
@@ -129,10 +129,10 @@
     <string name="importing_database_and_keys">Importing Database and Keys</string>
     <string name="importing_your_sms_database_keys_and_settings_">Importing your SMS database, keys, and settings...</string>
     <string name="import_database_and_settings_">Import Database and Settings?</string>
-    <string name="import_textsecure_database_keys_and_settings_from_the_sd_card_1">Import TextSecure database, keys, and settings from the SD Card?</string>
+    <string name="import_textsecure_database_keys_and_settings_from_the_sd_card_1">Import TbTxt database, keys, and settings from the SD Card?</string>
     <string name="import_textsecure_database_keys_and_settings_from_the_sd_card_2">WARNING: This will clobber any existing messages, keys, and settings!</string>
     <string name="export_database_">Export Database?</string>
-    <string name="export_textsecure_database_keys_and_settings_to_the_sd_card_">Export TextSecure database, keys, and settings to the SD Card?</string>
+    <string name="export_textsecure_database_keys_and_settings_to_the_sd_card_">Export TbTxt database, keys, and settings to the SD Card?</string>
     <string name="export">Export</string>
     <string name="no_sd_card_found_">No SD card found!</string>
     <string name="error_exporting_to_sd_">Error exporting to SD!</string>
@@ -141,7 +141,7 @@
     <string name="migrating_database">Migrating Database</string>
     <string name="migrating_your_sms_database_">Migrating your SMS database...</string>
     <string name="copy_system_text_message_database_">Copy System Text Message Database?</string>
-    <string name="current_versions_of_textsecure_use_an_encrypted_database">Current versions of TextSecure use an encrypted database that is separate from the default system database. Would you like to copy your existing text messages into TextSecure\'s encrypted database? Your default system database will be unaffected.</string>
+    <string name="current_versions_of_textsecure_use_an_encrypted_database">Current versions of TbTxt use an encrypted database that is separate from the default system database. Would you like to copy your existing text messages into TbTxt\'s encrypted database? Your default system database will be unaffected.</string>
     <string name="copy">Copy</string>
     <string name="don_t_copy">Don\'t copy</string>
     <string name="you_do_not_have_an_identity_key_">You do not have an identity key.</string>
@@ -173,8 +173,8 @@
     <string name="set_custom_led_blink_pattern">Set Custom LED Blink Pattern</string>
     <string name="custom_led_blink_pattern_set_">Custom LED blink pattern set!</string>
     <string name="bracketed_value_is_not_valid_">Bracketed value is not valid.</string>
-    <string name="textsecure_passphrase_cached">TextSecure Passphrase Cached</string>
-    <string name="textsecure_cached">TextSecure Cached</string>
+    <string name="textsecure_passphrase_cached">TbTxt Passphrase Cached</string>
+    <string name="textsecure_cached">TbTxt Cached</string>
     <string name="_new_messages"> New messages</string>
     <string name="most_recent_from_">Most recent from: </string>
     <string name="no_connectivity_available_for_mms_download_try_again_later_">No connectivity available for MMS download, try again later...</string>
@@ -185,7 +185,7 @@
     <string name="refuse">Refuse</string>
     <string name="please_note">Please Note</string>
     <string name="i_understand">I understand</string>
-    <string name="you_have_received_a_message_from_someone_who_supports_textsecure">You have received a message from someone who supports TextSecure encrypted sessions. Would you like to initiate a key exchange so you can communicate securely?</string>
+    <string name="you_have_received_a_message_from_someone_who_supports_textsecure">You have received a message from someone who supports TbTxt encrypted sessions. Would you like to initiate a key exchange so you can communicate securely?</string>
     <string name="initiate_exchange">Initiate Exchange</string>
     <string name="new_passphrase_">New passphrase:</string>
     <string name="repeat_new_passphrase_">Repeat new passphrase:</string>
@@ -212,9 +212,9 @@
   
   <!--  PREFERENCES STRINGS -->
   <string name="use_settings_title">Use Settings</string>
-  <string name="pref_all_sms_summary">Use TextSecure for viewing and storing all incoming text messages</string>
+  <string name="pref_all_sms_summary">Use TbTxt for viewing and storing all incoming text messages</string>
   <string name="pref_all_sms_title">Use for all SMS</string>
-  <string name="pref_all_mms_summary">Use TextSecure for viewing and storing all incoming multimedia messages</string>
+  <string name="pref_all_mms_summary">Use TbTxt for viewing and storing all incoming multimedia messages</string>
   <string name="pref_all_mms_title">Use for all MMS</string>   
   <string name="input_settings_title">Input Settings</string>
   <string name="pref_enter_sends_summary">Pressing the enter key will send text messages</string>
