@@ -157,14 +157,15 @@ public class MessageNotifier {
     String ledBlinkPatternCustom = sp.getString(ApplicationPreferencesActivity.LED_BLINK_PREF_CUSTOM, "500,2000");
     String[] blinkPatternArray   = parseBlinkPattern(ledBlinkPattern, ledBlinkPatternCustom);
 	
+    /*
     RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.custom_notifications);
     contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
     contentView.setTextViewText(R.id.title, title);
     contentView.setTextViewText(R.id.text, subtitle);
     notification.contentView = contentView;
-
-    //notification.setLatestEventInfo(context, title, subtitle, launchIntent);
-    notification.contentIntent = launchIntent;
+*/
+    notification.setLatestEventInfo(context, title, subtitle, launchIntent);
+    //notification.contentIntent = launchIntent;
 
     notification.sound          = TextUtils.isEmpty(ringtone) || !signal ? null : Uri.parse(ringtone);
     if (signal && vibrate)

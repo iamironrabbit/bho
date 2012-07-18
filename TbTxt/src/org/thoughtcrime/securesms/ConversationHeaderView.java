@@ -131,7 +131,8 @@ public class ConversationHeaderView extends RelativeLayout {
   }	
 	
   public void initializeColors() {
-    if (!PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(ApplicationPreferencesActivity.DARK_THREADS_PREF, true)) {
+	  
+    if (!PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(ApplicationPreferencesActivity.DARK_THREADS_PREF, false)) {
       this.setBackgroundDrawable(getResources().getDrawable(R.drawable.conversation_header_background_light));
       this.subjectView.setTextColor(Color.BLACK);
       this.fromView.setTextColor(Color.BLACK);

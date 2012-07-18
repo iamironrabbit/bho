@@ -61,14 +61,12 @@
         		   />
 			
 		<ListView android:id="@android:id/list" 
-			style="?android:attr/listViewWhiteStyle"
     		android:layout_width="fill_parent"
     		android:layout_height="wrap_content"
     		android:layout_weight="1"
     		android:drawSelectorOnTop="false"
     		android:scrollbarStyle="insideOverlay"
     		android:fadingEdgeLength="16dip"
-    		android:background="@android:color/white"
     		android:cacheColorHint="@android:color/white"
     		android:layout_below="@id/title_bar_container"
     		android:layout_above="@id/search_text" />

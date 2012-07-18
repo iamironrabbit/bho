@@ -610,9 +610,12 @@ public class SecureSMS extends ListActivity {
   }
 
   private void initializeColors() {
-    if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean(ApplicationPreferencesActivity.DARK_THREADS_PREF, true)) {
+	  
+
+    if (!PreferenceManager.getDefaultSharedPreferences(this).getBoolean(ApplicationPreferencesActivity.DARK_THREADS_PREF, false)) {
       this.getListView().setBackgroundColor(Color.WHITE);
       this.getListView().setCacheColorHint(Color.WHITE);
+      
       this.getListView().setDivider(new ColorDrawable(Color.parseColor("#cccccc")));
       this.getListView().setDividerHeight(1);
     } else {

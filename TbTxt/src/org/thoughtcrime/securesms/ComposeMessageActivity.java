@@ -839,21 +839,7 @@ public class ComposeMessageActivity extends Activity {
 	 private String lastChange = "";
 	 
     public void afterTextChanged(Editable s) {
-    	String newText = s.toString();
-    	
-    	if (!lastChange.equals(newText))
-    	{
-    		if (Math.abs(newText.length()-lastChange.length())>2)
-    		{
-                newText = TibConvert.convertUnicodeToPrecomposedTibetan(newText);
 
-    		}
-    		
-    		lastChange = newText;
-    		
-    		composeText.setText(lastChange);
-    		
-    	}
       calculateCharactersRemaining();
     }
     public void beforeTextChanged(CharSequence s, int start, int count,int after) {}

@@ -36,7 +36,7 @@
   <string name="transport_">བརྒྱུད་འདྲེན་བྱེད།\n</string>
   <string name="sent_received_">བསྐུར་ཟིན། འབྱོར་ཟིན།</string>
   <string name="delete_message_confirmation">འཕྲིན་ཐུང་སུབ།\n</string>
-  <string name="ok">འགྲིག</string>
+  <string name="ok">ok འགྲིག</string>
   <string name="are_you_sure_that_you_want_to_permanently_delete_this_message_">ཁྱོད་ཀྱིས་དངོས་གནས་འཕྲིན་ཐུང་འདི་གཏན་དུ་གསུབ་རྒྱུ་ཡིན་ནམ།\n</string>
   <string name="delete_thread_confirmation">འཕྲིན་ཐུང་སྐུད་རིམ་ཆ་ཚང་སུབ་ན་སྒྲིག་ཀྱི་རེད་དམ།</string>
   <string name="are_you_sure_that_you_want_to_permanently_delete_this_conversation_">ཁྱོད་ཀྱིས་དངོས་གནས་འཕྲིན་ཐུང་སྐུད་རིམ་ཆ་ཚང་གཏན་དུ་གསུབ་རྒྱུ་ཡིན་ནམ།</string>
@@ -107,20 +107,20 @@
   <string name="identity_name_exists_">ངོས་འཛིན་གྱི་མིང་སྔོན་ནས་འདུག</string>
   <string name="an_identity_key_with_the_specified_name_already_exists_">མིང་ཁ་གསལ་སྟོན་པའི་ངོས་འཛིན་ལྡེ་མིག་ཅིག་སྔོན་ནས་འདུག</string>
   <string name="manage_identities">དཔང་རྟགས་ལ་དོ་དམ་བྱོས།</string>
-  <string name="cancel">ཕྱིར་འཐེན་བྱེད།</string>
+  <string name="cancel">Cancel ཕྱིར་འཐེན་བྱེད།</string>
   
-  <string name="batch_mode">ལམ་ཁ་སྡེབ་གཅོད་བྱོས། </string>
-  <string name="secure_session">བདེ་འཇགས་གཏམ་གླེང་།</string>
-  <string name="enter_passphrase">གསང་ཡིག་འཇོག</string>
+  <string name="batch_mode">Batch ལམ་ཁ་སྡེབ་གཅོད་བྱོས། </string>
+  <string name="secure_session">Secure བདེ་འཇགས་གཏམ་གླེང་།</string>
+  <string name="enter_passphrase">Passphrase གསང་ཡིག་འཇོག</string>
   
-  <string name="search">འཚོལ།</string>
-  <string name="settings">སྒྲིག་བཟོ།</string>
-  <string name="import_export">ནང་འཇུག/ཕྱིར་འདོན།</string>
-  <string name="export_to_sd_card">SD Card ནང་ཕྱིར་འདོན་བྱེད།</string>
-  <string name="import_from_sd_card">SD Card ནས་ནང་འཇུག་བྱེད།</string>
-  <string name="more">མང་ཙམ། </string>
-  <string name="clear_passphrase">གསང་ཡིག་མེད་པ་བཟོས།</string>
-  <string name="normal_mode">འཆར་ཅན་གྱི་ཚུལ།</string>
+  <string name="search">Search འཚོལ།</string>
+  <string name="settings">Settings སྒྲིག་བཟོ།</string>
+  <string name="import_export">Import/Export ནང་འཇུག/ཕྱིར་འདོན།</string>
+  <string name="export_to_sd_card">Export SD Card ནང་ཕྱིར་འདོན་བྱེད།</string>
+  <string name="import_from_sd_card">Import SD Card ནས་ནང་འཇུག་བྱེད།</string>
+  <string name="more">More མང་ཙམ། </string>
+  <string name="clear_passphrase">Clear གསང་ཡིག་མེད་པ་བཟོས།</string>
+  <string name="normal_mode">Normal འཆར་ཅན་གྱི་ཚུལ།</string>
   <string name="delete_selected">འདེམས་པ་རྣམས་སུབ།</string>
   
   <string name="view_thread">འཕྲིན་ཐུང་སྐུད་རིམ་ལ་གཟིགས།</string>
