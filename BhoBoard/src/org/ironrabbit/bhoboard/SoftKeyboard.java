@@ -718,4 +718,9 @@ public class SoftKeyboard extends InputMethodService
     
     public void onRelease(int primaryCode) {
     }
+    	
+    @Override
+    public boolean onEvaluateFullscreenMode() {
+        return false;
+    }
 }

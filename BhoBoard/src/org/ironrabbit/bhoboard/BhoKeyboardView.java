@@ -40,7 +40,6 @@ public class BhoKeyboardView extends KeyboardView {
     public BhoKeyboardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         
-        
     }
     
     public void setupKeys (Typeface typeface)
