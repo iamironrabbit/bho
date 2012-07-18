@@ -71,12 +71,13 @@ public class SoftKeyboard extends InputMethodService
     private BhoKeyboard mSymbolsShiftedKeyboard;
     private BhoKeyboard mQwertyKeyboard;
     
+    private BhoKeyboard mQwertyShiftedKeyboard;
     private BhoKeyboard mCurKeyboard;
     
     private String mWordSeparators;
     
     private Typeface mTypeface;
-    private String mTypefaceName = "monlambodyig.ttf";//Jomolhari-alpha3c-0605331.ttf";//"DDC_Uchen.ttf"
+    private String mTypefaceName = "monlambodyig.ttf";
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
@@ -103,6 +104,8 @@ public class SoftKeyboard extends InputMethodService
             mLastDisplayWidth = displayWidth;
         }
         mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty);
+        mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted);
+        
         mSymbolsKeyboard = new BhoKeyboard(this, R.xml.symbols);
         mSymbolsShiftedKeyboard = new BhoKeyboard(this, R.xml.symbols_shift);
     }
@@ -179,7 +182,7 @@ public class SoftKeyboard extends InputMethodService
                 // be doing predictive text (showing candidates as the
                 // user types).
                 mCurKeyboard = mQwertyKeyboard;
-                mPredictionOn = true;
+                mPredictionOn = false;
                 
                 // We now look for a few special variations of text that will
                 // modify our behavior.
@@ -444,12 +447,15 @@ public class SoftKeyboard extends InputMethodService
      */
     private void updateShiftKeyState(EditorInfo attr) {
         if (attr != null 
-                && mInputView != null && mQwertyKeyboard == mInputView.getKeyboard()) {
+                && mInputView != null) {
+        	//&& mQwertyKeyboard == mInputView.getKeyboard()) {
+        
             int caps = 0;
             EditorInfo ei = getCurrentInputEditorInfo();
             if (ei != null && ei.inputType != EditorInfo.TYPE_NULL) {
                 caps = getCurrentInputConnection().getCursorCapsMode(attr.inputType);
             }
+            
             mInputView.setShifted(mCapsLock || caps != 0);
         }
     }
@@ -598,7 +604,21 @@ public class SoftKeyboard extends InputMethodService
             // Alphabet keyboard
             checkToggleCapsLock();
             mInputView.setShifted(mCapsLock || !mInputView.isShifted());
-        } else if (currentKeyboard == mSymbolsKeyboard) {
+            mInputView.setKeyboard(mQwertyShiftedKeyboard);
+
+            mInputView.setupKeys(mTypeface);
+        } 
+        else if(mQwertyShiftedKeyboard == currentKeyboard)
+        {
+            checkToggleCapsLock();
+            mInputView.setShifted(mCapsLock || !mInputView.isShifted());
+
+            mInputView.setKeyboard(mQwertyKeyboard);
+
+            mInputView.setupKeys(mTypeface);
+
+        }
+        else if (currentKeyboard == mSymbolsKeyboard) {
             mSymbolsKeyboard.setShifted(true);
             mInputView.setKeyboard(mSymbolsShiftedKeyboard);
             mInputView.setupKeys(mTypeface);

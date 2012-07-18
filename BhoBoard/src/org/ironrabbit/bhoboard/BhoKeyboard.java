@@ -32,6 +32,7 @@ public class BhoKeyboard extends Keyboard {
     private Key mEnterKey;
     public BhoKeyboard(Context context, int xmlLayoutResId) {
         super(context, xmlLayoutResId);
+        
     }
 
     public BhoKeyboard(Context context, int layoutTemplateResId, 

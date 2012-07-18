@@ -54,7 +54,7 @@ public class BhoKeyboardView extends KeyboardView {
     	{
     		key = itKeys.next();
     	
-    		if (key.codes[0] > 0)
+    		if (key.codes[0] > 3000)
     		{
 	    		String keyCode = ((char)key.codes[0])+"";
 	    		
