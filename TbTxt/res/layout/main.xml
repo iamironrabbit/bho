@@ -10,6 +10,7 @@
 						android:layout_height="43dip"
 						android:background="@drawable/iphone_bar_top"
 						android:layout_alignParentTop="true">
+						
 			<org.thoughtcrime.securesms.lang.BhoTextView
 			    android:textSize="18.0dip" 
 			    android:textStyle="bold" 

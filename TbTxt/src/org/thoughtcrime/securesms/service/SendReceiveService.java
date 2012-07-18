@@ -87,21 +87,25 @@ public class SendReceiveService extends Service {
 	
   @Override
   public void onStart(Intent intent, int startId) {
-    if (intent.getAction().equals(SEND_SMS_ACTION))
-      scheduleSecretRequiredIntent(SEND_SMS, intent);
-    else if (intent.getAction().equals(RECEIVE_SMS_ACTION))
-      scheduleIntent(RECEIVE_SMS, intent);
-    else if (intent.getAction().equals(SENT_SMS_ACTION))
-      scheduleIntent(RECEIVE_SMS, intent);
-    else if (intent.getAction().equals(SEND_MMS_ACTION) || intent.getAction().equals(SEND_MMS_CONNECTIVITY_ACTION))
-      scheduleSecretRequiredIntent(SEND_MMS, intent);
-    else if (intent.getAction().equals(RECEIVE_MMS_ACTION))
-      scheduleIntent(RECEIVE_MMS, intent);
-    else if (intent.getAction().equals(DOWNLOAD_MMS_ACTION) || intent.getAction().equals(DOWNLOAD_MMS_CONNECTIVITY_ACTION))
-      scheduleSecretRequiredIntent(DOWNLOAD_MMS, intent);
-    else 
-      Log.w("SendReceiveService", "Received intent with unknown action: " + intent.getAction());
-  }
+	  
+	  if (intent != null && intent.getAction() != null)
+	  {
+	    if (intent.getAction().equals(SEND_SMS_ACTION))
+	      scheduleSecretRequiredIntent(SEND_SMS, intent);
+	    else if (intent.getAction().equals(RECEIVE_SMS_ACTION))
+	      scheduleIntent(RECEIVE_SMS, intent);
+	    else if (intent.getAction().equals(SENT_SMS_ACTION))
+	      scheduleIntent(RECEIVE_SMS, intent);
+	    else if (intent.getAction().equals(SEND_MMS_ACTION) || intent.getAction().equals(SEND_MMS_CONNECTIVITY_ACTION))
+	      scheduleSecretRequiredIntent(SEND_MMS, intent);
+	    else if (intent.getAction().equals(RECEIVE_MMS_ACTION))
+	      scheduleIntent(RECEIVE_MMS, intent);
+	    else if (intent.getAction().equals(DOWNLOAD_MMS_ACTION) || intent.getAction().equals(DOWNLOAD_MMS_CONNECTIVITY_ACTION))
+	      scheduleSecretRequiredIntent(DOWNLOAD_MMS, intent);
+	    else 
+	      Log.w("SendReceiveService", "Received intent with unknown action: " + intent.getAction());
+	  }
+	}
 
   @Override
   public IBinder onBind(Intent intent) {

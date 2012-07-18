@@ -42,6 +42,7 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.RemoteViews;
 
 /**
  * Handles posting system notifications for new messages.
@@ -54,7 +55,12 @@ public class MessageNotifier {
 
   public static final int NOTIFICATION_ID = 1338;
 	
+  private Context context;
+  
   private static String buildTickerMessage(Context context, int count, Recipients recipients) {
+	  
+	 context = context;
+	 
     Recipient recipient   = recipients.getPrimaryRecipient();
     StringBuilder builder = new StringBuilder();
     builder.append('(');
@@ -150,8 +156,16 @@ public class MessageNotifier {
     String ledBlinkPattern       = sp.getString(ApplicationPreferencesActivity.LED_BLINK_PREF, "500,2000");
     String ledBlinkPatternCustom = sp.getString(ApplicationPreferencesActivity.LED_BLINK_PREF_CUSTOM, "500,2000");
     String[] blinkPatternArray   = parseBlinkPattern(ledBlinkPattern, ledBlinkPatternCustom);
-		
-    notification.setLatestEventInfo(context, title, subtitle, launchIntent);
+	
+    RemoteViews contentView = new RemoteViews(context.getPackageName(), R.layout.custom_notifications);
+    contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
+    contentView.setTextViewText(R.id.title, title);
+    contentView.setTextViewText(R.id.text, subtitle);
+    notification.contentView = contentView;
+
+    //notification.setLatestEventInfo(context, title, subtitle, launchIntent);
+    notification.contentIntent = launchIntent;
+
     notification.sound          = TextUtils.isEmpty(ringtone) || !signal ? null : Uri.parse(ringtone);
     if (signal && vibrate)
       notification.defaults  |= Notification.DEFAULT_VIBRATE;

@@ -6,5 +6,8 @@
     <org.thoughtcrime.securesms.lang.BhoTextView style="@style/contextual_menu_text"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/menuItemText" />
+        android:id="@+id/menuItemText"
+         android:background="#55000000"
+                            android:textColor="#ffffffff"
+         />
 </LinearLayout>

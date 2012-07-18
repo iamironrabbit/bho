@@ -36,6 +36,7 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.RemoteViews;
 
 /**
  * Small service that stays running to keep a key cached in memory.
@@ -87,14 +88,19 @@ public class KeyCachingService extends Service {
 	
   @Override
   public void onStart(Intent intent, int startId) {
-    if (intent.getAction() != null && intent.getAction().equals(CLEAR_KEY_ACTION))
-      handleClearKey();
-    else if (intent.getAction() != null && intent.getAction().equals(ACTIVITY_START_EVENT))
-      handleActivityStarted();
-    else if (intent.getAction() != null && intent.getAction().equals(ACTIVITY_STOP_EVENT))
-      handleActivityStopped();
-    else if (intent.getAction() != null && intent.getAction().equals(PASSPHRASE_EXPIRED_EVENT))
-      handlePassphraseExpired();
+	  
+	 if (intent != null && intent.getAction()!=null)
+	 {
+		 
+	    if (intent.getAction() != null && intent.getAction().equals(CLEAR_KEY_ACTION))
+	      handleClearKey();
+	    else if (intent.getAction() != null && intent.getAction().equals(ACTIVITY_START_EVENT))
+	      handleActivityStarted();
+	    else if (intent.getAction() != null && intent.getAction().equals(ACTIVITY_STOP_EVENT))
+	      handleActivityStopped();
+	    else if (intent.getAction() != null && intent.getAction().equals(PASSPHRASE_EXPIRED_EVENT))
+	      handlePassphraseExpired();
+	 }
   }
 	
   @Override
@@ -164,8 +170,20 @@ public class KeyCachingService extends Service {
     Notification notification  = new Notification(R.drawable.ic_launcher, getString(R.string.textsecure_passphrase_cached), System.currentTimeMillis());
     Intent intent              = new Intent(this, SecureSMS.class);
     PendingIntent launchIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, 0);
+    
     notification.setLatestEventInfo(getApplicationContext(), getString(R.string.textsecure_cached), getString(R.string.textsecure_passphrase_cached), launchIntent);
-		
+	
+    /*
+    RemoteViews contentView = new RemoteViews(getApplicationContext().getPackageName(), R.layout.custom_notifications);
+    contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
+    contentView.setTextViewText(R.id.title, getString(R.string.textsecure_cached));
+    contentView.setTextViewText(R.id.text, getString(R.string.textsecure_passphrase_cached));
+    notification.contentView = contentView;
+
+*/
+    
+//    notification.contentIntent = launchIntent;
+    
     stopForegroundCompat(SERVICE_RUNNING_ID);
     startForegroundCompat(SERVICE_RUNNING_ID, notification);
   }
@@ -210,8 +228,7 @@ public class KeyCachingService extends Service {
       return;
     }
         
-    setForeground(true);
-    notificationManager.notify(id, notification);
+    startForeground(id, notification);
   }
     
   /**
@@ -232,8 +249,8 @@ public class KeyCachingService extends Service {
       return;
     }
         
-    notificationManager.cancel(id);
-    setForeground(false);
+    stopForeground(true);
+
   }
   
 }

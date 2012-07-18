@@ -21,7 +21,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 		<RelativeLayout android:layout_width="fill_parent"
 						android:layout_height="43dip"
@@ -218,8 +219,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.0"
-                        android:addStatesFromChildren="true"
-                        android:background="@android:drawable/edit_text">
+                        android:addStatesFromChildren="true">
 
                         <org.thoughtcrime.securesms.lang.BhoEditText
                             android:id="@+id/embedded_text_editor"
@@ -228,11 +228,11 @@
                             android:autoText="true"
                             android:capitalize="sentences"
                             android:nextFocusRight="@+id/send_button"
-                            android:hint="Type to compose"
+                            android:hint="@string/compose_new_message_"
                             android:maxLines="4"
                             android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
                             android:imeOptions="actionSend|flagNoEnterAction"
-                            android:background="@null"
+                            
                             android:maxLength="1000"
                         />
     
@@ -240,8 +240,7 @@
                             android:id="@+id/text_counter"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="#88000000"
-                            android:textColor="#ffffffff"
+                            
                             android:textSize="11sp"
                             android:textStyle="bold"
                             android:paddingLeft="3dip"
@@ -259,7 +258,7 @@
                         style="?android:attr/buttonStyle"
                         android:layout_gravity="center_vertical"
                         android:nextFocusLeft="@+id/embedded_text_editor"
-                        android:text="Send"
+                        android:text="@string/send"
                     />
                 </LinearLayout>
                        <org.thoughtcrime.securesms.lang.BhoTextView android:id="@+id/space_left"

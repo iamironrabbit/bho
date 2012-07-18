@@ -22,6 +22,7 @@ import org.thoughtcrime.securesms.crypto.MasterSecret;
 import org.thoughtcrime.securesms.crypto.MasterSecretUtil;
 import org.thoughtcrime.securesms.lang.BhoButton;
 import org.thoughtcrime.securesms.lang.BhoEditText;
+import org.thoughtcrime.securesms.lang.BhoTextView;
 import org.thoughtcrime.securesms.lang.BhoToast;
 import org.thoughtcrime.securesms.lang.BhoTyper;
 import org.thoughtcrime.securesms.util.MemoryCleaner;
@@ -29,6 +30,7 @@ import org.thoughtcrime.securesms.util.MemoryCleaner;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
@@ -39,19 +41,28 @@ import android.widget.Toast;
  */
 public class PassphrasePromptActivity extends PassphraseActivity {
 
+  private BhoTextView passphraseTitle;	  
   private BhoEditText passphraseText;
+  
   private BhoButton okButton;
   private BhoButton cancelButton;
 		
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+	
+	requestWindowFeature(Window.FEATURE_NO_TITLE);
 
     setContentView(R.layout.prompt_passphrase_activity);
     initializeResources();
   }
 	
   private void initializeResources() {
+	
+	passphraseTitle = (BhoTextView)findViewById(R.id.passphrase_title);
+
+	passphraseTitle.setText(getTitle());
+	
     passphraseText = (BhoEditText)findViewById(R.id.passphrase_edit);
     okButton       = (BhoButton)findViewById(R.id.ok_button);
     cancelButton   = (BhoButton)findViewById(R.id.cancel_button);

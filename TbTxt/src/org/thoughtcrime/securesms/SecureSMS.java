@@ -71,6 +71,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
@@ -145,15 +146,18 @@ public class SecureSMS extends ListActivity {
   private boolean havePromptedForPassphrase = false;
   private boolean batchMode                 = false;
   
-  public static Typeface t;
-  	
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     
-    setLocale ();
+    setLocale();
     
-    getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+    if (Build.VERSION.SDK_INT < 11) 
+	{
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+	}
+    
     setContentView(R.layout.main);
         
     initializeKillReceiver();
@@ -163,9 +167,8 @@ public class SecureSMS extends ListActivity {
     registerForContextMenu(getListView());
     registerForContactsUpdates();
     
-	t = Typeface.createFromAsset(getAssets(), BhoTyper.FONT);
-    
   }
+  
   
   private void setLocale ()
   {
@@ -237,7 +240,7 @@ public class SecureSMS extends ListActivity {
     if (!batchMode) prepareNormalMenu(menu);
     else            prepareBatchModeMenu(menu);
 	
-    // TODO: this does not actually work.
+    /*
     getLayoutInflater().setFactory(new Factory() {
 
 		@Override
@@ -267,11 +270,13 @@ public class SecureSMS extends ListActivity {
 		}
     	
     });
+    */
     
     return super.onCreateOptionsMenu(menu);
   }
 	
   private void prepareNormalMenu(Menu menu) {
+	  
     menu.add(0, MENU_BATCH_MODE, Menu.NONE, R.string.batch_mode).setIcon(android.R.drawable.ic_menu_share);
 		
     if (masterSecret != null) menu.add(0, MENU_SEND_KEY, Menu.NONE, R.string.secure_session).setIcon(R.drawable.ic_lock_message_sms);
@@ -681,8 +686,9 @@ public class SecureSMS extends ListActivity {
     MessageRecord messageRecord           = new MessageRecord(-1, recipients, 0, 0, true, -1);
     messageRecord.setBody(getString(R.string.compose_new_message_));
     headerView.set(messageRecord, false);
-    //		headerView.setBackgroundColor(Color.TRANSPARENT);
-		
+    
+    
+    
     listView.addHeaderView(headerView, null, true);
   }
 	

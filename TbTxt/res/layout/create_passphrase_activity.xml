@@ -31,7 +31,7 @@
 	      android:id="@+id/repeat_label" 
 	      android:textSize="19dip"
 	      android:layout_margin="10dip"
-	      android:text="Repeat:"></org.thoughtcrime.securesms.lang.BhoTextView>
+	      android:text="@string/repeat_new_passphrase_"></org.thoughtcrime.securesms.lang.BhoTextView>
 	      
 <org.thoughtcrime.securesms.lang.BhoEditText  
           android:layout_height="wrap_content" 
@@ -47,7 +47,7 @@
 		>
 <org.thoughtcrime.securesms.lang.BhoButton android:layout_width="100dip" 
         android:layout_height="wrap_content" 
-        android:id="@+id/cancel_button" android:text="Cancel" 
+        android:id="@+id/cancel_button" android:text="@string/cancel" 
         android:layout_below="@id/passphrase_edit_repeat" 
         android:layout_alignParentRight="true" />
         

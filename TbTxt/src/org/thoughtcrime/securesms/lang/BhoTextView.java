@@ -8,30 +8,40 @@ import android.widget.TextView;
 public class BhoTextView extends TextView {
 	Context c;
 	private static Typeface t;
+	private boolean isSet = false;
 	
 	public BhoTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.c = context;
 		
-		if(t == null)
-			t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+		doType();
 		
-		setTypeface(t);
-		
+	}
+	
+	private void doType ()
+	{
+		if (!isSet)
+		{
+			if(t == null)
+				t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+			
+			setTypeface(t);
+			isSet = true;
+			
+		}
 	}
 	
 	public BhoTextView(Context context) {
 		super(context);
 		this.c = context;
 		
-		if(t == null)
-			t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
-		
-		setTypeface(t);
+		doType();
 	}
 	
 	@Override
 	public void setTypeface(Typeface typeface) {
 		super.setTypeface(typeface);
 	}
+	
+	
 }

@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import org.ironrabbit.TibConvert;
 import org.ironrabbit.tbtxt.R;
 import org.thoughtcrime.securesms.components.RecipientsPanel;
 import org.thoughtcrime.securesms.crypto.AuthenticityCalculator;
@@ -58,8 +59,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -155,8 +158,13 @@ public class ComposeMessageActivity extends Activity {
   @Override
   protected void onCreate(Bundle state) {
     super.onCreate(state);
-    Log.w("ComposeMessageActivity", "onCreate called...");
-    getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+    
+    if (Build.VERSION.SDK_INT < 11) 
+	{
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+	}
+    
     setContentView(R.layout.compose_message_activity);
     
     initializeReceivers();
@@ -164,6 +172,12 @@ public class ComposeMessageActivity extends Activity {
     initializeTitleBar();
     initializeColors();
   }
+  
+
+  @Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+	}
 
   @Override
   protected void onResume() {
@@ -819,14 +833,34 @@ public class ComposeMessageActivity extends Activity {
     }
   }
 	
+ 
   private class OnTextChangedListener implements TextWatcher {
+	  
+	 private String lastChange = "";
+	 
     public void afterTextChanged(Editable s) {
+    	String newText = s.toString();
+    	
+    	if (!lastChange.equals(newText))
+    	{
+    		if (Math.abs(newText.length()-lastChange.length())>2)
+    		{
+                newText = TibConvert.convertUnicodeToPrecomposedTibetan(newText);
+
+    		}
+    		
+    		lastChange = newText;
+    		
+    		composeText.setText(lastChange);
+    		
+    	}
       calculateCharactersRemaining();
     }
     public void beforeTextChanged(CharSequence s, int start, int count,int after) {}
     public void onTextChanged(CharSequence s, int start, int before,int count) {}
 		
   }
+
 	
   private class ComposeKeyPressedListener implements OnKeyListener {
     public boolean onKey(View v, int keyCode, KeyEvent event) {

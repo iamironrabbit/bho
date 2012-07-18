@@ -20,6 +20,9 @@
             style="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dip" />
+            android:padding="5dip"
+             android:background="#55000000"
+                            android:textColor="#ffffffff"
+             />
 	</ScrollView>
 </LinearLayout>

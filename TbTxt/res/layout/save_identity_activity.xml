@@ -34,7 +34,7 @@
 						android:padding="5dip"
 						android:gravity="center"
 						android:id="@+id/ok_button"
-						android:text="Ok"/>
+						android:text="@string/ok"/>
 						
 				<org.thoughtcrime.securesms.lang.BhoButton android:layout_width="100dip"
 						android:layout_height="wrap_content"
@@ -42,6 +42,6 @@
 						android:padding="5dip"
 						android:gravity="center"
 						android:id="@+id/cancel_button"
-						android:text="Cancel"/>			  			  
+						android:text="@string/cancel"/>			  			  
 			</LinearLayout>
 </LinearLayout>

@@ -22,15 +22,18 @@ import org.thoughtcrime.securesms.crypto.MasterSecret;
 import org.thoughtcrime.securesms.crypto.MasterSecretUtil;
 import org.thoughtcrime.securesms.lang.BhoButton;
 import org.thoughtcrime.securesms.lang.BhoEditText;
+import org.thoughtcrime.securesms.lang.BhoTextView;
 import org.thoughtcrime.securesms.util.MemoryCleaner;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 /**
@@ -50,13 +53,14 @@ public class PassphraseCreateActivity extends PassphraseActivity {
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+   getWindow().requestFeature(Window.FEATURE_NO_TITLE);
     setContentView(R.layout.create_passphrase_activity);
 		
     initializeResources();
   }
 	
   private void initializeResources() {
+	  
     this.passphraseEdit       = (BhoEditText) findViewById(R.id.passphrase_edit);
     this.passphraseRepeatEdit = (BhoEditText) findViewById(R.id.passphrase_edit_repeat);
     this.okButton             = (BhoButton) findViewById(R.id.ok_button);
@@ -97,13 +101,30 @@ public class PassphraseCreateActivity extends PassphraseActivity {
     }
 		
     public void generate() {
+      
       progressDialog = new ProgressDialog(PassphraseCreateActivity.this);
-      progressDialog.setTitle(R.string.generating_keypair);
-      progressDialog.setMessage(getString(R.string.generating_a_local_encryption_keypair_));
       progressDialog.setCancelable(false);
       progressDialog.setIndeterminate(true);
       progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+      
       progressDialog.show();
+      
+      
+      View view = LayoutInflater.from(PassphraseCreateActivity.this).inflate(R.layout.custom_notifications, null);  
+      
+  //    contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
+   //   contentView.setTextViewText(R.id.title, getString(R.string.generating_keypair));
+    //  contentView.setTextViewText(R.id.text, getString(R.string.generating_a_local_encryption_keypair_));
+      ((BhoTextView)view.findViewById(R.id.title)).setText(getString(R.string.generating_keypair));
+      ((BhoTextView)view.findViewById(R.id.text)).setText(getString(R.string.generating_a_local_encryption_keypair_));
+      
+      progressDialog.setContentView(view);
+
+      
+     // progressDialog.setTitle(R.string.generating_keypair);
+     // progressDialog.setMessage(getString(R.string.generating_a_local_encryption_keypair_));
+      
+      
       new Thread(this).start();			
     }
 		
