@@ -696,15 +696,32 @@ public class SoftKeyboard extends InputMethodService
         }
     }
     
+    private void switchKeyboard (int move)
+    {
+    	
+    }
+    
     public void swipeRight() {
+    	
         if (mCompletionOn) {
             pickDefaultCandidate();
+      }
+        else
+        {
+        	switchKeyboard(1);
+        	
         }
     }
     
     public void swipeLeft() {
-        handleBackspace();
+        //handleBackspace();
+        
+    	switchKeyboard(-1);
+    	
+        
     }
+    
+    
 
     public void swipeDown() {
         handleClose();
