@@ -23,7 +23,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoTextView;
 
 import android.content.Context;

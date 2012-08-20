@@ -1,6 +1,6 @@
 package info.guardianproject.otr.app.im.ui;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.app.AccountActivity;
 import info.guardianproject.otr.app.im.provider.Imps;
 import info.guardianproject.otr.app.lang.BhoButton;

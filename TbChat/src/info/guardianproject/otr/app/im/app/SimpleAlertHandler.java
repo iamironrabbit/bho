@@ -21,7 +21,7 @@ import info.guardianproject.otr.app.im.engine.Contact;
 import info.guardianproject.otr.app.im.engine.ContactListListener;
 import info.guardianproject.otr.app.im.engine.ImErrorInfo;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoToast;
 
 import android.app.Activity;

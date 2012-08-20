@@ -18,7 +18,7 @@ package info.guardianproject.otr.app.im.app;
 
 import java.util.List;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoTextView;
 
 import android.content.Context;

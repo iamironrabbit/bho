@@ -24,7 +24,7 @@ import info.guardianproject.otr.app.im.provider.Imps;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.IImConnection;
 import info.guardianproject.otr.app.lang.BhoEditText;
 import info.guardianproject.otr.app.lang.BhoTextView;

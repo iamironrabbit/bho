@@ -23,7 +23,7 @@ import info.guardianproject.otr.app.im.service.ImServiceConstants;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoTextView;
 
 import android.app.Activity;

@@ -40,7 +40,7 @@ import info.guardianproject.otr.app.im.IContactList;
 import info.guardianproject.otr.app.im.IContactListListener;
 import info.guardianproject.otr.app.im.IContactListManager;
 import info.guardianproject.otr.app.im.IImConnection;
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoButton;
 import info.guardianproject.otr.app.lang.BhoEditText;
 import info.guardianproject.otr.app.lang.BhoTextView;

@@ -24,7 +24,7 @@ import info.guardianproject.otr.app.im.plugin.ImpsConfigNames;
 import java.util.HashMap;
 import java.util.Map;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 
 import android.app.Service;
 import android.content.Intent;

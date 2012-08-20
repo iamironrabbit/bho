@@ -27,7 +27,7 @@ import java.util.Observer;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smackx.packet.VCard;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.IImConnection;
 import info.guardianproject.otr.app.lang.BhoTextView;
 

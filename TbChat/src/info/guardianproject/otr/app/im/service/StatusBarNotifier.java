@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 import org.jsoup.Jsoup;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 
 import android.app.Notification;
 import android.app.NotificationManager;

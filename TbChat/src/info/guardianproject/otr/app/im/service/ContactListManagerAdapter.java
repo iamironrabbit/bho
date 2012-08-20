@@ -39,7 +39,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.IContactList;
 import info.guardianproject.otr.app.im.IContactListListener;
 import info.guardianproject.otr.app.im.ISubscriptionListener;

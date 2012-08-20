@@ -16,7 +16,7 @@
  */
 package info.guardianproject.otr.app.im.plugin.loopback;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 
 import java.util.HashMap;
 import java.util.Map;

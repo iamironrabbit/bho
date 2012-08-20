@@ -27,7 +27,7 @@ import info.guardianproject.otr.app.im.service.ImServiceConstants;
 
 import java.util.List;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.IContactList;
 import info.guardianproject.otr.app.im.IContactListManager;
 import info.guardianproject.otr.app.im.IImConnection;

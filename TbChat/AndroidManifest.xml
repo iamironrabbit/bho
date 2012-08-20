@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.guardianproject.otr.app.im" 
+    package="org.ironrabbit.tbchat" 
     android:sharedUserLabel="@string/perm_label"
      android:versionName="0.0.9-RC4"
      android:versionCode="35"
@@ -41,14 +41,17 @@ android:anyDensity="true"
         android:label="@string/wo_perm_label"
         android:description="@string/wo_perm_desc" />
 
-    <application android:name=".app.ImApp"
+    <application android:name="info.guardianproject.otr.app.im.app.ImApp"
              android:label="@string/im_label"
-             android:icon="@drawable/ic_launcher_gibberbot"
+             android:icon="@drawable/ic_launcher"
              android:taskAffinity="info.guardianproject.otr.app.task.im" 
-             android:configChanges="locale">
+             android:configChanges="locale"
+             android:theme="@android:style/Theme.Light.NoTitleBar"
+             >
 
-         <activity android:name=".app.WelcomeActivity"
+         <activity android:name="info.guardianproject.otr.app.im.app.WelcomeActivity"
          	android:configChanges="locale"
+         	android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
          	>
             
               <intent-filter>
@@ -58,40 +61,40 @@ android:anyDensity="true"
         </activity>
         
         <!-- Brian's NEW Activities -->
-        <activity android:name=".ui.TabbedContainer"
+        <activity android:name="info.guardianproject.otr.app.im.ui.TabbedContainer"
         android:configChanges="locale"
         />
-        <activity android:name=".app.ChatListActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.ChatListActivity"
             android:configChanges="locale"
          	
             />
-        <activity android:name=".app.ActiveChatListView"
+        <activity android:name="info.guardianproject.otr.app.im.app.ActiveChatListView"
             android:configChanges="locale"
          	
             />
         
         
         
-         <activity android:name=".ui.AboutActivity"
+         <activity android:name="info.guardianproject.otr.app.im.ui.AboutActivity"
          	android:configChanges="locale"
          	
          	 />
-                 <activity android:name=".ui.AccountWizardActivity"
+                 <activity android:name="info.guardianproject.otr.app.im.ui.AccountWizardActivity"
                      android:configChanges="locale"
          	
                      />
         
-        <activity android:name=".ui.AppPassphraseActivity"
+        <activity android:name="info.guardianproject.otr.app.im.ui.AppPassphraseActivity"
             android:configChanges="locale"
          	
             />
-         <activity android:name=".ui.SettingsActivity"
+         <activity android:name="info.guardianproject.otr.app.im.ui.SettingsActivity"
              android:configChanges="locale"
          	
              />
         
         
-        <service android:name=".plugin.xmpp.XmppImPlugin"
+        <service android:name="info.guardianproject.otr.app.im.plugin.xmpp.XmppImPlugin"
                android:process=":remote"
         
         	>
@@ -106,7 +109,7 @@ android:anyDensity="true"
                 android:value="http://xmpp.org/services/"/>
         </service>
 
-        <service android:name=".plugin.xmpp.LLXmppImPlugin"
+        <service android:name="info.guardianproject.otr.app.im.plugin.xmpp.LLXmppImPlugin"
                android:process=":remote"
         
         	>
@@ -136,7 +139,7 @@ android:anyDensity="true"
             <!--  -->
             
            <!--  android:process="info.guardianproject.otr.app.process.im"-->
-        <service android:name=".service.RemoteImService"
+        <service android:name="info.guardianproject.otr.app.im.service.RemoteImService"
             android:exported="true"
             android:process=":remote"            
             android:permission="info.guardianproject.otr.app.im.permission.IM_SERVICE">
@@ -146,7 +149,7 @@ android:anyDensity="true"
             </intent-filter>
         </service>
 
-        <provider android:name=".provider.ImpsProvider"
+        <provider android:name="info.guardianproject.otr.app.im.provider.ImpsProvider"
         	android:process=":remote"
         	android:multiprocess="false"
             android:authorities="info.guardianproject.otr.app.im.provider.Imps"
@@ -154,7 +157,7 @@ android:anyDensity="true"
             android:writePermission="info.guardianproject.otr.app.providers.imps.permission.WRITE_ONLY"
             android:grantUriPermissions="true" />
 
-        <activity android:name=".app.ChooseAccountActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.ChooseAccountActivity"
                 android:theme="@android:style/Theme.NoDisplay"
                 android:configChanges="locale"
          	
@@ -181,7 +184,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
  -->
-        <activity android:name=".app.LandingPage"
+        <activity android:name="info.guardianproject.otr.app.im.app.LandingPage"
             android:configChanges="orientation|keyboardHidden|locale"
             >
             <intent-filter>
@@ -191,7 +194,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
       
-        <activity android:name=".app.AccountActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.AccountActivity"
             android:configChanges="orientation|keyboardHidden|locale"
             android:windowSoftInputMode="stateUnchanged">
             <intent-filter>
@@ -209,7 +212,7 @@ android:anyDensity="true"
         </activity>
       
 
-        <activity android:name=".app.SigningInActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.SigningInActivity"
             android:configChanges="orientation|keyboardHidden|locale"
          	
             >
@@ -219,7 +222,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.SignoutActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.SignoutActivity"
             android:configChanges="locale"
             >
             <intent-filter>
@@ -227,7 +230,7 @@ android:anyDensity="true"
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.ContactListActivity" android:launchMode="singleTop"
+        <activity android:name="info.guardianproject.otr.app.im.app.ContactListActivity" android:launchMode="singleTop"
             
             android:configChanges="locale"
             >
@@ -241,13 +244,13 @@ android:anyDensity="true"
                    android:resource="@xml/searchable"/>
         </activity>
 
-        <activity android:name=".app.AddContactActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.AddContactActivity"
             android:label="@string/add_contact_title"
             
             android:configChanges="locale"
             />
 
-        <activity android:name=".app.NewChatActivity"
+        <activity android:name="info.guardianproject.otr.app.im.app.NewChatActivity"
                 android:configChanges="orientation|keyboardHidden|locale"
                 android:windowSoftInputMode="stateUnchanged"
                 >
@@ -269,7 +272,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.ContactsPickerActivity" android:label="@string/contacts_picker_title"
+        <activity android:name="info.guardianproject.otr.app.im.app.ContactsPickerActivity" android:label="@string/contacts_picker_title"
             
             android:configChanges="locale"
             >
@@ -280,7 +283,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.BlockedContactsActivity" android:label="@string/blocked_list_title"
+        <activity android:name="info.guardianproject.otr.app.im.app.BlockedContactsActivity" android:label="@string/blocked_list_title"
             
             android:configChanges="locale"
             >
@@ -291,7 +294,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.ContactPresenceActivity" 
+        <activity android:name="info.guardianproject.otr.app.im.app.ContactPresenceActivity" 
             android:configChanges="locale">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -300,7 +303,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.AccountSettingsActivity" 
+        <activity android:name="info.guardianproject.otr.app.im.app.AccountSettingsActivity" 
             android:configChanges="locale">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -310,7 +313,7 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-        <activity android:name=".app.SettingActivity" 
+        <activity android:name="info.guardianproject.otr.app.im.app.SettingActivity" 
             android:configChanges="locale">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -320,25 +323,25 @@ android:anyDensity="true"
             </intent-filter>
         </activity>
 
-         <activity android:name=".app.SmpResponseActivity"
+         <activity android:name="info.guardianproject.otr.app.im.app.SmpResponseActivity"
             android:configChanges="locale"
          	android:theme="@android:style/Theme.Dialog"
          	 android:taskAffinity=""
             />
          
-          <activity android:name=".app.CertDisplayActivity"
+          <activity android:name="info.guardianproject.otr.app.im.app.CertDisplayActivity"
             android:configChanges="locale"
          	android:theme="@android:style/Theme.Dialog"
          	 android:taskAffinity=""
             />
           
-          <activity android:name=".app.WarningDialogActivity"
+          <activity android:name="info.guardianproject.otr.app.im.app.WarningDialogActivity"
             android:configChanges="locale"
          	android:theme="@android:style/Theme.Dialog"
          	 android:taskAffinity=""
             />
           
-          <receiver android:name=".app.AutoConnectListener" >
+          <receiver android:name="info.guardianproject.otr.app.im.app.AutoConnectListener" >
               <intent-filter>
                   <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
               </intent-filter>

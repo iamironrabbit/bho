@@ -24,7 +24,7 @@ import info.guardianproject.bouncycastle.asn1.DERSequence;
 import info.guardianproject.bouncycastle.asn1.DERString;
 import info.guardianproject.bouncycastle.asn1.x509.GeneralName;
 import info.guardianproject.bouncycastle.asn1.x509.X509Extensions;
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.app.CertDisplayActivity;
 import info.guardianproject.otr.app.im.service.RemoteImService;
 

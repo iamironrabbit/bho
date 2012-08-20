@@ -24,7 +24,7 @@ import info.guardianproject.otr.app.im.provider.ImpsAddressUtils;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoTextView;
 
 import android.app.Activity;

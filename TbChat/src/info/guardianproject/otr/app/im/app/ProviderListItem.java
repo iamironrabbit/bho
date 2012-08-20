@@ -20,7 +20,7 @@ package info.guardianproject.otr.app.im.app;
 import info.guardianproject.otr.app.im.plugin.BrandingResourceIDs;
 import info.guardianproject.otr.app.im.provider.Imps;
 
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.lang.BhoTextView;
 
 import android.content.ContentResolver;

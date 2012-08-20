@@ -23,7 +23,7 @@ import info.guardianproject.otr.app.im.IChatSessionManager;
 import info.guardianproject.otr.app.im.IConnectionCreationListener;
 import info.guardianproject.otr.app.im.IImConnection;
 import info.guardianproject.otr.app.im.IRemoteImService;
-import info.guardianproject.otr.app.im.R;
+import org.ironrabbit.tbchat.R;
 import info.guardianproject.otr.app.im.app.adapter.ConnectionListenerAdapter;
 import info.guardianproject.otr.app.im.engine.ImConnection;
 import info.guardianproject.otr.app.im.engine.ImErrorInfo;
@@ -392,7 +392,7 @@ public class ImApp extends Application {
     private void loadDefaultBrandingRes() {
         HashMap<Integer, Integer> resMapping = new HashMap<Integer, Integer>();
 
-        resMapping.put(BrandingResourceIDs.DRAWABLE_LOGO, R.drawable.ic_launcher_gibberbot);
+        resMapping.put(BrandingResourceIDs.DRAWABLE_LOGO, R.drawable.ic_launcher);
         resMapping.put(BrandingResourceIDs.DRAWABLE_PRESENCE_ONLINE,
                 android.R.drawable.presence_online);
         resMapping
