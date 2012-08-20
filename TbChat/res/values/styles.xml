@@ -52,17 +52,17 @@
 	
     <style name="bho_preference_H1">
 	    <item name="android:textSize">20dip</item>
-	    <item name="android:textColor">#ffffffff</item>
+	  <!--   <item name="android:textColor">#ffffffff</item> -->
 	</style>
 	
 	<style name="bho_preference_P">
 	    <item name="android:textSize">12dip</item>
-	    <item name="android:textColor">#ffcccccc</item>
+	<!--     <item name="android:textColor">#ffcccccc</item> -->
 	</style>
 	
 	<style name="bho_preference_separator">
 	    <item name="android:background">#ff444444</item>
-	    <item name="android:textColor">#ffcccccc</item>
+<!-- 	    <item name="android:textColor">#ffcccccc</item> -->
 	    <item name="android:textSize">16dip</item>
 	    <item name="android:paddingLeft">10dip</item>
 	    <item name="android:paddingRight">10dip</item>

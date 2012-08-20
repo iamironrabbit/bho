@@ -6,7 +6,7 @@
   <string name="wo_perm_desc">ཉེར་སྤྱོད་དག་ལ་IM ནང་དོན་མཁོ་སྤྲོད་ཀྱི་སྒང་དུ་རེའུ་མིག་འབྲི་རུ་བཅུག</string>
   <!--The application label. This appears in the application launcher on the
     Home screen. This is a noun.-->
-  <string name="im_label">Gibberbot</string>
+  <string name="im_label">TbChat</string>
   <!--These strings displayed on the landing page.-->
   <!--The title of the landing page.-->
   <string name="landing_page_title">གླེང་མོལ། - ཐོ་མཛོད་ཞིག་གདམ།</string>
