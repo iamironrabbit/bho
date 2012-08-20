@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    /*
+    * Copyright 2008, Google Inc.
+    *
+    * Licensed under the Apache License, Version 2.0 (the "License");
+    * you may not use this file except in compliance with the License.
+    * You may obtain a copy of the License at
+    *
+    *     http://www.apache.org/licenses/LICENSE-2.0
+    *
+    * Unless required by applicable law or agreed to in writing, software
+    * distributed under the License is distributed on an "AS IS" BASIS,
+    * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    * See the License for the specific language governing permissions and
+    * limitations under the License.
+    */
+-->
+
+<resources>
+    <style name="Theme.ChatSwitcher" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_im_switch_chats_strip</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    
+    <style name="btn_white">
+    	<item name="android:gravity">center_vertical|center_horizontal</item>
+    	<item name="android:textColor">#fff</item>
+    	<item name="android:textSize">16dip</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    <style name="btn_gray">
+    	<item name="android:gravity">center_vertical|center_horizontal</item>
+    	<item name="android:textColor">#b6b</item>
+    	<item name="android:textSize">16dip</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    <style name="btn_black">
+    	<item name="android:gravity">center_vertical|center_horizontal</item>
+    	<item name="android:textColor">#fff</item>
+    	<item name="android:textSize">16dip</item>
+    	<item name="android:textStyle">bold</item>
+    </style>
+    
+    <!-- BHO UI ELEMENT STYLES -->
+    <style name="contextual_menu_text">
+	    <item name="android:textColor">#ff000000</item>
+	    <item name="android:textSize">20dip</item>
+	    <item name="android:paddingLeft">10dip</item>
+	    <item name="android:paddingTop">6dip</item>
+	</style>
+	
+    <style name="bho_preference_H1">
+	    <item name="android:textSize">20dip</item>
+	    <item name="android:textColor">#ffffffff</item>
+	</style>
+	
+	<style name="bho_preference_P">
+	    <item name="android:textSize">12dip</item>
+	    <item name="android:textColor">#ffcccccc</item>
+	</style>
+	
+	<style name="bho_preference_separator">
+	    <item name="android:background">#ff444444</item>
+	    <item name="android:textColor">#ffcccccc</item>
+	    <item name="android:textSize">16dip</item>
+	    <item name="android:paddingLeft">10dip</item>
+	    <item name="android:paddingRight">10dip</item>
+	    <item name="android:paddingTop">4dip</item>
+	</style>
+	
+	<style name="bho_toast">
+	    <item name="android:background">#dd000000</item>
+	</style>
+	
+	<style name="bho_toast_P">
+	    <item name="android:padding">10dip</item>
+	    <item name="android:textSize">16dip</item>
+	    <item name="android:textColor">#ffcccccc</item>
+	</style>
+	
+	<style name="bho_tab_P">
+	    <item name="android:textSize">12dip</item>
+	    <item name="android:textColor">#ff000000</item>
+	</style>
+    
+</resources>

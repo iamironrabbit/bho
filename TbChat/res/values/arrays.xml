@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+   
+    <string-array name="otr_options">
+        <item>Force / Require</item>
+        <item>Automatically Attempt</item>
+        <item>As Requested</item>
+        <item>Disabled / Never</item>
+    </string-array>
+    
+    <string-array name="otr_options_values">
+        <item>force</item>
+        <item>auto</item>
+        <item>requested</item>
+        <item>disabled</item>
+    </string-array>
+    
+    <string-array name="languages">
+		<item>དབུ་ཅན་</item>
+		<item>English</item>
+		<item>中文(简体)</item>
+		<item>Default</item>
+		
+	</string-array>
+	<string-array name="languages_values">
+		<item>bo</item>
+		<item>en_us</item>
+		<item>zh</item>
+		<item>xx</item>
+	</string-array>
+    
+</resources>

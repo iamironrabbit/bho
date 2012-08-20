@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="ro_perm_label">read instant messages</string>
+  <string name="ro_perm_desc">
+        Allows applications to read data from the IM content provider.
+    </string>
+  <string name="wo_perm_label">write instant messages</string>
+  <string name="wo_perm_desc">
+        Allows applications to write data to the IM content provider.
+    </string>
+  <string name="im_label">Gibberbot</string>
+  <string name="landing_page_title">Chat - Select an account</string>
+  <string name="menu_about">About</string>
+  <string name="menu_add_account">Add account</string>
+  <string name="menu_edit_account">Edit account</string>
+  <string name="menu_remove_account">Remove account</string>
+  <string name="menu_sign_out_all">Sign out all</string>
+  <string name="choose_account_title">Chat - Select an account</string>
+  <string name="conversations">(&lt;xliff:g id=\"number\" example=\"27\"&gt;%1$d&lt;/xliff:g&gt;)</string>
+  <string name="menu_cancel_signin">Ακύρωση σύνδεσης</string>
+  <string name="menu_add_contact">Προσθήκη επαφής</string>
+  <string name="menu_remove_contact">Διαγραφή επαφής</string>
+  <string name="menu_block_contact">Αποκλεισμός επαφής</string>
+  <string name="menu_view_blocked">Αποκλεισμένος/η</string>
+  <string name="menu_view_accounts">Λίστα λογαριασμών</string>
+  <string name="menu_new_chat">New Chat</string>
+  <string name="menu_settings">Ρυθμίσεις</string>
+  <string name="menu_search_contacts">Search Contacts</string>
+  <string name="menu_start_chat">Έναρξη συζήτησης</string>
+  <string name="menu_sign_out">Αποσύνδεση</string>
+  <string name="menu_view_profile">Προβολή προφίλ</string>
+  <string name="menu_otr_start">Start Encryption</string>
+  <string name="menu_otr_stop">Stop Encryption</string>
+  <string name="menu_clear_chat">Clear Chat</string>
+  <string name="menu_end_conversation">Τερματισμός συζήτησης</string>
+  <string name="menu_view_contact_list">Λίστα επαφών</string>
+  <string name="menu_invite_contact">Πρόσκληση...</string>
+  <string name="menu_switch_chats">Εναλλαγή συζητήσεων</string>
+  <string name="menu_insert_smiley">Εισαγ.εικον.smiley</string>
+  <string name="menu_scan">Scan Fingerprint</string>
+  <string name="menu_fingerprint">Your Fingerprint</string>
+  <string name="menu_verify">Verify Fingerprint</string>
+  <string name="menu_plus">Μενού+</string>
+  <string name="confirm">Επιβεβαίωση</string>
+  <string name="signout_all_confirm_message">Do you want to sign out all services?</string>
+  <string name="confirm_delete_contact">Η επαφή \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\" θα διαγραφεί.</string>
+  <string name="confirm_block_contact">Θα γίνει αποκλεισμός της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="confirm_unblock_contact">Θα γίνει κατάργηση αποκλεισμού της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="ok">OK</string>
+  <string name="cancel">Ακύρωση</string>
+  <string name="yes">OK</string>
+  <string name="no">Ακύρωση</string>
+  <string name="signed_out_prompt">Πραγματοποιήσατε έξοδο από το &lt;xliff:g id=\"ACCOUNT\"&gt;%1$s&lt;/xliff:g&gt;.</string>
+  <string name="signed_out_prompt_with_error">Πραγματοποιήθηκε έξοδός σας από το &lt;xliff:g id=\"ACCOUNT\"&gt;%1$s&lt;/xliff:g&gt; επειδή &lt;xliff:g id=\"REASON\"&gt;%2$s&lt;/xliff:g&gt;.</string>
+  <string name="add_account">Προσθήκη λογαριασμού &lt;xliff:g id=\"ACCOUNT\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="label_username">Όνομα χρήστη:</string>
+  <string name="label_password">Κωδικός πρόσβασης:</string>
+  <string name="remember_password">Απομνημόνευση του κωδικού πρόσβασης.</string>
+  <string name="keep_me_signed_in">Αυτόματη σύνδεση.</string>
+  <string name="sign_up">Δεν έχετε λογαριασμό;</string>
+  <string name="check_save_password">For your security, if your phone is lost or stolen, go to the Web site on your computer and change your password.</string>
+  <string name="check_auto_sign_in">Αυτή η επιλογή σάς συνδέει αυτόματα κάθε φορά που ανοίγετε αυτήν την εφαρμογή. Για να απενεργοποιήσετε αυτήν την επιλογή, αποσυνδεθείτε και αφήστε κενό το πλαίσιο επιλογής \\"Αυτόματη σύνδεση\\".</string>
+  <string name="sign_in">Σύνδεση</string>
+  <string name="signing_in_to">Σύνδεση στον λογαριασμό: &lt;xliff:g id=\"ACCOUNT\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="signing_in_wait">Σύνδεση...</string>
+  <string name="bg_data_prompt_title">Τα δεδομένα παρασκηνίου είναι απενεργοποιημένα</string>
+  <string name="bg_data_prompt_message">&lt;xliff:g id=\"PROVIDER\"&gt;%1$s&lt;/xliff:g&gt; χρειάζεται ενεργοποιημένα τα δεδομένα παρασκηνίου.</string>
+  <string name="bg_data_prompt_ok">Ενεργοποίηση</string>
+  <string name="bg_data_prompt_cancel">Τερματισμός</string>
+  <string name="ongoing_conversation">Ενεργές συζητήσεις (&lt;xliff:g id=\"NUMBER\"&gt;%1$d&lt;/xliff:g&gt;)</string>
+  <string name="online_count">&lt;xliff:g id=\"NUMBER\"&gt;%1$d&lt;/xliff:g&gt; συνδεδεμένες επαφές</string>
+  <string name="subscriptions">Προσκλήσεις φίλων</string>
+  <string name="unknown_contact">(\"<i>\"Άγνωστος\"</i>\")</string>
+  <string name="empty_contact_group">Κενή</string>
+  <string name="empty_conversation_group">Δεν υπάρχουν συνομιλίες</string>
+  <string name="contacts_picker_title">Επιλογή επαφής (επαφών) για αποστολή πρόσκλησης</string>
+  <string name="contact_filter_hint">Πληκτρολογήστε για να βρείτε την επαφή</string>
+  <string name="empty_contact_list">Δεν βρέθηκαν επαφές.</string>
+  <string name="blocked_list_title">Αποκλεισμένες επαφές - &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="no_blocked_contact">Δεν υπάρχουν αποκλεισμένες επαφές.</string>
+  <string name="contact_profile_title">Προφίλ επαφής</string>
+  <string name="label_status">Κατάσταση:</string>
+  <string name="label_client_type">Τύπος προγράμματος-πελάτη:</string>
+  <string name="client_type_computer">Υπολογιστής</string>
+  <string name="client_type_mobile">Κινητό</string>
+  <string name="presence_available">Συνδεδεμένος</string>
+  <string name="presence_busy">Απασχολημένος/η</string>
+  <string name="presence_away">Μακριά από τον υπολογιστή</string>
+  <string name="presence_idle">Αδρανής</string>
+  <string name="presence_offline">Εκτός σύνδεσης</string>
+  <string name="presence_invisible">Να εμφανίζομαι εκτός σύνδεσης</string>
+  <string name="preference_title">&lt;xliff:g id=\"provider\"&gt;%1$s&lt;/xliff:g&gt; settings (dev only)</string>
+  <string name="data_channel_label">Data channel</string>
+  <string name="data_encoding_label">Data encoding</string>
+  <string name="cir_channel_label">CIR channel</string>
+  <string name="host_label">Host</string>
+  <string name="msisdn_label">MSISDN</string>
+  <string name="http">HTTP</string>
+  <string name="sms">SMS</string>
+  <string name="tcp">TCP</string>
+  <string name="xml">XML</string>
+  <string name="wbxml">WBXML</string>
+  <string name="save">Save</string>
+  <string name="chat_with">Συζήτηση με τον χρήστη &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="me">Εγώ</string>
+  <string name="compose_hint">Για σύνθεση κειμένου, πληκτρολογήστε</string>
+  <string name="contact_online">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; συνδέθηκε</string>
+  <string name="contact_away">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; βρίσκεται μακριά από τον υπολογιστή του</string>
+  <string name="contact_busy">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; είναι απασχολημένος/η</string>
+  <string name="contact_offline">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; βρίσκεται εκτός σύνδεσης</string>
+  <string name="contact_joined">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; συνδέθηκε</string>
+  <string name="contact_left">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; αποχώρησε</string>
+  <string name="time_stamp">\'Η αποστολή έγινε \'<xliff:g id="HOUR">hh</xliff:g>\':\'<xliff:g id="MINUTE">mm</xliff:g>\' \'<xliff:g id="AMPM">a</xliff:g>\', \'<xliff:g id="DATE">EEEE</xliff:g></string>
+  <string name="send">Αποστολή</string>
+  <string name="msg_sent_failed">Δεν ήταν δυνατή η αποστολή αυτού του μηνύματος.</string>
+  <string name="disconnected_warning">Χάθηκε η σύνδεση με τον διακομιστή. Η αποστολή των μηνυμάτων θα γίνει μόλις επανέλθει η σύνδεση.</string>
+  <string name="contact_offline_warning">Ο χρήστης &lt;xliff:g id=\"USER_0\"&gt;%1$s&lt;/xliff:g&gt; βρίσκεται εκτός σύνδεσης. Τα μηνύματα που στέλνετε θα παραδοθούν όταν ο χρήστης &lt;xliff:g id=\"USER_1\"&gt;%1$s&lt;/xliff:g&gt; συνδεθεί στο διαδίκτυο.</string>
+  <string name="contact_not_in_list_warning">Η επαφή &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; δεν υπάρχει στη λίστα επαφών σας.</string>
+  <string name="select_link_title">Επιλογή συνδέσμου</string>
+  <string name="empty_chat_list">Δεν υπάρχουν ενεργές συζητήσεις.</string>
+  <string name="add_contact_title">Προσθήκη επαφής</string>
+  <string name="input_contact_label">Διεύθυνση ηλεκτρονικού ταχυδρομείου του ατόμου που θέλετε να προσκαλέσετε:</string>
+  <string name="choose_list_label">Επιλέξτε μια λίστα:</string>
+  <string name="invite_instruction">Πληκτρολογήστε ένα όνομα για να το προσθέσετε από τις επαφές.</string>
+  <string name="invite_label">Αποστολή πρόσκλησης</string>
+  <string name="provider_full_name_xmpp">Jabber/XMPP</string>
+  <string name="account_setup_title">Account Setup</string>
+  <string name="encryption_and_anonymity_title">Encryption and Anonymity</string>
+  <string name="hide_offline_contacts">Απόκρυψη επαφών εκτός σύνδεσης</string>
+  <string name="notification_group_title">Ρυθμίσεις ειδοποιήσεων</string>
+  <string name="notification_enabled_title">Ειδοποιήσεις άμεσων μηνυμάτων (IM)</string>
+  <string name="notification_enabled_summary">Να εμφανίζεται ειδοποίηση στη γραμμή κατάστασης όταν γίνεται λήψη άμεσου μηνύματος (IM)</string>
+  <string name="notification_vibrate_title">Δόνηση</string>
+  <string name="notification_vibrate_summary">Δόνηση κατά τη λήψη άμεσων μηνυμάτων (IM)</string>
+  <string name="notification_sound_title">Ήχος</string>
+  <string name="notification_sound_summary">Αναπαραγωγή ήχου κλήσης κατά τη λήψη άμεσου μηνύματος (IM)</string>
+  <string name="notification_ringtone_title">Επιλογή ήχου κλήσης</string>
+  <string name="invitation_prompt">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; σας προσκάλεσε να συμμετέχετε σε ομαδική συζήτηση.</string>
+  <string name="invitation_sent_prompt">Έγινε αποστολή πρόσκλησης στον χρήστη: &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;.</string>
+  <string name="accept_invitation">Αποδοχή</string>
+  <string name="decline_invitation">Απόρριψη</string>
+  <string name="subscription_prompt">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; σας έστειλε πρόσκληση για να σας προσθέσει στη λίστα επαφών του.</string>
+  <string name="approve_subscription">Αποδοχή</string>
+  <string name="decline_subscription">Απόρριψη</string>
+  <string name="approve_subscription_error">Δεν ήταν δυνατή η έγκριση συνδρομής από τον χρήστη &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;. Δοκιμάστε ξανά αργότερα.</string>
+  <string name="decline_subscription_error">Δεν ήταν δυνατή η απόρριψη συνδρομής από τον χρήστη &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;. Δοκιμάστε ξανά αργότερα.</string>
+  <string name="newMessages_label">Νέα μηνύματα &lt;xliff:g id=\"PROVIDER\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="num_unread_chats">&lt;xliff:g id=\"NUMBER\"&gt;%1$d&lt;/xliff:g&gt; μη αναγνωσμένες συζητήσεις</string>
+  <string name="subscription_notify_text">Νέα πρόσκληση φίλου από τον χρήστη <xliff:g id="USER">%s</xliff:g></string>
+  <string name="notify_groupchat_label">Πρόσκληση σε ομαδική συζήτηση</string>
+  <string name="group_chat_invite_notify_text">Νέα πρόσκληση για ομαδική συζήτηση από τον χρήστη <xliff:g id="USER">%s</xliff:g></string>
+  <string name="add_contact_success">Έγινε προσθήκη της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="delete_contact_success">Η επαφή \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\" διαγράφηκε.</string>
+  <string name="block_contact_success">Έγινε αποκλεισμός της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="unblock_contact_success">Κατάργηση αποκλεισμού της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="perm_label">Έναρξη υπηρεσίας ανταλλαγής άμεσων μηνυμάτων (IM)</string>
+  <string name="perm_desc">Επιτρέπει στις εφαρμογές να εκκινούν την υπηρεσία ανταλλαγής άμεσων μηνυμάτων (IM) μέσω του intent.</string>
+  <string name="error">Προσοχή</string>
+  <string name="login_service_failed">Δεν είναι δυνατή η σύνδεση στην υπηρεσία &lt;xliff:g id=\"SERVICE\"&gt;%1$s&lt;/xliff:g&gt;. Δοκιμάστε ξανά αργότερα.\"\n\"(Λεπτομέρειες: &lt;xliff:g id=\"DESCRIPTION\"&gt;%2$s&lt;/xliff:g&gt;)</string>
+  <string name="add_list_failed">Δεν έγινε προσθήκη της λίστας.</string>
+  <string name="block_contact_failed">Δεν έγινε αποκλεισμός της επαφής.</string>
+  <string name="unblock_contact_failed">Δεν έγινε κατάργηση αποκλεισμού της επαφής.</string>
+  <string name="select_contact">Επιλέξτε πρώτα μια επαφή.</string>
+  <string name="disconnected">\"Χωρίς σύνδεση!\"\n</string>
+  <string name="service_error">Σφάλμα υπηρεσίας!</string>
+  <string name="load_contact_list_failed">Δεν έγινε φόρτωση της λίστας επαφών.</string>
+  <string name="cant_connect_to_server">Δεν είναι δυνατή η σύνδεση με τον διακομιστή. Ελέγξτε τη σύνδεσή σας.</string>
+  <string name="contact_already_exist">Ο χρήστης &lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt; υπάρχει ήδη στη λίστα επαφών σας.</string>
+  <string name="contact_blocked">Έγινε αποκλεισμός της επαφής \\"&lt;xliff:g id=\"USER\"&gt;%1$s&lt;/xliff:g&gt;\\".</string>
+  <string name="contact_not_loaded">Περιμένετε μέχρι να φορτώσει η λίστα επαφών σας.</string>
+  <string name="network_error">Προέκυψε σφάλμα δικτύου.</string>
+  <string name="service_not_support">Ο διακομιστής δεν υποστηρίζει αυτήν τη δυνατότητα.</string>
+  <string name="invalid_password">Ο κωδικός πρόσβασης που εισάγατε δεν είναι έγκυρος.</string>
+  <string name="internal_server_error">Παρουσιάστηκε σφάλμα στον διακομιστή.</string>
+  <string name="not_implemented">Ο διακομιστής δεν υποστηρίζει αυτήν τη δυνατότητα.</string>
+  <string name="service_unavaiable">Ο διακομιστής δεν είναι διαθέσιμος αυτήν τη στιγμή.</string>
+  <string name="timeout">Η περίοδος σύνδεσης με τον διακομιστή έληξε.</string>
+  <string name="version_not_supported">Ο διακομιστής δεν υποστηρίζει την τρέχουσα έκδοση.</string>
+  <string name="message_queue_full">Η ουρά μηνυμάτων είναι πλήρης.</string>
+  <string name="domain_not_supported">Ο διακομιστής δεν υποστηρίζει την προώθηση προς τον τομέα διαδικτύου.</string>
+  <string name="unknown_user">Το όνομα χρήστη που εισάγατε δεν αναγνωρίζεται.</string>
+  <string name="recipient_blocked_the_user">Λυπούμαστε, αλλά έχετε αποκλειστεί από τον χρήστη.</string>
+  <string name="session_expired">Η περίοδος σύνδεσης έληξε, συνδεθείτε ξανά.</string>
+  <string name="forced_logout">συνδεθήκατε από άλλο πρόγραμμα-πελάτη.</string>
+  <string name="already_logged_in">έχετε ήδη συνδεθεί από άλλο πρόγραμμα-πελάτη.</string>
+  <string name="msisdn_error">Λυπούμαστε, δεν είναι δυνατή η ανάγνωση του αριθμού τηλεφώνου από την κάρτα SIM. Επικοινωνήστε με την εταιρεία κινητής τηλεφωνίας για βοήθεια.</string>
+  <string name="not_signed_in">Δεν είστε συνδεδεμένοι αυτήν τη στιγμή.</string>
+  <string name="general_error">Κωδικός σφάλματος &lt;xliff:g id=\"CODE\"&gt;%1$d&lt;/xliff:g&gt;</string>
+  <string-array name="default_smiley_names"><item>Είμαι χαρούμενος</item>
+<item>Είμαι λυπημένος</item>
+<item>Κλείνω το μάτι</item>
+<item>Κοροϊδεύω</item>
+<item>Είμαι έκπληκτος</item>
+<item>Φιλάω</item>
+<item>Φωνάζω</item>
+<item>Cool</item>
+<item>Κάνω τα λόγια μου πράξη</item>
+<item>Είπα χαζομάρα</item>
+<item>Ντρέπομαι</item>
+<item>Αγγελούδι</item>
+<item>Δεν έχω αποφασίσει</item>
+<item>Κλαίω</item>
+<item>Δεν αποκαλύπτω τίποτα</item>
+<item>Γελάω</item>
+<item>Είμαι μπερδεμένος</item>
+</string-array>
+  <string-array name="default_smiley_texts"><item>:-)</item>
+<item>:-(</item>
+<item>;-)</item>
+<item>:-P</item>
+<item>=-O</item>
+<item>:-*</item>
+<item>:O</item>
+<item>B-)</item>
+<item>:-$</item>
+<item>:-!</item>
+<item>:-[</item>
+<item>O:-)</item>
+<item>:-\\</item>
+<item>:\'(</item>
+<item>:-X</item>
+<item>:-D</item>
+<item>o_O</item>
+</string-array>
+  <string-array name="smiley_names"><item>Happy</item>
+<item>Sad</item>
+<item>Winking</item>
+<item>Tongue sticking out</item>
+<item>Surprised</item>
+<item>Kissing</item>
+<item>Yelling</item>
+<item>Cool</item>
+<item>Money mouth</item>
+<item>Foot in mouth</item>
+<item>Embarrassed</item>
+<item>Angel</item>
+<item>Undecided</item>
+<item>Crying</item>
+<item>Lips are sealed</item>
+<item>Laughing</item>
+<item>Confused</item>
+</string-array>
+  <string-array name="smiley_texts"><item>:-)</item>
+<item>:-(</item>
+<item>;-)</item>
+<item>:-P</item>
+<item>=-O</item>
+<item>:-*</item>
+<item>:O</item>
+<item>B-)</item>
+<item>:-$</item>
+<item>:-!</item>
+<item>:-[</item>
+<item>O:-)</item>
+<item>:-\\</item>
+<item>:\'(</item>
+<item>:-X</item>
+<item>:-D</item>
+<item>o_O</item>
+</string-array>
+  <string name="buddy_list_title">Contact List - &lt;xliff:g id=\"username\"&gt;%1$s&lt;/xliff:g&gt;</string>
+  <string name="menu_contact_list">Contact List</string>
+  <string name="menu_view_encrypt_chat">Encrypt On/Off</string>
+  <string name="use_tor">Connect via Tor (Requires Orbot app)</string>
+  <string name="app_name">Gibberbot</string>
+  <string name="welcome_first">First time using Gibberbot?</string>
+  <string name="welcome_skip">Can\'t wait to get started?</string>
+  <string name="welcome_about">Get Started</string>
+  <string name="welcome_account">Account Setup</string>
+  <string name="about_welcome_title">About Gibberbot</string>
+  <string name="about_welcome">Gibberbot is a mobile instant messaging app that provides extra security features that prevent others from snooping on your conversations and communications.\n\nThe app supports any chat service that uses the Jabber or XMPP protocol, such as Google GTalk or Jabber.org.</string>
+  <string name="about_otr_title">How is it secure?</string>
+  <string name="about_otr">\'Off-the-Record Messaging\' is a security system designed to enable privacy by mimicking the characteristics of a private conversation in the real world, including Encryption, Authentication, Deniability and Forward Secrecy.\n\nThe OTR-protocol is compatible with desktop chat clients such as Adium or Pidgin.</string>
+  <string name="about_security_title">Are My Chats Secure?</string>
+  <string name="about_security">Gibberbot\'s chat encryption feature only works when messaging with others using a compatible app or program, so you should ensure your contacts are using Gibberbot for mobile and Adium or Pidgin for the desktop. You can fine-tune exactly how and when Gibberbot attempts to encrypt your chats in Account Settings.\n\nLet\'s get started!</string>
+  <string name="setup_passphrase_title">Passphrase Setup</string>
+  <string name="setup_passphrase">Before you get started please choose a secure passphrase to protect your Gibberbot data from unjust access.</string>
+  <string name="setup_passphrase_label1">Passphrase:</string>
+  <string name="setup_passphrase_label2">Passphrase (again):</string>
+  <string name="account_setup_example_email_address">user@domain.com</string>
+  <string name="account_setup_password">password</string>
+  <string name="account_setup_advanced_button">Advanced Account Settings</string>
+  <string name="account_setup_pers_sub">Persistence</string>
+  <string name="account_setup_pers_pw_title">Remember Password</string>
+  <string name="account_setup_pers_pw_on">Password cached</string>
+  <string name="account_setup_pers_pw_off">Password not cached</string>
+  <string name="account_setup_pers_auto_title">Automatically Sign In</string>
+  <string name="account_setup_pers_auto_on">Connect at Gibberbot start-up</string>
+  <string name="account_setup_pers_auto_off">Don\'t connect at Gibberbot start-up</string>
+  <string name="account_setup_pers_now_title">Sign In Now</string>
+  <string name="account_setup_pers_now_on">Connect following account setup</string>
+  <string name="account_setup_pers_now_off">Don\'t connect following account setup</string>
+  <string name="account_setup_personal_sub">Personal (optional)</string>
+  <string name="account_setup_personal_alias_title">Account Alias (your name)</string>
+  <string name="account_setup_personal_alias_sub">How your account appears online</string>
+  <string name="account_setup_personal_profile_title">Profile</string>
+  <string name="account_setup_personal_profile_sub">A brief blurb about yourself</string>
+  <string name="account_setup_advanced_enc_force">Force encryption / refuse plaintext</string>
+  <string name="account_setup_advanced_enc_auto">When possible, encrypt chats automatically</string>
+  <string name="account_setup_advanced_enc_req">Encrypt chats as requested</string>
+  <string name="account_setup_advanced_enc_off">Disable chat encryption</string>
+  <string name="account_setup_signin_a">Validating credentials...</string>
+  <string name="account_setup_signin_b">Generating keypair...</string>
+  <string name="account_setup_signin_c">Signing in...</string>
+  <string name="account_setup_error_validating">Gibberbot encountered an error while validating your username or password - please check them and try again.</string>
+  <string name="account_setup_error_keypair">Gibberbot encountered an error while generating a keypair.</string>
+  <string name="account_setup_error_server">Gibberbot encountered an error while connecting to the chat server - please check your configuration and try again.</string>
+  <string name="account_setup_error_connectivity">Gibberbot encountered an error while connecting - please doublecheck your network connectivity and try again.</string>
+  <string name="label_fingerprint_remote">Their Fingerprint</string>
+  <string name="label_fingerprint_local">Your Fingerprint</string>
+  <string name="menu_sign_in">Sign In</string>
+  <string name="menu_gen_key">Regen Key</string>
+  <string name="error_suspended_connection">Gibberbot has lost a connection to the network</string>
+  <string name="error_reestablish_connection">Gibberbot is attempting to restablish a connection</string>
+  <string name="otr_session_status_plaintext">Warning: This chat is NOT encrypted</string>
+  <string name="otr_session_status_encrypted">This chat is secure but the identities of the participants have NOT been verified</string>
+  <string name="otr_session_status_finished">Warning: chat encryption has been stopped.</string>
+  <string name="otr_session_status_verified">This chat is secured and verified</string>
+  <string name="account_wizard_setup_title">Account Wizard</string>
+  <string name="account_wizard_account_title">Your Account ID</string>
+  <string name="account_wizard_host_title">Configure Server</string>
+  <string name="account_wizard_ready_title">Are You Ready?</string>
+  <string name="account_wizard_setup_body">Enter your account ID to configure Gibberbot for your XMPP chat service. It looks like an email address:</string>
+  <string name="account_wizard_account_body">Please enter your account ID (user@hostname):</string>
+  <string name="account_wizard_host_body">Please enter or edit your jabber/xmpp chat server hostname and port number (5222 is default).</string>
+  <string name="account_wizard_ready_body">Gibberbot has been configured, and now it is time to connect to your service, and start chatting safely, securely and privately!</string>
+  <string name="account_wizard_no_domain_warning">You didn\'t enter an @hostname.com part for your account ID. Try again!</string>
+  <string name="account_wizard_no_root_domain_warning">Your server hostname didn\'t have a .com, .net or similar appendix. Try again!</string>
+  <string name="signin_password_prompt">Enter your password:</string>
+  <string name="pref_account_user">pref_account_user</string>
+  <string name="pref_account_pass">pref_account_pass</string>
+  <string name="pref_account_domain">pref_account_domain</string>
+  <string name="pref_account_xmpp_resource">pref_account_xmpp_resource</string>
+  <string name="pref_account_port">pref_account_port</string>
+  <string name="pref_account_server">pref_account_server</string>
+  <string name="pref_security_allow_plain_auth">pref_security_allow_plain_auth</string>
+  <string name="pref_security_require_tls">pref_security_require_tls</string>
+  <string name="pref_security_tls_cert_verify">pref_security_tls_cert_verify</string>
+  <string name="pref_security_otr_mode">pref_security_otr_mode</string>
+  <string name="pref_security_use_tor">pref_security_use_tor</string>
+  <string name="pref_security_do_dns_srv">pref_security_do_dns_srv</string>
+  <string name="pref_hide_offline_contacts">pref_hide_offline_contacts</string>
+  <string name="pref_enable_notification">pref_enable_notification</string>
+  <string name="pref_notification_vibrate">pref_notification_vibrate</string>
+  <string name="pref_notification_sound">pref_notification_sound</string>
+  <string name="pref_notification_ringtone">pref_notification_ringtone</string>
+  <string name="account_settings_title">Account Settings</string>
+  <string name="warning_alpha">WARNING: This is an early release of Gibberbot that may still include security holes or bugs.</string>
+  <string name="menu_view_groups">Groups</string>
+  <string name="otr_gen_key">Generating new OTR keypair...</string>
+  <string name="search_label">Contact</string>
+  <string name="search_hint">type the name of a contact to chat with</string>
+  <string name="search_button_text">Go</string>
+  <string name="menu_locale">Language</string>
+  <string name="KEY_PREF_LANGUAGE_TITLE">Languages</string>
+  <string name="KEY_PREF_LANGUAGE_SUMMARY">What language should InTheClear display?</string>
+  <string name="do_srv_lookup">Do SRV Lookup</string>
+  <string name="use_dns_srv_to_find_actual_xmpp_server_from_domain_name">Use DNS SRV to find actual XMPP server from domain name</string>
+  <string name="allow_the_username_and_password_to_be_sent_as_plain_text_when_using_an_unencrypted_transport">Allow the username and password to be sent as plain text when using an unencrypted transport</string>
+  <string name="allow_plain_text_auth">Allow Plain Text Auth</string>
+  <string name="verify_that_the_certificate_is_trusted">Verify that the certificate is trusted</string>
+  <string name="tls_verification">TLS Verification</string>
+  <string name="require_tls_ssl_connection">Require TLS/SSL connection</string>
+  <string name="transport_encryption">Transport Encryption</string>
+  <string name="how_encrypted_chats_are_started">how encrypted chats are started</string>
+  <string name="the_server_to_connect_to_if_needed">The server to connect to, if needed</string>
+  <string name="connect_server">Connect Server</string>
+  <string name="tcp_port_for_xmpp_server">TCP Port for XMPP Server</string>
+  <string name="server_port">Server Port</string>
+  <string name="xmpp_resource">XMPP Resource</string>
+  <string name="to_distinguish_this_connection_from_other_clients_that_are_also_logged_in">to distinguish this connection from other clients that are also logged in</string>
+  <string name="btn_next">Next</string>
+  <string name="btn_back">Back</string>
+  <string name="title_chats">Conversations</string>
+</resources>
