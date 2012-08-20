@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:paddingLeft="4dip"
     android:paddingRight="4dip">
-    <info.guardianproject.otr.app.lang.BhoTextView style="@style/contextual_menu_text" android:id="@+id/text"
+    <org.ironrabbit.tbchat.app.lang.BhoTextView style="@style/contextual_menu_text" android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true" />

@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 -->
-<info.guardianproject.otr.app.im.app.ChatView
+<org.ironrabbit.tbchat.app.im.app.ChatView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/chatView"
     android:orientation="vertical"
@@ -37,7 +37,7 @@
             android:layout_height="16dip"
             android:scaleType="fitCenter" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/title"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/title"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -69,7 +69,7 @@
             android:layout_height="fill_parent"
             android:src="@drawable/ic_im_message_not_sent" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/warningText"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/warningText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="5dip"
@@ -85,7 +85,6 @@
         android:background="#ff202020" />
 
     <ListView android:id="@+id/history"
-        android:cacheColorHint="#00000000"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
@@ -103,7 +102,7 @@
         android:visibility="gone"
         android:background="@drawable/text_divider_horizontal">
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtInvitation"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtInvitation"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffad45d6"
@@ -113,12 +112,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <info.guardianproject.otr.app.lang.BhoButton android:id="@+id/btnAccept"
+            <org.ironrabbit.tbchat.app.lang.BhoButton android:id="@+id/btnAccept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/accept_invitation" />
 
-            <info.guardianproject.otr.app.lang.BhoButton android:id="@+id/btnDecline"
+            <org.ironrabbit.tbchat.app.lang.BhoButton android:id="@+id/btnDecline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dip"
@@ -134,7 +133,7 @@
         android:visibility="gone"
         android:background="@drawable/text_divider_horizontal">
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtSubscription"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtSubscription"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffad45d6"
@@ -144,12 +143,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <info.guardianproject.otr.app.lang.BhoButton android:id="@+id/btnApproveSubscription"
+            <org.ironrabbit.tbchat.app.lang.BhoButton android:id="@+id/btnApproveSubscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/approve_subscription" />
 
-            <info.guardianproject.otr.app.lang.BhoButton android:id="@+id/btnDeclineSubscription"
+            <org.ironrabbit.tbchat.app.lang.BhoButton android:id="@+id/btnDeclineSubscription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dip"
@@ -173,7 +172,7 @@
               -->
         
 
-        <info.guardianproject.otr.app.lang.BhoEditText android:id="@+id/composeMessage"
+        <org.ironrabbit.tbchat.app.lang.BhoEditText android:id="@+id/composeMessage"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -185,10 +184,10 @@
             
             />
 
-        <info.guardianproject.otr.app.lang.BhoButton android:id="@+id/btnSend"
+        <org.ironrabbit.tbchat.app.lang.BhoButton android:id="@+id/btnSend"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:drawableLeft="@drawable/ic_menu_unencrypt"
             android:text="@string/send" />
     </LinearLayout>
-</info.guardianproject.otr.app.im.app.ChatView>
+</org.ironrabbit.tbchat.app.im.app.ChatView>

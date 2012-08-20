@@ -30,7 +30,7 @@
             android:padding="2dip"
             android:background="@drawable/picture_frame_background" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/labelName"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/labelName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dip"
@@ -38,13 +38,13 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/label_username" /> -->
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtName"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtName"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="40dip"
             android:text="name here"/>
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/labelStatus"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/labelStatus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dip"
@@ -52,11 +52,11 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/label_status" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtStatus"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtStatus"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtStatusText"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtStatusText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dip"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content" />
              -->
             
-            <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/labelFingerprintRemote"
+            <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/labelFingerprintRemote"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dip"                
@@ -87,13 +87,13 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/label_fingerprint_remote" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtFingerprintRemote"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtFingerprintRemote"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
             android:text="" />
             
-               <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/labelFingerprintLocal"
+               <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/labelFingerprintLocal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dip"                
@@ -101,7 +101,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/label_fingerprint_local" />
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/txtFingerprintLocal"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/txtFingerprintLocal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"

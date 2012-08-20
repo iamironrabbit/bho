@@ -18,16 +18,17 @@
  */
 -->
 <view xmlns:android="http://schemas.android.com/apk/res/android"
-    class="info.guardianproject.otr.app.im.app.MessageView"
+    class="org.ironrabbit.tbchat.app.im.app.MessageView"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="#ccffffff" >
+    android:background="#ccffffff"
+     >
 
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal">
 
-	    <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/message"
+	    <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/message"
 	        android:textAppearance="?android:attr/textAppearanceMedium"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"

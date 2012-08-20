@@ -19,7 +19,7 @@
 -->
 
 <view xmlns:android="http://schemas.android.com/apk/res/android"
-    class="info.guardianproject.otr.app.im.app.ContactView"
+    class="org.ironrabbit.tbchat.app.im.app.ContactView"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
@@ -57,7 +57,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
-                <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/line1"
+                <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/line1"
                     android:maxLines="1"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
@@ -66,7 +66,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:ellipsize="marquee" />
 
-                <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/timestamp"
+                <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/timestamp"
                     android:maxLines="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"/>
             </LinearLayout>
 
-            <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/line2"                
+            <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/line2"                
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"

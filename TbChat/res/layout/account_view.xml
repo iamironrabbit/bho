@@ -17,7 +17,7 @@
  */
 -->
 
-<info.guardianproject.otr.app.im.app.ProviderListItem
+<org.ironrabbit.tbchat.app.im.app.ProviderListItem
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
@@ -51,7 +51,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
-                <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/providerName"
+                <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/providerName"
                     android:textColor="@color/landing_page_text"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold"
@@ -60,7 +60,7 @@
                     android:ellipsize="marquee"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content" />
-                <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/conversations"
+                <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/conversations"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="@color/landing_page_text_secondary"
                     android:singleLine="true"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
-            <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/loginName"
+            <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/loginName"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="@color/landing_page_text"
                 android:ellipsize="marquee"
@@ -88,4 +88,4 @@
             android:layout_width="30dip"
             android:layout_height="18dip"/>
     </LinearLayout>
-</info.guardianproject.otr.app.im.app.ProviderListItem>
+</org.ironrabbit.tbchat.app.im.app.ProviderListItem>

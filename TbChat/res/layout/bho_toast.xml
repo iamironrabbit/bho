@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     style="@style/bho_toast" >
-    <info.guardianproject.otr.app.lang.BhoTextView style="@style/bho_toast_P"
+    <org.ironrabbit.tbchat.app.lang.BhoTextView style="@style/bho_toast_P"
         android:id="@+id/bho_toast_text"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent" />

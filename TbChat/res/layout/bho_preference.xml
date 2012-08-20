@@ -33,7 +33,7 @@
         android:layout_marginBottom="6dip"
         android:layout_weight="1">
     
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+android:id/title"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+android:id/title"
             style="@style/bho_preference_H1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:ellipsize="marquee"
             android:fadingEdge="horizontal" />
             
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+android:id/summary"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+android:id/summary"
             style="@style/bho_preference_P"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

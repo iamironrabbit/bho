@@ -6,7 +6,6 @@
 package net.java.otr4j.io;
 
 import info.guardianproject.bouncycastle.util.encoders.Base64;
-import info.guardianproject.otr.OtrConstants;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -21,6 +20,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.crypto.interfaces.DHPublicKey;
+
+import org.ironrabbit.tbchat.OtrConstants;
 
 import net.java.otr4j.io.messages.AbstractEncodedMessage;
 import net.java.otr4j.io.messages.AbstractMessage;

@@ -26,7 +26,7 @@
     android:defaultValue="false"
     android:layout="@layout/bho_checkbox_preference" />
 
-  <info.guardianproject.otr.app.lang.BhoListPreference android:title="Chat Encryption"
+  <org.ironrabbit.tbchat.app.lang.BhoListPreference android:title="Chat Encryption"
     android:key="@string/pref_security_otr_mode"
     android:entryValues="@array/otr_options_values"
     android:entries="@array/otr_options"
@@ -68,7 +68,7 @@
                 android:defaultValue="false"
                  />
 <!-- 
-        <info.guardianproject.otr.app.im.app.ImRingtonePreference
+        <org.ironrabbit.tbchat.app.im.app.ImRingtonePreference
                 android:layout="?android:attr/preferenceLayoutChild"
                 android:dependency="@string/pref_notification_sound"
                 android:key="@string/pref_notification_ringtone"

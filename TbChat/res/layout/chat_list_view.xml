@@ -17,13 +17,13 @@
  * limitations under the License.
  */
 -->
-<info.guardianproject.otr.app.im.app.ActiveChatListView xmlns:android="http://schemas.android.com/apk/res/android"
+<org.ironrabbit.tbchat.app.im.app.ActiveChatListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/ActiveChatListView"
     android:orientation="vertical">
 
-    <info.guardianproject.otr.app.im.app.UserPresenceView
+    <org.ironrabbit.tbchat.app.im.app.UserPresenceView
         android:id="@+id/userPresence"
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -32,8 +32,7 @@
         android:paddingTop="9dip"
         android:paddingLeft="5dip"
         android:paddingBottom="5dip"
-        android:paddingRight="5dip"
-        android:background="#D00000">	
+        android:paddingRight="5dip">	
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -51,7 +50,7 @@
 
         </LinearLayout>
 
-        <info.guardianproject.otr.app.lang.BhoEditText android:id="@+id/statusEdit"
+        <org.ironrabbit.tbchat.app.lang.BhoEditText android:id="@+id/statusEdit"
             android:inputType="textCapSentences|textAutoCorrect"
             android:selectAllOnFocus="true"
             android:layout_gravity="center_vertical"
@@ -59,10 +58,10 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:visibility="gone"/>
 
-        <info.guardianproject.otr.app.lang.BhoTextView android:id="@+id/statusView"
+        <org.ironrabbit.tbchat.app.lang.BhoTextView android:id="@+id/statusView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -70,17 +69,14 @@
             android:paddingLeft="3dip"
             android:singleLine="true"
             android:visibility="gone"
-            android:background="#55999999"
-            android:textAppearance="?android:attr/textAppearanceLargeInverse"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
 
-    </info.guardianproject.otr.app.im.app.UserPresenceView>
+    </org.ironrabbit.tbchat.app.im.app.UserPresenceView>
 
     <ListView android:id="@+id/chatsList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" 
-         android:background="#00000000"
-         android:cacheColorHint="#00000000"
-
+     
         />
 
-</info.guardianproject.otr.app.im.app.ActiveChatListView>
+</org.ironrabbit.tbchat.app.im.app.ActiveChatListView>

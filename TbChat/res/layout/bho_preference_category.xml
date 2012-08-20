@@ -15,7 +15,7 @@
 -->
 
 <!-- Layout used for PreferenceCategory in a PreferenceActivity. -->
-<info.guardianproject.otr.app.lang.BhoTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<org.ironrabbit.tbchat.app.lang.BhoTextView xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/bho_preference_separator"
     android:id="@+android:id/title"
     android:layout_width="match_parent"

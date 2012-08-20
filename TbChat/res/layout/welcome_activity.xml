@@ -11,8 +11,7 @@
   	android:id="@+id/imageView1" 
   	android:src="@drawable/feature"/>
   
-      <info.guardianproject.otr.app.lang.BhoButton android:layout_marginLeft="20dip" 
-      		android:textColor="#333333" 
+      <org.ironrabbit.tbchat.app.lang.BhoButton android:layout_marginLeft="20dip" 
       		android:text="@string/welcome_about" 
       		android:id="@+id/btnSplashAbout" 
       		android:layout_width="fill_parent" 
