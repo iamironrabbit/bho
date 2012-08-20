@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.ironrabbit.tbchat" 
     android:sharedUserLabel="@string/perm_label"
-     android:versionName="0.0.9-RC4"
-     android:versionCode="35"
+     android:versionName="0.0.9-bo-1"
+     android:versionCode="36"
      android:installLocation="auto"     
      >     
     <supports-screens
@@ -126,7 +126,7 @@ android:anyDensity="true"
                 android:value="http://xmpp.org/services/"/>
         </service>
   -->
-<!--  -->
+<!-- 
         <service android:name=".plugin.loopback.LoopbackImPlugin">
             <intent-filter>
                 <action android:name=".app.im.plugin" />
@@ -202,13 +202,13 @@ android:anyDensity="true"
             <intent-filter>
                 <action android:name="android.intent.action.EDIT" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name=".app.im.IMPS_CATEGORY" />
+                <category android:name="org.ironrabbit.tbchat.app.im.IMPS_CATEGORY" />
                 <data android:mimeType="vnd.android.cursor.item/bo-imps-accounts" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.INSERT" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name=".app.im.IMPS_CATEGORY" />
+                <category android:name="org.ironrabbit.tbchat.app.im.IMPS_CATEGORY" />
                 <data android:mimeType="vnd.android.cursor.item/bo-imps-providers" />
             </intent-filter>
         </activity>
@@ -239,7 +239,7 @@ android:anyDensity="true"
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name=".app.im.IMPS_CATEGORY" />
+                <category android:name="org.ironrabbit.tbchat.app.im.IMPS_CATEGORY" />
                 <data android:mimeType="vnd.android.cursor.dir/bo-imps-contacts"/>
             </intent-filter>
             <meta-data android:name="android.app.searchable"
