@@ -17,7 +17,10 @@ public class DynaDrawable extends Drawable {
 	
 	Key mKey;
 
-	public DynaDrawable (Context context, Key key, Typeface typeface, String text, int textColor)
+	int mXOffset = -5;
+	int mYOffset = 5;
+	
+	public DynaDrawable (Context context, Key key, Typeface typeface, String text, int textColor, int xOffset, int yOffset)
 	{
 		mTypeface = typeface;
 		mText = text;
@@ -28,14 +31,17 @@ public class DynaDrawable extends Drawable {
         mPaint.setTextSize((int)(key.height/2.5));
         mPaint.setColor(textColor);
         mPaint.setTypeface(mTypeface);
-	        
+	      
+        mXOffset = xOffset;
+        mYOffset = yOffset;
+        
 	}
 	
 	@Override
 	public void draw(Canvas canvas) {
 
 		
-		canvas.drawText(mText, -5, 5, mPaint);
+		canvas.drawText(mText, mXOffset, mYOffset, mPaint);
 		
 	}
 

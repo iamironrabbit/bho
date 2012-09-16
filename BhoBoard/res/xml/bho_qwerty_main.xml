@@ -25,7 +25,7 @@ Row 1:
         <Key android:codes="0x0F84"  android:horizontalGap=".9%p" android:keyEdgeFlags="left"/>
         <Key android:codes="0x0F49" />
         <Key android:codes="0x0F7A" />
-        <Key android:codes="0x0F62" />
+        <Key android:codes="0x0F62"  android:popupCharacters="abc" android:popupKeyboard="@xml/f62_popup"/>
         <Key android:codes="0x0F4F" />
         <Key android:codes="0x0F68" />
         <Key android:codes="0x0F74" />

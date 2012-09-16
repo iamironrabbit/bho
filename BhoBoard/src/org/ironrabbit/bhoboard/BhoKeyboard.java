@@ -16,35 +16,68 @@
 
 package org.ironrabbit.bhoboard;
 
+import java.util.Iterator;
+import java.util.List;
+
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
+import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
 public class BhoKeyboard extends Keyboard {
 
     private Key mEnterKey;
-    public BhoKeyboard(Context context, int xmlLayoutResId) {
+    private Context mContext;
+    private Typeface mTypeface;
+    private String mTypefaceName = "monlambodyig.ttf";
+
+    public BhoKeyboard(Context context, int xmlLayoutResId, Typeface typeface) {
         super(context, xmlLayoutResId);
+        mContext = context;
+        mTypeface = typeface;
         
+        Log.d("BhoKeyboard","new keyboard created: id=" + xmlLayoutResId);
     }
 
     public BhoKeyboard(Context context, int layoutTemplateResId, 
             CharSequence characters, int columns, int horizontalPadding) {
         super(context, layoutTemplateResId, characters, columns, horizontalPadding);
+        mContext = context;
+        mTypeface = Typeface.createFromAsset(mContext.getAssets(), mTypefaceName);
+
+        Log.d("BhoKeyboard","new keyboard created: chars=" + characters);
     }
 
     @Override
     protected Key createKeyFromXml(Resources res, Row parent, int x, int y, 
             XmlResourceParser parser) {
 
-        Key key = new BhoKey(res, parent, x, y, parser);
- 
+    	BhoKey key = new BhoKey(res, parent, x, y, parser);
+    	setupKey(key);
+    	 return key;
+    }
+    
+    public void setupKey(BhoKey key)
+    {
+    	Log.d("BhoKeyboard", "creating key: " + key.codes[0] + "; popups=" + key.popupCharacters);
+    	
         if (key.codes[0] == 10) {
             mEnterKey = key;
         }
-        return key;
+        
+        if (key.codes[0] > 3000)
+		{
+    		String keyCode = ((char)key.codes[0])+"";
+    		
+    		key.icon = new DynaDrawable (mContext, key, mTypeface, keyCode, Color.WHITE, -5, 5);
+            key.iconPreview = new DynaDrawable (mContext, key, mTypeface,  keyCode, Color.BLACK, -5, -25);
+		}
+        
+       
     }
     
     /**
@@ -85,7 +118,7 @@ public class BhoKeyboard extends Keyboard {
         }
     }
     
-    static class BhoKey extends Keyboard.Key {
+    public static class BhoKey extends Keyboard.Key {
         
         public BhoKey(Resources res, Keyboard.Row parent, int x, int y, XmlResourceParser parser) {
             super(res, parent, x, y, parser);
@@ -100,5 +133,24 @@ public class BhoKeyboard extends Keyboard {
             return super.isInside(x, codes[0] == KEYCODE_CANCEL ? y - 10 : y);
         }
     }
+
+	@Override
+	public List<Key> getKeys() {
+		
+		
+		List<Key> lKeys = super.getKeys();
+		
+		Log.d("BhoKeyboard","geting keys. size=" + lKeys.size());
+		
+		for (Key key : lKeys)
+		{
+			 if (key instanceof BhoKey && key.icon == null && key.codes[0] > 3000)
+				{
+		    		setupKey((BhoKey)key);
+				}
+		}
+		
+		return lKeys;
+	}
 
 }

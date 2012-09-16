@@ -108,9 +108,9 @@ public class SoftKeyboard extends InputMethodService
             mLastDisplayWidth = displayWidth;
         }*/
         
-        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_main);
-        mQwertyNumbersKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_numbers);
-        mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted);
+        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_main, mTypeface);
+        mQwertyNumbersKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_numbers, mTypeface);
+        mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted, mTypeface);
         
        // mSymbolsKeyboard = new BhoKeyboard(this, R.xml.symbols);
        // mSymbolsShiftedKeyboard = new BhoKeyboard(this, R.xml.symbols_shift);

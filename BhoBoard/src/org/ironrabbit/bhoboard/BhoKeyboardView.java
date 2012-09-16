@@ -27,6 +27,7 @@ import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.Keyboard.Key;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.View;
 
 public class BhoKeyboardView extends KeyboardView {
 
@@ -45,7 +46,6 @@ public class BhoKeyboardView extends KeyboardView {
     public void setupKeys (Typeface typeface)
     {
     	
-    	
     	Iterator<Key> itKeys = getKeyboard().getKeys().iterator();
     	Key key;
     	
@@ -57,9 +57,10 @@ public class BhoKeyboardView extends KeyboardView {
     		{
 	    		String keyCode = ((char)key.codes[0])+"";
 	    		
-	    		key.icon = new DynaDrawable (getContext(), key, typeface, keyCode, Color.WHITE);
-	            key.iconPreview = new DynaDrawable (getContext(), key, typeface,  keyCode, Color.BLACK);
+	    		key.icon = new DynaDrawable (getContext(), key, typeface, keyCode, Color.WHITE, -5, 5);
+	            key.iconPreview = new DynaDrawable (getContext(), key, typeface,  keyCode, Color.BLACK, -5, -25);
     		}
+    		
     	}
     	
     }
@@ -74,6 +75,21 @@ public class BhoKeyboardView extends KeyboardView {
             return super.onLongPress(key);
         }
     }
+
+	@Override
+	public void setPopupOffset(int x, int y) {
+		super.setPopupOffset(x, y);
+	}
+
+	@Override
+	public void setPopupParent(View v) {
+		super.setPopupParent(v);
+	}
+
+	@Override
+	public void setVerticalCorrection(int verticalOffset) {
+		super.setVerticalCorrection(verticalOffset);
+	}
 
     /*
 	@Override
