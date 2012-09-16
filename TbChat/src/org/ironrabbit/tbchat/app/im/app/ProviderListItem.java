@@ -106,9 +106,9 @@ public class ProviderListItem extends LinearLayout {
         mUnderBubble.setBackgroundDrawable(mDefaultBackground);
         statusIcon.setVisibility(View.GONE);
 
-        providerName.setTextColor(mProviderNameColors);
-        loginName.setTextColor(mLoginNameColors);
-        chatView.setTextColor(mChatViewColors);
+      //  providerName.setTextColor(mProviderNameColors);
+       // loginName.setTextColor(mLoginNameColors);
+       // chatView.setTextColor(mChatViewColors);
 
         if (!cursor.isNull(mActiveAccountIdColumn)) {
             mLoginName.setVisibility(View.VISIBLE);
@@ -142,11 +142,13 @@ public class ProviderListItem extends LinearLayout {
                     chatView.setVisibility(View.VISIBLE);
                     chatView.setText(r.getString(R.string.conversations, count));
 
-                    providerName.setTextColor(0xff000000);
-                    loginName.setTextColor(0xff000000);
-                    chatView.setTextColor(0xff000000);
+                    providerName.setVisibility(View.GONE);
+                    loginName.setVisibility(View.GONE);
+                    
                 } else {
                     chatView.setVisibility(View.GONE);
+                    providerName.setVisibility(View.VISIBLE);
+                    loginName.setVisibility(View.VISIBLE);
                 }
 
                 secondRowText = providerDisplayName;

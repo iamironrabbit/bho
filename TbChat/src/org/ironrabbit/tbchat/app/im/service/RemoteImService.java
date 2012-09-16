@@ -194,7 +194,7 @@ public class RemoteImService extends Service implements OtrEngineListener {
     }
 
     private void startForegroundCompat() {
-        Notification notification = new Notification(R.drawable.status, getString(R.string.im_label),
+        Notification notification = new Notification(R.drawable.ic_stat_tbchatnotify, getString(R.string.im_label),
                 System.currentTimeMillis());
         notification.flags = Notification.FLAG_ONGOING_EVENT | Notification.FLAG_NO_CLEAR;
         Intent notificationIntent = new Intent(this, LandingPage.class);

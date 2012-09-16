@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.ironrabbit.tbchat" 
     android:sharedUserLabel="@string/perm_label"
-     android:versionName="0.0.9-bo-1"
-     android:versionCode="36"
+     android:versionName="0.0.9-bo-2"
+     android:versionCode="37"
      android:installLocation="auto"     
      >     
     <supports-screens
@@ -46,7 +46,7 @@ android:anyDensity="true"
         	 android:label="@string/app_name"
              android:icon="@drawable/ic_launcher"
              android:taskAffinity="org.ironrabbit.tbchat.app.task.im" 
-             android:configChanges="locale"
+            android:configChanges="orientation|keyboardHidden|locale"
              android:theme="@android:style/Theme.Light.NoTitleBar"
              >
 
@@ -248,8 +248,7 @@ android:anyDensity="true"
 
         <activity android:name=".app.im.app.AddContactActivity"
             android:label="@string/add_contact_title"
-            
-            android:configChanges="locale"
+            android:configChanges="orientation|keyboardHidden|locale"
             />
 
         <activity android:name=".app.im.app.NewChatActivity"
@@ -306,7 +305,7 @@ android:anyDensity="true"
         </activity>
 
         <activity android:name=".app.im.app.AccountSettingsActivity" 
-            android:configChanges="locale">
+            android:configChanges="orientation|keyboardHidden|locale">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="org.ironrabbit.tbchat.app.im.IMPS_CATEGORY" />
@@ -316,7 +315,7 @@ android:anyDensity="true"
         </activity>
 
         <activity android:name=".app.im.app.SettingActivity" 
-            android:configChanges="locale">
+            android:configChanges="orientation|keyboardHidden|locale">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="org.ironrabbit.tbchat.app.im.IMPS_CATEGORY" />
