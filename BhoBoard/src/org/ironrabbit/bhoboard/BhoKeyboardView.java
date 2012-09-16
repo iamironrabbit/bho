@@ -32,20 +32,30 @@ import android.view.View;
 public class BhoKeyboardView extends KeyboardView {
 
     static final int KEYCODE_OPTIONS = -100;
-    
+    public static final String TAG = "BhoBoard";
+    private Typeface mTypeface;
+    private String mTypefaceName = "monlambodyig.ttf";
+
     public BhoKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
         
     }
 
     public BhoKeyboardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        
+        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
+    
     }
     
     public void setupKeys (Typeface typeface)
     {
-    	
+    	mTypeface = typeface;
+    	setupKeys();
+    }
+    
+    private void setupKeys()
+    {
     	Iterator<Key> itKeys = getKeyboard().getKeys().iterator();
     	Key key;
     	
@@ -56,9 +66,9 @@ public class BhoKeyboardView extends KeyboardView {
     		if (key.codes[0] > 3000)
     		{
 	    		String keyCode = ((char)key.codes[0])+"";
-	    		
-	    		key.icon = new DynaDrawable (getContext(), key, typeface, keyCode, Color.WHITE, -5, 5);
-	            key.iconPreview = new DynaDrawable (getContext(), key, typeface,  keyCode, Color.BLACK, -5, -25);
+	    		key.label = null;
+	    		key.icon = new DynaDrawable (getContext(), key, mTypeface, keyCode, Color.WHITE, -5, 5);
+	            key.iconPreview = new DynaDrawable (getContext(), key, mTypeface,  keyCode, Color.BLACK, -5, -25);
     		}
     		
     	}
@@ -79,11 +89,13 @@ public class BhoKeyboardView extends KeyboardView {
 	@Override
 	public void setPopupOffset(int x, int y) {
 		super.setPopupOffset(x, y);
+		Log.d(TAG,"popup offset set: " + x + "," + y);
 	}
 
 	@Override
 	public void setPopupParent(View v) {
 		super.setPopupParent(v);
+		Log.d(TAG,"popup parent view set: " + v);
 	}
 
 	@Override
@@ -91,12 +103,20 @@ public class BhoKeyboardView extends KeyboardView {
 		super.setVerticalCorrection(verticalOffset);
 	}
 
-    /*
+    
 	@Override
 	public void onDraw(Canvas canvas) {
 		
+		setupKeys();
 		
 		super.onDraw(canvas);
 	}
-	*/
+
+	@Override
+	public void setKeyboard(Keyboard keyboard) {
+		super.setKeyboard(keyboard);
+		
+		setupKeys();
+	}
+	
 }

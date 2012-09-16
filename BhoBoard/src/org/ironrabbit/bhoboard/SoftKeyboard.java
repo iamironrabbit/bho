@@ -78,8 +78,8 @@ public class SoftKeyboard extends InputMethodService
     
     private String mWordSeparators;
     
-    private Typeface mTypeface;
-    private String mTypefaceName = "monlambodyig.ttf";
+ //   private Typeface mTypeface;
+   // private String mTypefaceName = "monlambodyig.ttf";
     /**
      * Main initialization of the input method component.  Be sure to call
      * to super class.
@@ -88,7 +88,7 @@ public class SoftKeyboard extends InputMethodService
         super.onCreate();
         mWordSeparators = getResources().getString(R.string.word_separators);
         
-        mTypeface = Typeface.createFromAsset(getAssets(), mTypefaceName);
+       // mTypeface = Typeface.createFromAsset(getAssets(), mTypefaceName);
         
     }
     
@@ -108,9 +108,9 @@ public class SoftKeyboard extends InputMethodService
             mLastDisplayWidth = displayWidth;
         }*/
         
-        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_main, mTypeface);
-        mQwertyNumbersKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_numbers, mTypeface);
-        mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted, mTypeface);
+        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_main);
+        mQwertyNumbersKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_numbers);
+        mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted);
         
        // mSymbolsKeyboard = new BhoKeyboard(this, R.xml.symbols);
        // mSymbolsShiftedKeyboard = new BhoKeyboard(this, R.xml.symbols_shift);
@@ -129,7 +129,6 @@ public class SoftKeyboard extends InputMethodService
         
         mInputView.setOnKeyboardActionListener(this);
         mInputView.setKeyboard(mQwertyKeyboard);
-        mInputView.setupKeys(mTypeface);
         
         return mInputView;
     }
@@ -139,7 +138,7 @@ public class SoftKeyboard extends InputMethodService
      * be generated, like {@link #onCreateInputView}.
      */
     @Override public View onCreateCandidatesView() {
-        mCandidateView = new CandidateView(this, mTypeface);
+        mCandidateView = new CandidateView(this);
         mCandidateView.setService(this);
         return mCandidateView;
     }
@@ -264,8 +263,7 @@ public class SoftKeyboard extends InputMethodService
         super.onStartInputView(attribute, restarting);
         // Apply the selected keyboard to the input view.
         mInputView.setKeyboard(mCurKeyboard);
-        mInputView.setupKeys(mTypeface);
-
+       
         mInputView.closing();
     }
     
@@ -537,7 +535,6 @@ public class SoftKeyboard extends InputMethodService
             }
             
             mInputView.setKeyboard(current);
-            mInputView.setupKeys(mTypeface);
             /*
             if (current == mQwertyNumbersKeyboard) {
                 current.setShifted(false);
@@ -620,7 +617,6 @@ public class SoftKeyboard extends InputMethodService
             mInputView.setShifted(true);
             mQwertyShiftedKeyboard.setShifted(true);
             mInputView.setKeyboard(mQwertyShiftedKeyboard);
-            mInputView.setupKeys(mTypeface);
         } 
         else if(mQwertyShiftedKeyboard == currentKeyboard)
         {
@@ -628,7 +624,6 @@ public class SoftKeyboard extends InputMethodService
             mInputView.setShifted(false);
             mQwertyKeyboard.setShifted(false);
             mInputView.setKeyboard(mQwertyKeyboard);
-            mInputView.setupKeys(mTypeface);
 
         }/*
         else if (currentKeyboard == mSymbolsKeyboard) {

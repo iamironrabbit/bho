@@ -67,16 +67,17 @@ public class CandidateView extends View {
     private GestureDetector mGestureDetector;
 
     private Typeface mTypeface;
-    
+    private String mTypefaceName = "monlambodyig.ttf";
+
     /**
      * Construct a CandidateView for showing suggested words for completion.
      * @param context
      * @param attrs
      */
-    public CandidateView(Context context, Typeface typeface) {
+    public CandidateView(Context context) {
         super(context);
         
-        mTypeface = typeface;
+        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
         
         mSelectionHighlight = context.getResources().getDrawable(
                 android.R.drawable.list_selector_background);

@@ -32,24 +32,18 @@ public class BhoKeyboard extends Keyboard {
 
     private Key mEnterKey;
     private Context mContext;
-    private Typeface mTypeface;
-    private String mTypefaceName = "monlambodyig.ttf";
 
-    public BhoKeyboard(Context context, int xmlLayoutResId, Typeface typeface) {
+    public BhoKeyboard(Context context, int xmlLayoutResId) {
         super(context, xmlLayoutResId);
         mContext = context;
-        mTypeface = typeface;
         
-        Log.d("BhoKeyboard","new keyboard created: id=" + xmlLayoutResId);
     }
 
     public BhoKeyboard(Context context, int layoutTemplateResId, 
             CharSequence characters, int columns, int horizontalPadding) {
         super(context, layoutTemplateResId, characters, columns, horizontalPadding);
         mContext = context;
-        mTypeface = Typeface.createFromAsset(mContext.getAssets(), mTypefaceName);
 
-        Log.d("BhoKeyboard","new keyboard created: chars=" + characters);
     }
 
     @Override
@@ -57,10 +51,11 @@ public class BhoKeyboard extends Keyboard {
             XmlResourceParser parser) {
 
     	BhoKey key = new BhoKey(res, parent, x, y, parser);
-    	setupKey(key);
+    	//setupKey(key);
     	 return key;
     }
     
+    /*
     public void setupKey(BhoKey key)
     {
     	Log.d("BhoKeyboard", "creating key: " + key.codes[0] + "; popups=" + key.popupCharacters);
@@ -78,7 +73,7 @@ public class BhoKeyboard extends Keyboard {
 		}
         
        
-    }
+    }*/
     
     /**
      * This looks at the ime options given by the current editor, to set the
@@ -140,15 +135,6 @@ public class BhoKeyboard extends Keyboard {
 		
 		List<Key> lKeys = super.getKeys();
 		
-		Log.d("BhoKeyboard","geting keys. size=" + lKeys.size());
-		
-		for (Key key : lKeys)
-		{
-			 if (key instanceof BhoKey && key.icon == null && key.codes[0] > 3000)
-				{
-		    		setupKey((BhoKey)key);
-				}
-		}
 		
 		return lKeys;
 	}

@@ -50,7 +50,7 @@ Row 2:
     <Row>
         <Key android:codes="0x0F68" android:horizontalGap="6.9%p" android:keyEdgeFlags="left"/>
         <Key android:codes="0x0F64" />
-        <Key android:codes="0x0F4C" />
+        <Key android:codes="0x0F4C"  android:popupCharacters="\u0F4C\u0F4D" android:popupKeyboard="@xml/popup_template" />
         <Key android:codes="0x0F4B" />
         <Key android:codes="0x0F4A" />
         
@@ -83,22 +83,19 @@ Row 3:
 		Pop up key 9: 0x0F7E
 		Pop up key 10: 0x0F83
 	Key 9: Delete
-    
      -->
     <Row>
-        
+     
        <Key android:codes="-1" android:keyIcon="@drawable/sym_keyboard_shift" 
                  android:keyWidth="15%p" android:isModifier="true"
-                android:isSticky="true" android:keyEdgeFlags="left"/>
-       
+                android:isSticky="true" android:keyEdgeFlags="left"/>  
         <Key android:codes="0x0F5E"/>
         <Key android:codes="0x0F65"/>
         <Key android:codes="0x0F46"/>
         <Key android:codes="0x0F5A"/>
         <Key android:codes="0x0F56" />
         <Key android:codes="0x0F4E"/>
-        
-        <Key android:codes="0x0F7E" />
+        <Key android:codes="0x0F7E"  android:popupCharacters="\u0F8B\u0F85\u0F8A\u0F89\u0F88\u0F87\u0F86\u0F82\u0F7E\u0F83" android:popupKeyboard="@xml/popup_template" />
         
     	 <Key android:codes="-5" android:keyEdgeFlags="right" 
    	     android:isRepeatable="true"  android:keyWidth="15%p" android:keyIcon="@drawable/sym_keyboard_delete" />

@@ -25,7 +25,7 @@ Row 1:
         <Key android:codes="0x0F84"  android:horizontalGap=".9%p" android:keyEdgeFlags="left"/>
         <Key android:codes="0x0F49" />
         <Key android:codes="0x0F7A" />
-        <Key android:codes="0x0F62"  android:popupCharacters="abc" android:popupKeyboard="@xml/f62_popup"/>
+        <Key android:codes="0x0F62"  android:popupCharacters="\u0F62\u0F6A\u0F6C" android:popupKeyboard="@xml/popup_template"/>
         <Key android:codes="0x0F4F" />
         <Key android:codes="0x0F68" />
         <Key android:codes="0x0F74" />
@@ -59,10 +59,10 @@ Row 2:
         <Key android:codes="0x0F66" />
         <Key android:codes="0x0F51" />
         <Key android:codes="0x0F44" />
-        <Key android:codes="0x0F42" />
+        <Key android:codes="0x0F42"  android:popupCharacters="\u0F42\u0F43" android:popupKeyboard="@xml/popup_template"/>
         <Key android:codes="0x0F67" />
         <Key android:codes="0x0F47" />
-        <Key android:codes="0x0F40" />
+        <Key android:codes="0x0F40"  android:popupCharacters="\u0F69\u0F6B\u0F40" android:popupKeyboard="@xml/popup_template" />
         <Key android:codes="0x0F63"  android:keyEdgeFlags="right" />
         
     </Row>
@@ -90,10 +90,10 @@ Row 3:
                 android:keyWidth="15%p" android:isModifier="true"
                 android:isSticky="true" android:keyEdgeFlags="left"/>
         <Key android:codes="0x0F5F" />
-        <Key android:codes="0x0F5B" />
+        <Key android:codes="0x0F5B" android:popupCharacters="\u0F5B\u0F5C" android:popupKeyboard="@xml/popup_template"  />
         <Key android:codes="0x0F45" />
         <Key android:codes="0x0F59" />
-        <Key android:codes="0x0F56" />
+        <Key android:codes="0x0F56" android:popupCharacters="\u0F57\u0F56" android:popupKeyboard="@xml/popup_template"/>
         
         <Key android:codes="0x0F53" />
         <Key android:codes="0x0F58" />
