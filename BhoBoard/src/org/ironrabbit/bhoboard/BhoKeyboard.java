@@ -19,12 +19,7 @@ package org.ironrabbit.bhoboard;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.Keyboard.Key;
-import android.inputmethodservice.Keyboard.Row;
-import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
 public class BhoKeyboard extends Keyboard {

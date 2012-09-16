@@ -62,16 +62,18 @@ public class SoftKeyboard extends InputMethodService
     private StringBuilder mComposing = new StringBuilder();
     private boolean mPredictionOn;
     private boolean mCompletionOn;
-    private int mLastDisplayWidth;
+  //  private int mLastDisplayWidth;
     private boolean mCapsLock;
     private long mLastShiftTime;
     private long mMetaState;
-    
+    /*
     private BhoKeyboard mSymbolsKeyboard;
     private BhoKeyboard mSymbolsShiftedKeyboard;
+    */
     private BhoKeyboard mQwertyKeyboard;
-    
+    private BhoKeyboard mQwertyNumbersKeyboard; 
     private BhoKeyboard mQwertyShiftedKeyboard;
+    
     private BhoKeyboard mCurKeyboard;
     
     private String mWordSeparators;
@@ -95,6 +97,8 @@ public class SoftKeyboard extends InputMethodService
      * is called after creation and any configuration change.
      */
     @Override public void onInitializeInterface() {
+    	
+    	/*
         if (mQwertyKeyboard != null) {
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
@@ -102,12 +106,14 @@ public class SoftKeyboard extends InputMethodService
             int displayWidth = getMaxWidth();
             if (displayWidth == mLastDisplayWidth) return;
             mLastDisplayWidth = displayWidth;
-        }
-        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty);
+        }*/
+        
+        mQwertyKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_main);
+        mQwertyNumbersKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_numbers);
         mQwertyShiftedKeyboard = new BhoKeyboard(this, R.xml.bho_qwerty_shifted);
         
-        mSymbolsKeyboard = new BhoKeyboard(this, R.xml.symbols);
-        mSymbolsShiftedKeyboard = new BhoKeyboard(this, R.xml.symbols_shift);
+       // mSymbolsKeyboard = new BhoKeyboard(this, R.xml.symbols);
+       // mSymbolsShiftedKeyboard = new BhoKeyboard(this, R.xml.symbols_shift);
     }
     
     /**
@@ -117,11 +123,12 @@ public class SoftKeyboard extends InputMethodService
      * a configuration change.
      */
     @Override public View onCreateInputView() {
+    	
         mInputView = (BhoKeyboardView) getLayoutInflater().inflate(
                 R.layout.input, null);
+        
         mInputView.setOnKeyboardActionListener(this);
         mInputView.setKeyboard(mQwertyKeyboard);
-        
         mInputView.setupKeys(mTypeface);
         
         return mInputView;
@@ -167,13 +174,13 @@ public class SoftKeyboard extends InputMethodService
             case EditorInfo.TYPE_CLASS_DATETIME:
                 // Numbers and dates default to the symbols keyboard, with
                 // no extra features.
-                mCurKeyboard = mSymbolsKeyboard;
+                mCurKeyboard = mQwertyNumbersKeyboard;
                 break;
                 
             case EditorInfo.TYPE_CLASS_PHONE:
                 // Phones will also default to the symbols keyboard, though
                 // often you will want to have a dedicated phone keyboard.
-                mCurKeyboard = mSymbolsKeyboard;
+                mCurKeyboard = mQwertyNumbersKeyboard;
                 break;
                 
             case EditorInfo.TYPE_CLASS_TEXT:
@@ -386,6 +393,7 @@ public class SoftKeyboard extends InputMethodService
                             && (event.getMetaState()&KeyEvent.META_ALT_ON) != 0) {
                         // A silly example: in our input method, Alt+Space
                         // is a shortcut for 'android' in lower case.
+                    	/*
                         InputConnection ic = getCurrentInputConnection();
                         if (ic != null) {
                             // First, tell the editor that it is no longer in the
@@ -400,7 +408,7 @@ public class SoftKeyboard extends InputMethodService
                             keyDownUp(KeyEvent.KEYCODE_D);
                             // And we consume this event.
                             return true;
-                        }
+                        }*/
                     }
                     if (mPredictionOn && translateKeyDown(keyCode, event)) {
                         return true;
@@ -520,18 +528,21 @@ public class SoftKeyboard extends InputMethodService
             // Show a menu or somethin'
         } else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
                 && mInputView != null) {
-            Keyboard current = mInputView.getKeyboard();
-            if (current == mSymbolsKeyboard || current == mSymbolsShiftedKeyboard) {
+         
+        	Keyboard current = mInputView.getKeyboard();
+            if (current == mQwertyNumbersKeyboard) {
                 current = mQwertyKeyboard;
             } else {
-                current = mSymbolsKeyboard;
+                current = mQwertyNumbersKeyboard;
             }
+            
             mInputView.setKeyboard(current);
             mInputView.setupKeys(mTypeface);
-
-            if (current == mSymbolsKeyboard) {
+            /*
+            if (current == mQwertyNumbersKeyboard) {
                 current.setShifted(false);
-            }
+            }*/
+            
         } else {
             handleCharacter(primaryCode, keyCodes);
         }
@@ -595,42 +606,43 @@ public class SoftKeyboard extends InputMethodService
     }
 
     private void handleShift() {
-        if (mInputView == null) {
+        
+    	if (mInputView == null) {
             return;
         }
         
         Keyboard currentKeyboard = mInputView.getKeyboard();
-        if (mQwertyKeyboard == currentKeyboard) {
-            // Alphabet keyboard
-            checkToggleCapsLock();
-            mInputView.setShifted(mCapsLock || !mInputView.isShifted());
-            mInputView.setKeyboard(mQwertyShiftedKeyboard);
 
+        if (mQwertyKeyboard == currentKeyboard) {
+           
+        	// Alphabet keyboard
+            checkToggleCapsLock();
+            mInputView.setShifted(true);
+            mQwertyShiftedKeyboard.setShifted(true);
+            mInputView.setKeyboard(mQwertyShiftedKeyboard);
             mInputView.setupKeys(mTypeface);
         } 
         else if(mQwertyShiftedKeyboard == currentKeyboard)
         {
             checkToggleCapsLock();
-            mInputView.setShifted(mCapsLock || !mInputView.isShifted());
-
+            mInputView.setShifted(false);
+            mQwertyKeyboard.setShifted(false);
             mInputView.setKeyboard(mQwertyKeyboard);
-
             mInputView.setupKeys(mTypeface);
 
-        }
+        }/*
         else if (currentKeyboard == mSymbolsKeyboard) {
             mSymbolsKeyboard.setShifted(true);
             mInputView.setKeyboard(mSymbolsShiftedKeyboard);
             mInputView.setupKeys(mTypeface);
-
             mSymbolsShiftedKeyboard.setShifted(true);
         } else if (currentKeyboard == mSymbolsShiftedKeyboard) {
-            mSymbolsShiftedKeyboard.setShifted(false);
+    
+        	mSymbolsShiftedKeyboard.setShifted(false);
             mInputView.setKeyboard(mSymbolsKeyboard);
             mInputView.setupKeys(mTypeface);
-
             mSymbolsKeyboard.setShifted(false);
-        }
+        }*/
     }
     
     private void handleCharacter(int primaryCode, int[] keyCodes) {
@@ -731,6 +743,7 @@ public class SoftKeyboard extends InputMethodService
     }
     
     public void onPress(int primaryCode) {
+    
     }
     
     public void onRelease(int primaryCode) {
