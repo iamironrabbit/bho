@@ -121,10 +121,10 @@ Row 4:
                 android:keyWidth="15%p" />
          
         
-        <Key android:codes="0x0f0b" android:keyWidth="25.5%p" />
+        <Key android:codes="0x0f0b" android:keyWidth="26%p" />
         
             <Key android:codes="32" android:keyIcon="@drawable/sym_keyboard_space" 
-                android:keyWidth="25.5%p" android:isRepeatable="true"/>
+                android:keyWidth="26%p" android:isRepeatable="true"/>
         
           <Key android:codes="10" android:keyIcon="@drawable/sym_keyboard_return" 
                 android:keyWidth="15%p" android:keyEdgeFlags="right"/>
