@@ -140,10 +140,9 @@ Row 3:
         <Key android:codes="0x0F1C" android:popupCharacters="\u0F1A\u0F1C\u0F1B\u0FCE\u0F1F\u0F1D\u0F1E\u0FCF" android:popupKeyboard="@xml/popup_template" />
         <Key android:codes="0x0F34"  android:popupCharacters="\u0F36\u0F34\u0FBE\u0F37\u0F38" android:popupKeyboard="@xml/popup_template"/>
         <Key android:codes="0x0F0D"  android:popupCharacters="\u0F14\u0F13\u0F12\u0F11\u0F10\u0F0F\u0F0D\u0F0E" android:popupKeyboard="@xml/popup_template"/>
-        <Key android:codes="0x0F04"  android:popupCharacters="\u0FD0\u0F0A\u0F09\u0F03\u0F02\u0F00\u0F01\u0F08\u0F09\u0FD3\u0FD4\u0F06\u0F04\u0F05" android:popupKeyboard="@xml/popup_template"/>
+        <Key android:codes="0x0F04"  android:popupCharacters="\u0F03\u0F00\u0F08\u0FD3\u0F06\u0F04" android:popupKeyboard="@xml/popup_template"/>
         
-        
-        
+       
    	 <Key android:codes="-5" android:keyEdgeFlags="right" 
    	     android:isRepeatable="true" android:keyWidth="15%p" android:keyIcon="@drawable/sym_keyboard_delete" />
     </Row>

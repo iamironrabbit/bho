@@ -107,7 +107,7 @@ public class BhoKeyboardView extends KeyboardView {
 	@Override
 	public void onDraw(Canvas canvas) {
 		
-		setupKeys();
+	//	setupKeys();
 		
 		super.onDraw(canvas);
 	}
