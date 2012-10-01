@@ -1,0 +1,17 @@
+default.properties
+build.properties
+local.properties
+bin/
+gen/
+res/drawable/
+res/raw/
+scripts/resources/*.diff
+obj/
+epubs/
+mappings/
+READY/
+.classpath
+.settings
+.DS_Store
+*.so
+*~
