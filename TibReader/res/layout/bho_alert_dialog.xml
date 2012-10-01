@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="9dip"
+    android:paddingBottom="3dip"
+    android:paddingLeft="3dip"
+    android:paddingRight="1dip">
+	<ScrollView android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="2dip"
+        android:paddingBottom="12dip"
+        android:paddingLeft="14dip"
+        android:paddingRight="10dip">
+        <org.ironrabbit.bho.BhoTextView android:id="@+id/bho_alert_message"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+             android:background="#55000000"
+                            android:textColor="#ffffffff"
+             />
+	</ScrollView>
+</LinearLayout>

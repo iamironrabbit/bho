@@ -13,5 +13,7 @@ READY/
 .classpath
 .settings
 .DS_Store
+.project
+*.patch
 *.so
 *~
