@@ -85,7 +85,6 @@ public class BhoMenu {
 		}
 		
 		BhoMenuItem bmi = new BhoMenuItem(index, label);
-		Log.d(BhoTyper.BHOTAG, "hello " + index + " " + label + " adding to " + menuInContext.getClass().getName());
 		menuInContext.items.add(bmi);
 		return bmi;
 	}
@@ -227,13 +226,13 @@ public class BhoMenu {
 		BhoSubMenu(String label) {
 			super(a);
 			this.label = label;
-			maxRows = 1;
 			itemsPerRow = 1;
 			
 		}
 		
 		@Override
 		public void show(View v) {
+			maxRows = items.size()/itemsPerRow;
 			pw = new PopupWindow(inner, LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, false);
 			pw.setAnimationStyle(android.R.style.Animation_Dialog);
 			pw.setWidth(display.getWidth());

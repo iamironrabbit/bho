@@ -8,8 +8,6 @@ import org.ironrabbit.bho.BhoMenu.BhoMenuItem;
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 
 public class BhoMenuFactory {
@@ -49,7 +47,6 @@ public class BhoMenuFactory {
 	}
 	
 	private TableRow initTableRow() {
-		Log.d(BhoTyper.BHOTAG, "NEW ROW!");
 		TableRow tr = new TableRow(c);
 		tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 		return tr;

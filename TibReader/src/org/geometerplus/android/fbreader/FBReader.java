@@ -25,6 +25,8 @@ import android.app.SearchManager;
 import android.content.*;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.*;
 import android.widget.RelativeLayout;
 
@@ -38,6 +40,7 @@ import org.geometerplus.zlibrary.ui.android.R;
 import org.geometerplus.zlibrary.ui.android.library.*;
 import org.geometerplus.zlibrary.ui.android.view.AndroidFontUtil;
 
+import org.geometerplus.fbreader.Paths;
 import org.geometerplus.fbreader.fbreader.ActionCode;
 import org.geometerplus.fbreader.fbreader.FBReaderApp;
 import org.geometerplus.fbreader.bookmodel.BookModel;
@@ -52,6 +55,7 @@ import org.geometerplus.android.fbreader.tips.TipsActivity;
 import org.geometerplus.android.util.UIUtil;
 import org.ironrabbit.bho.BhoMenu;
 import org.ironrabbit.bho.BhoMenu.BhoSubMenu;
+import org.ironrabbit.bho.BhoTyper;
 
 public final class FBReader extends ZLAndroidActivity {
 	public static final String BOOK_PATH_KEY = "BookPath";
@@ -123,7 +127,7 @@ public final class FBReader extends ZLAndroidActivity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-
+		
 		final FBReaderApp fbReader = (FBReaderApp)FBReaderApp.Instance();
 		final ZLAndroidLibrary zlibrary = (ZLAndroidLibrary)ZLibrary.Instance();
 		myFullScreenFlag =
@@ -141,6 +145,14 @@ public final class FBReader extends ZLAndroidActivity {
 		if (fbReader.getPopupById(SelectionPopup.ID) == null) {
 			new SelectionPopup(fbReader);
 		}
+		
+		Handler bhoHandler = new Handler();
+		bhoHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				BhoTyper.checkForFont(Paths.cardDirectory() + "/Fonts", FBReader.this);
+			}
+		});
 		
 		menu = new BhoMenu(FBReader.this);
 		initBhoMenu();
