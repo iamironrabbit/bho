@@ -10,7 +10,6 @@ import android.content.Context;
 import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
-import android.util.Log;
 
 public class BhoListPreference extends ListPreference implements OnBhoSelectedListener {
     Context context;
