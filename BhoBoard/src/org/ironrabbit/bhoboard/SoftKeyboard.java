@@ -514,7 +514,7 @@ public class SoftKeyboard extends InputMethodService
                 commitTyped(getCurrentInputConnection());
             }
             sendKey(primaryCode);
-            updateShiftKeyState(getCurrentInputEditorInfo());
+            
         } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) {
@@ -524,7 +524,22 @@ public class SoftKeyboard extends InputMethodService
             return;
         } else if (primaryCode == BhoKeyboardView.KEYCODE_OPTIONS) {
             // Show a menu or somethin'
-        } else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
+        } 
+        else if (primaryCode == -123) {
+          
+        	Keyboard current = mInputView.getKeyboard();
+            if (current == mQwertyNumbersKeyboard) {
+                current = mQwertyKeyboard;
+            } else {
+                current = mQwertyNumbersKeyboard;
+            }
+            
+            mInputView.setKeyboard(current);
+            mInputView.setShifted(false);
+            mQwertyKeyboard.setShifted(false);
+            
+        } 
+        else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
                 && mInputView != null) {
          
         	Keyboard current = mInputView.getKeyboard();
@@ -609,7 +624,7 @@ public class SoftKeyboard extends InputMethodService
         }
         
         Keyboard currentKeyboard = mInputView.getKeyboard();
-
+        
         if (mQwertyKeyboard == currentKeyboard) {
            
         	// Alphabet keyboard
