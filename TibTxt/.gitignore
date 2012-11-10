@@ -1,0 +1,14 @@
+.classpath
+project.properties
+.project
+.settings
+bin/
+gen/
+.idea/
+TextSecure.iml
+out
+tests
+lint.xml
+local.properties
+ant.properties
+.DS_Store
