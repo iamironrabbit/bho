@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
-     android:keyWidth="9.1%p" android:horizontalGap=".7%p" android:verticalGap="0px" android:keyHeight="8.33332%p">
+     android:keyWidth="9.1%p" android:horizontalGap=".7%p" android:verticalGap="0px" android:keyHeight="@dimen/key_height">
 
     <!-- 
 Numbers keyboard layout
