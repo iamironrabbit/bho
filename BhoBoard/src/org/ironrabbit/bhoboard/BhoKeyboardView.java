@@ -18,6 +18,8 @@ package org.ironrabbit.bhoboard;
 
 import java.util.Iterator;
 
+import org.ironrabbit.type.CustomTypefaceManager;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -34,17 +36,16 @@ public class BhoKeyboardView extends KeyboardView {
     static final int KEYCODE_OPTIONS = -100;
     public static final String TAG = "BhoBoard";
     private Typeface mTypeface;
-    private String mTypefaceName = "monlambodyig.ttf";
 
     public BhoKeyboardView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
+        mTypeface = CustomTypefaceManager.getCurrentTypeface(context);
         
     }
 
     public BhoKeyboardView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
+        mTypeface = CustomTypefaceManager.getCurrentTypeface(context);
     
     }
     
@@ -63,12 +64,13 @@ public class BhoKeyboardView extends KeyboardView {
     	{
     		key = itKeys.next();
     	
-    		if (key.codes[0] > 3000)
+    		if (key.codes[0] > 2000)
     		{
 	    		String keyCode = ((char)key.codes[0])+"";
+	    		boolean hasMult = key.popupCharacters != null && key.popupCharacters.length() > 0;
 	    		key.label = null;
-	    		key.icon = new DynaDrawable (getContext(), key, mTypeface, keyCode, Color.WHITE, -5, 5);
-	            key.iconPreview = new DynaDrawable (getContext(), key, mTypeface,  keyCode, Color.BLACK, -5, -25);
+	    		key.icon = new DynaDrawable (getContext(), key, mTypeface, keyCode, Color.WHITE, -8, 20, 1.8f, hasMult);
+	            key.iconPreview = new DynaDrawable (getContext(), key, mTypeface,  keyCode, Color.BLACK, -10, -25, 1.5f,false);
     		}
     		
     	}

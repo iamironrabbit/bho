@@ -30,6 +30,8 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.ironrabbit.type.CustomTypefaceManager;
+
 
 public class CandidateView extends View {
 
@@ -65,9 +67,7 @@ public class CandidateView extends View {
     private int mTotalWidth;
     
     private GestureDetector mGestureDetector;
-
     private Typeface mTypeface;
-    private String mTypefaceName = "monlambodyig.ttf";
 
     /**
      * Construct a CandidateView for showing suggested words for completion.
@@ -77,7 +77,7 @@ public class CandidateView extends View {
     public CandidateView(Context context) {
         super(context);
         
-        mTypeface = Typeface.createFromAsset(context.getAssets(), mTypefaceName);
+        mTypeface = CustomTypefaceManager.getCurrentTypeface(context);
         
         mSelectionHighlight = context.getResources().getDrawable(
                 android.R.drawable.list_selector_background);

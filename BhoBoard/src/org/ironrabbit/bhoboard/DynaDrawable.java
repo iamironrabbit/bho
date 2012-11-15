@@ -20,20 +20,25 @@ public class DynaDrawable extends Drawable {
 	int mXOffset = -5;
 	int mYOffset = 5;
 	
-	public DynaDrawable (Context context, Key key, Typeface typeface, String text, int textColor, int xOffset, int yOffset)
+	private boolean mHasMult = false;
+	private int mTextSize = -1;
+	
+	public DynaDrawable (Context context, Key key, Typeface typeface, String text, int textColor, int xOffset, int yOffset, float heightMod, boolean hasMult)
 	{
 		mTypeface = typeface;
 		mText = text;
 		mKey = key;
+		mTextSize = (int)(key.height/heightMod);
 		
 		mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setTextSize((int)(key.height/2.5));
+        mPaint.setTextSize(mTextSize);
         mPaint.setColor(textColor);
         mPaint.setTypeface(mTypeface);
 	      
         mXOffset = xOffset;
         mYOffset = yOffset;
+        mHasMult = hasMult;
         
 	}
 	
@@ -43,6 +48,13 @@ public class DynaDrawable extends Drawable {
 		
 		canvas.drawText(mText, mXOffset, mYOffset, mPaint);
 		
+		
+		if (mHasMult)
+		{
+			mPaint.setTextSize((int)(mTextSize/1.5));
+			canvas.drawText("...", mXOffset, mYOffset+(mYOffset/2), mPaint);
+			mPaint.setTextSize(mTextSize);
+		}
 	}
 
 
