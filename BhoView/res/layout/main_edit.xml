@@ -10,7 +10,7 @@
 	android:id="@+id/editor"
     android:layout_width="match_parent" 
     android:layout_height="match_parent" 
-    android:textSize="18pt"
+    android:textSize="16pt"
     android:gravity="top|left"
      
     />

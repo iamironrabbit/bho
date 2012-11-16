@@ -14,8 +14,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -151,7 +153,25 @@ public class TibetanPadActivity extends SherlockActivity implements Runnable {
     
     public void setupEditor ()
     {
- 	    }
+    	ev.setOnEditorActionListener(new OnEditorActionListener()
+    	{
+
+			@Override
+			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
+				
+				int selidx = ev.getSelectionStart();
+				
+				String text = ev.getText().toString();
+                text = TibConvert.convertUnicodeToPrecomposedTibetan(text + " ").trim();
+
+                ev.setText(text);
+				ev.setSelection(Math.min(text.length(),selidx));
+				
+				return false;
+			}
+    		
+    	});
+ 	}
 
 	@Override
 	protected void onResume() {
