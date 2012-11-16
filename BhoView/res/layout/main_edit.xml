@@ -2,18 +2,15 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
     
-<EditText  
+<org.ironrabbit.type.CustomTypefaceEditText  
 	android:id="@+id/editor"
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content"     
-    android:hint="@string/welcome"
-    android:textColor="#cccccc"
-    android:textSize="10pt"
-    android:background="#000000ff"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent" 
+    android:textSize="18pt"
     android:gravity="top|left"
      
     />

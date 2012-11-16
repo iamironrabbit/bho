@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BhoView</string>
-    <string name="app_name_browse">BhoWeb</string>
-    
-	<string name="str_about_message">BhoText Tibetan Reader</string>
+    <string name="app_name">Tibetan Pad</string>    
+	<string name="str_about_message">Tibetan Pad</string>
 	 
 	 <string name="welcome">
 	 You can paste text here to display it in Tibetan. You can also "Share" text directly from any other app that supports it, like the Browser or Email apps.

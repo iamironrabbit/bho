@@ -37,24 +37,18 @@
 package org.ironrabbit;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 import java.util.Stack;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.ProtocolException;
-import org.apache.http.client.RedirectHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.protocol.HttpContext;
+import org.ironrabbit.type.TibConvert;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -68,7 +62,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.PluginData;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -77,7 +70,7 @@ import android.widget.TableLayout;
 import android.widget.Toast;
 
 
-public class SharCheBrowserActivity extends Activity {
+public class TibetanBrowserActivity extends Activity {
 	final int MENU_URLENTRY = 0;
 	final int MENU_BACK = 1;
 	final int MENU_REFRESH = 2;
@@ -161,7 +154,7 @@ public class SharCheBrowserActivity extends Activity {
 	        		loadData("http://","text/html", "utf-8",text);
 	        	}
 	        	catch (Exception e){
-	        		Log.e(BhoBookActivity.TAG, "error loading intent extras content", e);
+	        		Log.e(TibetanPadActivity.TAG, "error loading intent extras content", e);
 	        	}
 	        }
 	        else if (extras != null && extras.containsKey("url"))
@@ -242,6 +235,7 @@ public class SharCheBrowserActivity extends Activity {
 	 *            the path of the asset to get
 	 * @return the PluginData structure containing the asset
 	 */
+    /*
 	private PluginData getFromAsset(String path) {
 		InputStream in;
 		try {
@@ -253,7 +247,7 @@ public class SharCheBrowserActivity extends Activity {
 		}
 
 		return new PluginData(in, 0L, new HashMap<String, String[]>(), 200);
-	}
+	}*/
 	
 	/**
 	 * Returns a PluginData object filled with HTML from a string
@@ -264,6 +258,7 @@ public class SharCheBrowserActivity extends Activity {
 	 *            the HTTP status code for the object
 	 * @return an appropriate PluginData object
 	 */
+    /*
 	private PluginData stringToPluginData(String s, int statuscode) {
 
 		// Default error if can't convert provided string
@@ -281,7 +276,8 @@ public class SharCheBrowserActivity extends Activity {
 				new HashMap<String, String[]>(), statuscode);
 		return p;
 	}
-
+*/
+    
     protected void displayUrl(String url) {
         try {
         	
@@ -456,13 +452,7 @@ public class SharCheBrowserActivity extends Activity {
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    
-   //  menu.add(0, MENU_URLENTRY, 0, R.string.str_URLbar);
-     menu.add(0, MENU_BACK,  0, R.string.str_Back).setIcon(R.drawable.ic_menu_back);
-     
-     menu.add(0, MENU_REFRESH,  0, R.string.str_Refresh).setIcon(R.drawable.ic_menu_refresh);
-    // menu.add(0, MENU_FORWARD,  0, R.string.str_Forward).setIcon(R.drawable.ic_menu_forward);
-     //menu.add(0, MENU_ABOUT,  0, R.string.str_About);
+  
      
      return super.onCreateOptionsMenu(menu);
     }
