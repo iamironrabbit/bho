@@ -1625,7 +1625,7 @@ public class TibConvert {
 		// If this is our first time, we may need to create an index
 		createTableIndex();
 		
-		StringBuffer bStrOut = new StringBuffer(nEnd - nStart);
+		StringBuffer bStrOut = new StringBuffer();
 		
 		// The lookahead of characters we're currently considering
 		char chInput[] = { 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000 };
@@ -1740,7 +1740,7 @@ public class TibConvert {
 						}
 					}
 				}
-/*				for ( int j = 0; j < TableAMapping.length; j++ )
+				for ( int j = 0; j < TableAMapping.length; j++ )
 				{
 					if ( TableAMapping[j][1] == chInput[1] )
 					{
@@ -1763,7 +1763,7 @@ public class TibConvert {
 							}
 						}
 					}
-				} */
+				} 
 			}
 
 			if ( ( i + 1 ) == nEnd )
