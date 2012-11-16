@@ -16,16 +16,12 @@
 
 package org.ironrabbit.bhoboard;
 
-import java.util.Iterator;
 import java.util.List;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
-import android.util.Log;
 import android.view.inputmethod.EditorInfo;
 
 public class BhoKeyboard extends Keyboard {
