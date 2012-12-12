@@ -19,14 +19,12 @@
 
 package org.geometerplus.android.fbreader.library;
 
+import android.app.AlertDialog;
 import android.content.*;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.*;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 
 import org.geometerplus.zlibrary.core.options.ZLStringOption;
 import org.geometerplus.zlibrary.core.filesystem.ZLFile;
@@ -44,12 +42,8 @@ import org.geometerplus.android.fbreader.FBReader;
 import org.geometerplus.android.fbreader.FBUtil;
 import org.geometerplus.android.fbreader.tree.TreeActivity;
 import org.ironrabbit.bho.BhoAlertDialog;
-import org.ironrabbit.bho.BhoMenu;
-import org.ironrabbit.bho.BhoMenu.BhoMenuItem;
-import org.ironrabbit.bho.BhoMenu.OnMenuItemClickListener;
-import org.ironrabbit.bho.BhoTyper;
 
-public class LibraryActivity extends TreeActivity implements OnMenuItemClickListener, View.OnCreateContextMenuListener, Library.ChangeListener {
+public class LibraryActivity extends TreeActivity implements MenuItem.OnMenuItemClickListener, View.OnCreateContextMenuListener, Library.ChangeListener {
 	static volatile boolean ourToBeKilled = false;
 
 	public static final String SELECTED_BOOK_PATH_KEY = "SelectedBookPath";
@@ -58,7 +52,6 @@ public class LibraryActivity extends TreeActivity implements OnMenuItemClickList
 	private Library myLibrary;
 
 	private Book mySelectedBook;
-	private BhoMenu menu;
 
 	@Override
 	public void onCreate(Bundle icicle) {
@@ -89,9 +82,6 @@ public class LibraryActivity extends TreeActivity implements OnMenuItemClickList
 
 		getListView().setTextFilterEnabled(true);
 		getListView().setOnCreateContextMenuListener(this);
-		
-		// init bho menu
-		initBhoMenu();
 	}
 
 	@Override
@@ -261,30 +251,25 @@ public class LibraryActivity extends TreeActivity implements OnMenuItemClickList
 	}
 
 	//
-	// TODO: replace Options menu with our BhoMenu
+	// Options menu
 	//
+
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if(keyCode == KeyEvent.KEYCODE_MENU) {			
-			menu.show(findViewById(android.R.id.content));
-			return true;
-		} else
-			return super.onKeyDown(keyCode, event);
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+		addMenuItem(menu, 1, "localSearch", R.drawable.ic_menu_search);
+		return true;
 	}
-	
-	private void initBhoMenu() {
-		menu = new BhoMenu(LibraryActivity.this);
-		addMenuItem(1, "localSearch", R.drawable.ic_menu_search);
-	}
-	
-	private void addMenuItem(int index, String resourceKey, int iconId) {
+
+	private MenuItem addMenuItem(Menu menu, int index, String resourceKey, int iconId) {
 		final String label = LibraryUtil.resource().getResource("menu").getResource(resourceKey).getValue();
-		final BhoMenuItem item = menu.add(index, label);
+		final MenuItem item = menu.add(0, index, Menu.NONE, label);
 		item.setOnMenuItemClickListener(this);
 		item.setIcon(iconId);
+		return item;
 	}
-	
-	public boolean onMenuItemClick(BhoMenuItem item) {
+
+	public boolean onMenuItemClick(MenuItem item) {
 		switch (item.getItemId()) {
 			case 1:
 				return onSearchRequested();
@@ -292,7 +277,6 @@ public class LibraryActivity extends TreeActivity implements OnMenuItemClickList
 				return true;
 		}
 	}
-	
 
 	//
 	// Book deletion
@@ -310,8 +294,7 @@ public class LibraryActivity extends TreeActivity implements OnMenuItemClickList
 			deleteBook(myBook, myMode);
 		}
 	}
-	
-	// TODO: 20120926 make sure this is doing things
+
 	private void tryToDeleteBook(Book book) {
 		final ZLResource dialogResource = ZLResource.resource("dialog");
 		final ZLResource buttonResource = dialogResource.getResource("button");

@@ -24,12 +24,8 @@ import java.util.*;
 import android.app.*;
 import android.os.*;
 import android.view.*;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TabHost;
 import android.content.*;
+import android.widget.*;
 
 import org.geometerplus.zlibrary.core.util.ZLMiscUtil;
 import org.geometerplus.zlibrary.core.resources.ZLResource;

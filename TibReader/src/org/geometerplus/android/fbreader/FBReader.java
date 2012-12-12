@@ -26,7 +26,6 @@ import android.content.*;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.*;
 import android.widget.RelativeLayout;
 
@@ -53,8 +52,6 @@ import org.geometerplus.android.fbreader.api.*;
 import org.geometerplus.android.fbreader.tips.TipsActivity;
 
 import org.geometerplus.android.util.UIUtil;
-import org.ironrabbit.bho.BhoMenu;
-import org.ironrabbit.bho.BhoMenu.BhoSubMenu;
 import org.ironrabbit.bho.BhoTyper;
 
 public final class FBReader extends ZLAndroidActivity {
@@ -96,7 +93,6 @@ public final class FBReader extends ZLAndroidActivity {
 			}
 		}
 	};
-	BhoMenu menu;
 
 	@Override
 	protected ZLFile fileFromIntent(Intent intent) {
@@ -127,7 +123,7 @@ public final class FBReader extends ZLAndroidActivity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		
+
 		final FBReaderApp fbReader = (FBReaderApp)FBReaderApp.Instance();
 		final ZLAndroidLibrary zlibrary = (ZLAndroidLibrary)ZLibrary.Instance();
 		myFullScreenFlag =
@@ -153,9 +149,6 @@ public final class FBReader extends ZLAndroidActivity {
 				BhoTyper.checkForFont(Paths.cardDirectory() + "/Fonts", FBReader.this);
 			}
 		});
-		
-		menu = new BhoMenu(FBReader.this);
-		initBhoMenu();
 
 		fbReader.addAction(ActionCode.SHOW_LIBRARY, new ShowLibraryAction(this, fbReader));
 		fbReader.addAction(ActionCode.SHOW_PREFERENCES, new ShowPreferencesAction(this, fbReader));
@@ -430,45 +423,29 @@ public final class FBReader extends ZLAndroidActivity {
 		((NavigationPopup)FBReaderApp.Instance().getPopupById(NavigationPopup.ID)).runNavigation();
 	}
 
-	private BhoSubMenu addSubMenu(BhoMenu menu, String id) {
+	private Menu addSubMenu(Menu menu, String id) {
 		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
 		return application.myMainWindow.addSubMenu(menu, id);
 	}
 
-	private void addMenuItem(BhoMenu menu, String actionId, String name) {
+	private void addMenuItem(Menu menu, String actionId, String name) {
 		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
 		application.myMainWindow.addMenuItem(menu, actionId, null, name);
 	}
 
-	private void addMenuItem(BhoMenu menu, String actionId, int iconId) {
+	private void addMenuItem(Menu menu, String actionId, int iconId) {
 		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
 		application.myMainWindow.addMenuItem(menu, actionId, iconId, null);
 	}
 
-	private void addMenuItem(BhoMenu menu, String actionId) {
-		menu.menuInContext = menu.mainMenu;
-		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
-		application.myMainWindow.addMenuItem(menu, actionId, null, null);
-	}
-	
-	private void addMenuItem(BhoSubMenu menu, String actionId) {
-		menu.getParent().menuInContext = menu.getParent().subMenu;
+	private void addMenuItem(Menu menu, String actionId) {
 		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
 		application.myMainWindow.addMenuItem(menu, actionId, null, null);
 	}
 
-	
-	// TODO: MENU STUFF
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if(keyCode == KeyEvent.KEYCODE_MENU) {			
-			menu.show(findViewById(android.R.id.content));
-			return true;
-		} else
-			return super.onKeyDown(keyCode, event);
-	}
-	
-	public void initBhoMenu() {
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
 		addMenuItem(menu, ActionCode.SHOW_LIBRARY, R.drawable.ic_menu_library);
 		addMenuItem(menu, ActionCode.SHOW_NETWORK_LIBRARY, R.drawable.ic_menu_networklibrary);
 		addMenuItem(menu, ActionCode.SHOW_TOC, R.drawable.ic_menu_toc);
@@ -479,8 +456,7 @@ public final class FBReader extends ZLAndroidActivity {
 		addMenuItem(menu, ActionCode.SHARE_BOOK, R.drawable.ic_menu_search);
 		addMenuItem(menu, ActionCode.SHOW_PREFERENCES);
 		addMenuItem(menu, ActionCode.SHOW_BOOK_INFO);
-		
-		final BhoSubMenu subMenu = addSubMenu(menu, "screenOrientation");
+		final Menu subMenu = addSubMenu(menu, "screenOrientation");
 		addMenuItem(subMenu, ActionCode.SET_SCREEN_ORIENTATION_SYSTEM);
 		addMenuItem(subMenu, ActionCode.SET_SCREEN_ORIENTATION_SENSOR);
 		addMenuItem(subMenu, ActionCode.SET_SCREEN_ORIENTATION_PORTRAIT);
@@ -489,7 +465,6 @@ public final class FBReader extends ZLAndroidActivity {
 			addMenuItem(subMenu, ActionCode.SET_SCREEN_ORIENTATION_REVERSE_PORTRAIT);
 			addMenuItem(subMenu, ActionCode.SET_SCREEN_ORIENTATION_REVERSE_LANDSCAPE);
 		}
-		
 		addMenuItem(menu, ActionCode.INCREASE_FONT);
 		addMenuItem(menu, ActionCode.DECREASE_FONT);
 		addMenuItem(menu, ActionCode.SHOW_NAVIGATION);
@@ -508,5 +483,7 @@ public final class FBReader extends ZLAndroidActivity {
 
 		final ZLAndroidApplication application = (ZLAndroidApplication)getApplication();
 		application.myMainWindow.refresh();
+
+		return true;
 	}
 }

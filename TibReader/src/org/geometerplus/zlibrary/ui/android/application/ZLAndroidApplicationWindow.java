@@ -39,17 +39,13 @@ import org.geometerplus.zlibrary.ui.android.library.ZLAndroidLibrary;
 import org.geometerplus.zlibrary.ui.android.error.ErrorKeys;
 
 import org.geometerplus.android.util.UIUtil;
-import org.ironrabbit.bho.BhoMenu;
-import org.ironrabbit.bho.BhoMenu.BhoMenuItem;
-import org.ironrabbit.bho.BhoMenu.BhoSubMenu;
-import org.ironrabbit.bho.BhoMenu.OnMenuItemClickListener;
 
 public final class ZLAndroidApplicationWindow extends ZLApplicationWindow {
-	private final HashMap<BhoMenuItem,String> myMenuItemMap = new HashMap<BhoMenuItem,String>();
+	private final HashMap<MenuItem,String> myMenuItemMap = new HashMap<MenuItem,String>();
 
-	private final OnMenuItemClickListener myMenuListener =
-		new OnMenuItemClickListener() {
-			public boolean onMenuItemClick(BhoMenuItem item) {
+	private final MenuItem.OnMenuItemClickListener myMenuListener =
+		new MenuItem.OnMenuItemClickListener() {
+			public boolean onMenuItemClick(MenuItem item) {
 				getApplication().runAction(myMenuItemMap.get(item));
 				return true;
 			}
@@ -59,29 +55,15 @@ public final class ZLAndroidApplicationWindow extends ZLApplicationWindow {
 		super(application);
 	}
 
-	public BhoSubMenu addSubMenu(BhoMenu menu, String id) {
+	public Menu addSubMenu(Menu menu, String id) {
 		return menu.addSubMenu(ZLResource.resource("menu").getResource(id).getValue());
 	}
 
-	// TODO: THIS.
-	public void addMenuItem(BhoSubMenu menu, String actionId, Integer iconId, String name) {
+	public void addMenuItem(Menu menu, String actionId, Integer iconId, String name) {
 		if (name == null) {
 			name = ZLResource.resource("menu").getResource(actionId).getValue();
 		}
-		menu.getParent().menuInContext = menu.getParent().subMenu;
-		final BhoMenuItem menuItem = menu.getParent().add(name);
-		if (iconId != null) {
-			menuItem.setIcon(iconId);
-		}
-		menuItem.setOnMenuItemClickListener(myMenuListener);
-		myMenuItemMap.put(menuItem, actionId);
-	}
-	
-	public void addMenuItem(BhoMenu menu, String actionId, Integer iconId, String name) {
-		if (name == null) {
-			name = ZLResource.resource("menu").getResource(actionId).getValue();
-		}
-		final BhoMenuItem menuItem = menu.add(name);
+		final MenuItem menuItem = menu.add(name);
 		if (iconId != null) {
 			menuItem.setIcon(iconId);
 		}
@@ -91,10 +73,10 @@ public final class ZLAndroidApplicationWindow extends ZLApplicationWindow {
 
 	@Override
 	public void refresh() {
-		for (Map.Entry<BhoMenuItem,String> entry : myMenuItemMap.entrySet()) {
+		for (Map.Entry<MenuItem,String> entry : myMenuItemMap.entrySet()) {
 			final String actionId = entry.getValue();
 			final ZLApplication application = getApplication();
-			final BhoMenuItem menuItem = entry.getKey();
+			final MenuItem menuItem = entry.getKey();
 			menuItem.setVisible(application.isActionVisible(actionId) && application.isActionEnabled(actionId));
 			switch (application.isActionChecked(actionId)) {
 				case B3_TRUE:

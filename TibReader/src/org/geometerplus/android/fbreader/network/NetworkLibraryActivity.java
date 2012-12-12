@@ -27,9 +27,7 @@ import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.*;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.*;
 
 import org.geometerplus.zlibrary.core.network.ZLNetworkManager;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
@@ -363,6 +361,7 @@ public abstract class NetworkLibraryActivity extends TreeActivity implements Lis
 						break;
 					case NotFound:
 						UIUtil.showErrorMessage(NetworkLibraryActivity.this, "emptyNetworkSearchResults");
+						getListView().invalidateViews();
 						break;
 					case EmptyCatalog:
 						UIUtil.showErrorMessage(NetworkLibraryActivity.this, "emptyCatalog");
