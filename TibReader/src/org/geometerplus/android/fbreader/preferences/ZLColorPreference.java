@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.graphics.*;
 import android.graphics.drawable.*;
 import android.preference.DialogPreference;
+import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 
@@ -33,8 +34,9 @@ import org.geometerplus.zlibrary.core.resources.ZLResource;
 
 import org.geometerplus.zlibrary.ui.android.R;
 import org.geometerplus.zlibrary.ui.android.util.ZLAndroidColorUtil;
+import org.ironrabbit.bho.BhoDialogPreference;
 
-class ZLColorPreference extends DialogPreference {
+class ZLColorPreference extends BhoDialogPreference implements BhoDialogPreference.BhoDialogPreferenceListener {
 	private final ZLColorOption myOption;
 
 	private SeekBar myRedSlider;
@@ -46,6 +48,7 @@ class ZLColorPreference extends DialogPreference {
 		super(context, null);
 		myOption = option;
 		final String title = resource.getResource(resourceKey).getValue();
+		
 		setTitle(title);
 		setDialogTitle(title);
 		setDialogLayoutResource(R.layout.color_dialog);
@@ -53,6 +56,7 @@ class ZLColorPreference extends DialogPreference {
 		final ZLResource buttonResource = ZLResource.resource("dialog").getResource("button");
 		setPositiveButtonText(buttonResource.getResource("ok").getValue());
 		setNegativeButtonText(buttonResource.getResource("cancel").getValue());
+		
 	}
 
 	private SeekBar createSlider(View view, int id, int value, String resourceKey) {
@@ -67,7 +71,7 @@ class ZLColorPreference extends DialogPreference {
 	}
 
 	@Override
-	protected void onBindDialogView(View view) {
+	public void onDialogLayoutSet(View view) {
 		final ZLColor color = myOption.getValue();
 
 		myRedSlider = createSlider(view, R.id.color_red, color.Red, "red");
@@ -104,8 +108,7 @@ class ZLColorPreference extends DialogPreference {
 		myRedSlider.setOnSeekBarChangeListener(listener);
 		myGreenSlider.setOnSeekBarChangeListener(listener);
 		myBlueSlider.setOnSeekBarChangeListener(listener);
-
-		super.onBindDialogView(view);
+		
 	}
 
 	@Override

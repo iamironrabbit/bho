@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentPanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="3dip"
+    android:paddingLeft="3dip"
+    android:paddingRight="1dip"
+    android:paddingTop="9dip" >
+
+    <org.ironrabbit.bho.BhoTextView
+        android:id="@+id/bho_dialog_title"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dip"
+        android:paddingLeft="14dip"
+        android:paddingRight="10dip"
+        android:paddingTop="2dip" >
+
+        <LinearLayout
+            android:id="@+id/bho_dialog_message_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <org.ironrabbit.bho.BhoTextView
+                android:id="@+id/bho_dialog_message"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#55000000"
+                android:padding="5dip"
+                android:textColor="#ffffffff" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

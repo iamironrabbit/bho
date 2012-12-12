@@ -20,11 +20,11 @@
 package org.geometerplus.android.fbreader.preferences;
 
 import android.content.Context;
-import android.preference.ListPreference;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.ironrabbit.bho.BhoListPreference;
 
-abstract class ZLStringListPreference extends ListPreference {
+abstract class ZLStringListPreference extends BhoListPreference {
 	private final ZLResource myResource;
 
 	ZLStringListPreference(Context context, ZLResource rootResource, String resourceKey) {

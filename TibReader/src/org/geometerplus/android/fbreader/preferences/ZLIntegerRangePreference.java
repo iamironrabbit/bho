@@ -20,12 +20,12 @@
 package org.geometerplus.android.fbreader.preferences;
 
 import android.content.Context;
-import android.preference.ListPreference;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 import org.geometerplus.zlibrary.core.options.ZLIntegerRangeOption;
+import org.ironrabbit.bho.BhoListPreference;
 
-class ZLIntegerRangePreference extends ListPreference {
+class ZLIntegerRangePreference extends BhoListPreference {
 	private final ZLIntegerRangeOption myOption;
 
 	ZLIntegerRangePreference(Context context, ZLResource resource, ZLIntegerRangeOption option) {

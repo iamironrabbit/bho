@@ -20,11 +20,11 @@
 package org.geometerplus.android.fbreader.preferences;
 
 import android.content.Context;
-import android.preference.EditTextPreference;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.ironrabbit.bho.BhoEditTextPreference;
 
-abstract class ZLStringPreference extends EditTextPreference {
+abstract class ZLStringPreference extends BhoEditTextPreference {
 	private String myValue;
 
 	ZLStringPreference(Context context, ZLResource rootResource, String resourceKey) {
