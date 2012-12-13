@@ -23,8 +23,9 @@ import android.content.Context;
 import android.preference.CheckBoxPreference;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.ironrabbit.bho.BhoCheckBoxPreference;
 
-abstract class ZLCheckBoxPreference extends CheckBoxPreference {
+abstract class ZLCheckBoxPreference extends BhoCheckBoxPreference {
 	ZLCheckBoxPreference(Context context, ZLResource rootResource, String resourceKey) {
 		super(context);
 

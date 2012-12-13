@@ -25,8 +25,9 @@ import android.net.Uri;
 import android.preference.Preference;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.ironrabbit.bho.BhoPreference;
 
-class UrlPreference extends Preference implements Preference.OnPreferenceClickListener {
+class UrlPreference extends BhoPreference implements Preference.OnPreferenceClickListener {
 	private final String myUrl;
 
 	UrlPreference(Context context, ZLResource resource, String resourceKey) {

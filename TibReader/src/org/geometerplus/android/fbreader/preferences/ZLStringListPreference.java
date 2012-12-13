@@ -20,9 +20,11 @@
 package org.geometerplus.android.fbreader.preferences;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 import org.ironrabbit.bho.BhoListPreference;
+import org.ironrabbit.bho.BhoTyper;
 
 abstract class ZLStringListPreference extends BhoListPreference {
 	private final ZLResource myResource;
@@ -70,8 +72,6 @@ abstract class ZLStringListPreference extends BhoListPreference {
 	@Override
 	protected void onDialogClosed(boolean result) {
 		super.onDialogClosed(result);
-		if (result) {
-			setSummary(getEntry());
-		}
+		setSummary(getEntry());
 	}
 }

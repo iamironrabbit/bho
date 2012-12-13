@@ -19,10 +19,11 @@
 
 package org.geometerplus.android.fbreader.preferences;
 
-import android.content.Context;
-import android.preference.Preference;
+import org.ironrabbit.bho.BhoPreference;
 
-class InfoPreference extends Preference {
+import android.content.Context;
+
+class InfoPreference extends BhoPreference {
 	InfoPreference(Context context, String title, String value) {
 		super(context);
 		setTitle(title);

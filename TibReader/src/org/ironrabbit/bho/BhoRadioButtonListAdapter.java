@@ -1,5 +1,6 @@
 package org.ironrabbit.bho;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.geometerplus.zlibrary.ui.android.R;
@@ -25,7 +26,10 @@ public class BhoRadioButtonListAdapter extends BaseAdapter implements ListAdapte
     
     public BhoRadioButtonListAdapter(Object callback, Context context, List<? extends BhoOptions> data, int itemViewId,
             int textId, int radioButtonId, int separatorId) {
-        mData = data;
+        
+    	mData = data;
+        //Collections.reverse(mData);
+        
         mAreAllItemsSelectable = !data.contains(null);
         mSeparatorId = separatorId;
         mTextId = textId;

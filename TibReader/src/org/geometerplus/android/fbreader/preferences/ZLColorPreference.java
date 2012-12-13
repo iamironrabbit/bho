@@ -23,8 +23,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.*;
 import android.graphics.drawable.*;
-import android.preference.DialogPreference;
-import android.util.Log;
 import android.view.View;
 import android.widget.SeekBar;
 

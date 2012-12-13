@@ -31,8 +31,9 @@ import org.geometerplus.zlibrary.core.options.ZLIntegerRangeOption;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 
 import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.bho.BhoDialogPreference;
 
-class AnimationSpeedPreference extends DialogPreference {
+class AnimationSpeedPreference extends BhoDialogPreference implements BhoDialogPreference.BhoDialogPreferenceListener {
 	private final ZLIntegerRangeOption myOption;
 	private final ZLResource myResource;
 
@@ -53,13 +54,11 @@ class AnimationSpeedPreference extends DialogPreference {
 	}
 
 	@Override
-	protected void onBindDialogView(View view) {
+	public void onDialogLayoutSet(View view) {
 		mySlider = (SeekBar)view.findViewById(R.id.animation_speed_slider);
 		mySlider.setMax(myOption.MaxValue - myOption.MinValue);
 		mySlider.setProgress(myOption.getValue() - myOption.MinValue);
 		mySlider.setProgressDrawable(new SeekBarDrawable());
-
-		super.onBindDialogView(view);
 	}
 
 	@Override

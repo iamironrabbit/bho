@@ -24,10 +24,12 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.preference.*;
+import android.util.Log;
 import android.content.Intent;
 
 import org.geometerplus.zlibrary.core.options.*;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.ironrabbit.bho.BhoTyper;
 
 abstract class ZLPreferenceActivity extends android.preference.PreferenceActivity {
 	public static String SCREEN_KEY = "screen";
@@ -41,6 +43,7 @@ abstract class ZLPreferenceActivity extends android.preference.PreferenceActivit
 		private Screen(ZLResource root, String resourceKey) {
 			Resource = root.getResource(resourceKey);
 			myScreen = getPreferenceManager().createPreferenceScreen(ZLPreferenceActivity.this);
+			
 			myScreen.setTitle(Resource.getValue());
 			myScreen.setSummary(Resource.getResource("summary").getValue());
 		}
@@ -56,6 +59,7 @@ abstract class ZLPreferenceActivity extends android.preference.PreferenceActivit
 		}
 
 		public Preference addPreference(Preference preference) {
+			//Log.d(BhoTyper.BHOTAG, preference.getClass().getName() + "\n" + preference.getTitle().toString() + "\n\n");
 			myScreen.addPreference(preference);
 			return preference;
 		}
