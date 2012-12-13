@@ -24,11 +24,14 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.preference.*;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.util.Log;
 import android.content.Intent;
 
 import org.geometerplus.zlibrary.core.options.*;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
+import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.bho.BhoPreference;
 import org.ironrabbit.bho.BhoTyper;
 
 abstract class ZLPreferenceActivity extends android.preference.PreferenceActivity {
@@ -38,14 +41,16 @@ abstract class ZLPreferenceActivity extends android.preference.PreferenceActivit
 
 	protected class Screen {
 		public final ZLResource Resource;
-		private final PreferenceScreen myScreen;
+		private PreferenceScreen myScreen;
 
 		private Screen(ZLResource root, String resourceKey) {
 			Resource = root.getResource(resourceKey);
 			myScreen = getPreferenceManager().createPreferenceScreen(ZLPreferenceActivity.this);
-			
+
 			myScreen.setTitle(Resource.getValue());
 			myScreen.setSummary(Resource.getResource("summary").getValue());
+			
+			((Preference) myScreen).setLayoutResource(R.layout.bho_preference);
 		}
 
 		public void setSummary(CharSequence summary) {
@@ -59,7 +64,6 @@ abstract class ZLPreferenceActivity extends android.preference.PreferenceActivit
 		}
 
 		public Preference addPreference(Preference preference) {
-			//Log.d(BhoTyper.BHOTAG, preference.getClass().getName() + "\n" + preference.getTitle().toString() + "\n\n");
 			myScreen.addPreference(preference);
 			return preference;
 		}
@@ -134,6 +138,6 @@ abstract class ZLPreferenceActivity extends android.preference.PreferenceActivit
 		final Intent intent = getIntent();
 		init(intent);
 		final Screen screen = myScreenMap.get(intent.getStringExtra(SCREEN_KEY));
-		setPreferenceScreen(screen != null ? screen.myScreen : myScreen);
+		setPreferenceScreen((PreferenceScreen) (screen != null ? screen.myScreen : myScreen));		
 	}
 }
