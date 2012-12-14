@@ -1,6 +1,6 @@
 package org.ironrabbit.bho;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;

@@ -27,7 +27,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 import org.ironrabbit.bho.BhoTextView;
 
 public class CancelActivity extends ListActivity {

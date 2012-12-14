@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import android.app.AlertDialog;
 import android.content.Context;

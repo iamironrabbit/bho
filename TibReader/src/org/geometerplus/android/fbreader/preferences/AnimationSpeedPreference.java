@@ -30,8 +30,8 @@ import android.widget.SeekBar;
 import org.geometerplus.zlibrary.core.options.ZLIntegerRangeOption;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 
-import org.geometerplus.zlibrary.ui.android.R;
 import org.ironrabbit.bho.BhoDialogPreference;
+import org.ironrabbit.reader.R;
 
 class AnimationSpeedPreference extends BhoDialogPreference implements BhoDialogPreference.BhoDialogPreferenceListener {
 	private final ZLIntegerRangeOption myOption;

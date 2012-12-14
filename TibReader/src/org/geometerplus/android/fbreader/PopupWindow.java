@@ -24,7 +24,7 @@ import android.content.Context;
 import android.view.*;
 import android.widget.*;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 public class PopupWindow extends LinearLayout {
 	public static enum Location {

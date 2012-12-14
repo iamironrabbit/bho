@@ -25,7 +25,7 @@ import android.widget.ImageView;
 
 import org.geometerplus.zlibrary.core.filesystem.ZLFile;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.fbreader.library.*;
 

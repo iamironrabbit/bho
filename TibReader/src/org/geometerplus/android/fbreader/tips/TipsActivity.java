@@ -27,7 +27,7 @@ import android.widget.CheckBox;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.fbreader.tips.*;
 import org.ironrabbit.bho.BhoButton;

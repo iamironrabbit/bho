@@ -23,7 +23,7 @@ import android.view.*;
 import android.widget.ImageView;
 import org.ironrabbit.bho.BhoTextView;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.fbreader.network.*;
 import org.geometerplus.fbreader.network.tree.*;

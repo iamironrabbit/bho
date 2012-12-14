@@ -33,7 +33,7 @@ import android.view.*;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.zlibrary.core.image.ZLImage;
 import org.geometerplus.zlibrary.core.image.ZLLoadableImage;

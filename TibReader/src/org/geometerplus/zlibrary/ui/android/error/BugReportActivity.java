@@ -26,7 +26,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.text.method.ScrollingMovementMethod;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 import org.ironrabbit.bho.BhoTextView;
 
 public class BugReportActivity extends Activity implements ErrorKeys {

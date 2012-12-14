@@ -28,7 +28,7 @@ import org.geometerplus.zlibrary.core.resources.ZLResource;
 
 import org.geometerplus.fbreader.Paths;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.android.fbreader.FBReader;
 import org.ironrabbit.bho.BhoButton;

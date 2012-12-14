@@ -32,7 +32,7 @@ import org.geometerplus.fbreader.network.NetworkLibrary;
 import org.geometerplus.fbreader.network.urlInfo.UrlInfo;
 import org.geometerplus.fbreader.network.authentication.NetworkAuthenticationManager;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.android.util.PackageUtil;
 

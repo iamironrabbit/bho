@@ -1,6 +1,6 @@
 package org.ironrabbit.bho;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

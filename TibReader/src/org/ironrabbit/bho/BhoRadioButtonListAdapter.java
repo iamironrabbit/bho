@@ -3,7 +3,7 @@ package org.ironrabbit.bho;
 import java.util.Collections;
 import java.util.List;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import android.app.Activity;
 import android.content.Context;

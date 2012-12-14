@@ -27,7 +27,7 @@ import android.widget.Button;
 
 import org.geometerplus.zlibrary.core.resources.ZLResource;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 import org.geometerplus.zlibrary.ui.android.error.ErrorKeys;
 import org.geometerplus.zlibrary.ui.android.error.ErrorUtil;
 import org.ironrabbit.bho.BhoButton;

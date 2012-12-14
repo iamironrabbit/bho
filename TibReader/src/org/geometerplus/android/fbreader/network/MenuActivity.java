@@ -29,7 +29,7 @@ import android.view.*;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
 
 import org.geometerplus.android.fbreader.api.PluginApi;
 import org.ironrabbit.bho.BhoTextView;
