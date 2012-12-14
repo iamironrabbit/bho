@@ -18,6 +18,8 @@
  */
 
 package org.geometerplus.android.fbreader.preferences;
+import org.ironrabbit.reader.R;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +32,6 @@ import android.content.Intent;
 
 import org.geometerplus.zlibrary.core.options.*;
 import org.geometerplus.zlibrary.core.resources.ZLResource;
-import org.geometerplus.zlibrary.ui.android.R;
 import org.ironrabbit.bho.BhoPreference;
 import org.ironrabbit.bho.BhoTyper;
 

@@ -1,6 +1,7 @@
 package org.ironrabbit.bho;
 
-import org.geometerplus.zlibrary.ui.android.R;
+import org.ironrabbit.reader.R;
+
 import org.ironrabbit.bho.BhoRadioButtonListAdapter.OnBhoSelectedListener;
 
 import java.util.ArrayList;

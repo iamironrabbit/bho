@@ -1,11 +1,11 @@
 package org.ironrabbit.bho;
 
-import org.geometerplus.zlibrary.ui.android.R;
+
+import org.ironrabbit.reader.R;
 
 import android.content.Context;
 import android.preference.DialogPreference;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
