@@ -533,46 +533,39 @@ public class SoftKeyboard extends InputMethodService
           
         	 
         	  
-        	Keyboard current = mInputView.getKeyboard();
+        	mCurKeyboard = (BhoKeyboard)mInputView.getKeyboard();
         	boolean isStacked = false;
         	
-        	boolean isShifted = current.isShifted(); 
-            if (current == mQwertyKeyboard)
+        	boolean isShifted = mCurKeyboard.isShifted(); 
+            if (mCurKeyboard == mQwertyKeyboard)
             {
-                current = mQwertyKeyboardStacked;
+            	mCurKeyboard = mQwertyKeyboardStacked;
                 isStacked = true;
             }
-            else if (current == mQwertyKeyboardStacked)
-            	current = mQwertyKeyboard;
-            else if (current == mQwertyShiftedKeyboard)
+            else if (mCurKeyboard == mQwertyKeyboardStacked)
+            	mCurKeyboard = mQwertyKeyboard;
+            else if (mCurKeyboard == mQwertyShiftedKeyboard)
             {
-                current = mQwertyShiftedKeyboardStacked;
+            	mCurKeyboard = mQwertyShiftedKeyboardStacked;
                 isStacked = true; 
             }
-            else if (current == mQwertyShiftedKeyboardStacked)            
-                current = mQwertyShiftedKeyboard;
+            else if (mCurKeyboard == mQwertyShiftedKeyboardStacked)            
+            	mCurKeyboard = mQwertyShiftedKeyboard;
             
-            current.setShifted(isShifted);
-            for (Key key: current.getModifierKeys())
-            {
-            	if (key.codes[0] == 0x0F84)
-            		key.pressed = true;
-            }
-            
-            mInputView.setKeyboard(current);
-            //handleCharacter(primaryCode, keyCodes);
+            mCurKeyboard.setShifted(isShifted);
+            mInputView.setKeyboard(mCurKeyboard);
         } 
         else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
                 && mInputView != null) {
          
-        	Keyboard current = mInputView.getKeyboard();
-            if (current == mQwertyNumbersKeyboard) {
-                current = mQwertyKeyboard;
+        	mCurKeyboard = (BhoKeyboard)mInputView.getKeyboard();
+            if (mCurKeyboard == mQwertyNumbersKeyboard) {
+            	mCurKeyboard = mQwertyKeyboard;
             } else {
-                current = mQwertyNumbersKeyboard;
+            	mCurKeyboard = mQwertyNumbersKeyboard;
             }
             
-            mInputView.setKeyboard(current);
+            mInputView.setKeyboard(mCurKeyboard);
             /*
             if (current == mQwertyNumbersKeyboard) {
                 current.setShifted(false);
@@ -580,6 +573,19 @@ public class SoftKeyboard extends InputMethodService
             
         } else {
             handleCharacter(primaryCode, keyCodes);
+            
+            //now unstack it!
+            if (mCurKeyboard == mQwertyKeyboardStacked)
+            {
+            	mCurKeyboard = mQwertyKeyboard;
+            	mInputView.setKeyboard(mCurKeyboard);
+            }
+            else if (mCurKeyboard == mQwertyShiftedKeyboardStacked)
+            {
+            	mCurKeyboard = mQwertyShiftedKeyboard;
+            	mInputView.setKeyboard(mCurKeyboard);
+            }
+            	
         }
     }
 
