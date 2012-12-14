@@ -16,9 +16,14 @@ public class CustomTypefaceManager {
 
 	private static Typeface mTypeface = null;
 	
-	public final static int mTypefaceIds[] = {R.raw.jomolhari,R.raw.monlamuniouchan2,R.raw.tcrcunicode,R.raw.tibmachuni};
-	public final static String mTypefaceStrings[] = {"jomolhari.ttf","monlamuniouchan2.ttf","tcrcunicode.ttf","tibmachuni.ttf"};
-	public final static String mTypefaceNames[] = {"Jomolhari","Monlam Uni Ouchan2","TCRC Unicode","Tibetan Machine Uni"};
+//	public final static int mTypefaceIds[] = {R.raw.jomolhari,R.raw.monlamuniouchan2,R.raw.tcrcunicode,R.raw.tibmachuni};
+//	public final static String mTypefaceStrings[] = {"jomolhari.ttf","monlamuniouchan2.ttf","tcrcunicode.ttf","tibmachuni.ttf"};
+//	public final static String mTypefaceNames[] = {"Jomolhari","Monlam Uni Ouchan2","TCRC Unicode","Tibetan Machine Uni"};
+	
+	
+	public final static int mTypefaceIds[] = {R.raw.jomolhari};
+	public final static String mTypefaceStrings[] = {"jomolhari.ttf"};
+	public final static String mTypefaceNames[] = {"Jomolhari"};
 	
 	private final static String FONT_FOLDER = "Fonts";	
 	
