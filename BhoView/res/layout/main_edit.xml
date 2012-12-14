@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-    
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_weight_tell_us"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true" >
 <org.ironrabbit.type.CustomTypefaceEditText  
 	android:id="@+id/editor"
     android:layout_width="match_parent" 
-    android:layout_height="match_parent" 
+    android:layout_height="wrap_content" 
     android:textSize="16pt"
     android:gravity="top|left"
      
     />
-    
-</LinearLayout>
+    </ScrollView>
