@@ -44,7 +44,7 @@ public class BhoEditTextPreference extends EditTextPreference {
     	setLayoutResource(R.layout.bho_preference);
     	
     	if(t == null)
-            t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+            t = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(c);
         
         this.getEditText().setTypeface(t);
     }

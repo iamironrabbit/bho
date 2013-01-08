@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.ironrabbit.reader" android:versionCode="106001" android:versionName="1.6" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.ironrabbit.reader" android:versionCode="106002" android:versionName="1.6-bo" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="5" android:maxSdkVersion="10"/>
 	<supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:anyDensity="true"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<application android:name="org.geometerplus.android.fbreader.FBReaderApplication" android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+	<application android:name="org.geometerplus.android.fbreader.FBReaderApplication" 
+	    android:icon="@drawable/ic_launcher" android:label="@string/app_name"
+	            android:theme="@style/Holo.Theme"	    
+	    >
 		<activity android:name="org.geometerplus.android.fbreader.error.BookReadingErrorActivity" android:theme="@android:style/Theme.Dialog" android:configChanges="orientation|keyboardHidden" android:process=":error">
 			<intent-filter>
 				<action android:name="android.fbreader.action.ERROR"/>

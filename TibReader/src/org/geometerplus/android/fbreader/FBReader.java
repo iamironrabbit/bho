@@ -142,13 +142,14 @@ public final class FBReader extends ZLAndroidActivity {
 			new SelectionPopup(fbReader);
 		}
 		
+		/*
 		Handler bhoHandler = new Handler();
 		bhoHandler.post(new Runnable() {
 			@Override
 			public void run() {
 				BhoTyper.checkForFont(Paths.cardDirectory() + "/Fonts", FBReader.this);
 			}
-		});
+		});*/
 
 		fbReader.addAction(ActionCode.SHOW_LIBRARY, new ShowLibraryAction(this, fbReader));
 		fbReader.addAction(ActionCode.SHOW_PREFERENCES, new ShowPreferencesAction(this, fbReader));

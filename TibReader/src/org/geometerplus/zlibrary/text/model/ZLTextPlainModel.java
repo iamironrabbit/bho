@@ -24,6 +24,8 @@ import java.util.*;
 import org.geometerplus.zlibrary.core.image.ZLImage;
 import org.geometerplus.zlibrary.core.util.*;
 
+import android.util.Log;
+
 public class ZLTextPlainModel implements ZLTextModel, ZLTextStyleEntry.Feature {
 	private final String myId;
 	private final String myLanguage;
@@ -146,9 +148,21 @@ public class ZLTextPlainModel implements ZLTextModel, ZLTextStyleEntry.Feature {
 					myTextLength =
 						(int)data[dataOffset++] +
 						(((int)data[dataOffset++]) << 16);
+					
 					myTextData = data;
 					myTextOffset = dataOffset;
 					dataOffset += myTextLength;
+				
+				    char[] tibData = doTibetanStacking(myTextData,myTextOffset, myTextLength);
+			        
+				    myTextLength = myTextLength - tibData.length;
+				    
+				    for (int i = 0; i < tibData.length; i++)
+				    {
+				        myTextData[myTextOffset + i] = tibData[i];
+				    }
+				    
+				     
 					break;
 				case ZLTextParagraph.Entry.CONTROL:
 				{
@@ -375,5 +389,15 @@ public class ZLTextPlainModel implements ZLTextModel, ZLTextStyleEntry.Feature {
 			return index;
 		}
 		return Math.min(-index - 1, myParagraphsNumber - 1);
+	}
+	
+	private char[] doTibetanStacking (char[] data, int offset, int length)
+	{
+	    String dataSub = new String(data).substring(offset, offset+length);
+	    
+	    char[] procData = org.ironrabbit.type.TibConvert.convertUnicodeToPrecomposedTibetan(dataSub).toCharArray();
+	   
+	    return procData;
+	    
 	}
 }

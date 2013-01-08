@@ -23,7 +23,7 @@ public class BhoTextView extends TextView {
 		if (!isSet)
 		{
 			if(t == null)
-				t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+			  t = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(getContext());
 			
 			setTypeface(t);
 			isSet = true;

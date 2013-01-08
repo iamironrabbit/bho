@@ -27,7 +27,7 @@ import android.widget.LinearLayout;
 public class BhoTyper {
 	
 	public static String BHOTAG = "******************* LANG SERVICE **************";
-	public static String FONT = "monlambodyig.ttf";
+//	public static String FONT = "jomolhari.ttf";
 	
 	Typeface bho;
 	ArrayList<TextView> textViews = new ArrayList<TextView>();
@@ -37,14 +37,15 @@ public class BhoTyper {
 	public BhoTyper(Context c, View root) {
 		this.c = c;
 		this.root = root;
-		bho = Typeface.createFromAsset(this.c.getAssets(), FONT);
+        bho = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(c);
 	    
 		refreshBho();
 	}
 	
 	public static void parseForBhoViews(Context c, ViewGroup viewGroup) {
-	    Typeface t = Typeface.createFromAsset(c.getAssets(), FONT);
-	    Log.d(BhoTyper.BHOTAG, "view group with " + viewGroup.getChildCount() + " children");
+        Typeface t = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(c);
+
+        Log.d(BhoTyper.BHOTAG, "view group with " + viewGroup.getChildCount() + " children");
 	    for(int i=0; i<viewGroup.getChildCount(); i++) {
 	        View v = viewGroup.getChildAt(i);
 	        if(v instanceof LinearLayout)
@@ -108,6 +109,7 @@ public class BhoTyper {
 		} catch(ClassCastException e) {}
 	}
 
+	/*
 	public static void checkForFont(String fontDirName, Context c) {		
 		boolean fontIsFound = false;
 		File fontDir = new File(fontDirName);
@@ -126,7 +128,8 @@ public class BhoTyper {
 					return lcName.endsWith(".ttf") || lcName.endsWith(".otf");
 				}
 
-			})) {
+			})) 
+			{
 				if(f.getName().equals(FONT)) {
 
 					try {
@@ -169,10 +172,10 @@ public class BhoTyper {
 			}
 		}
 		
-		// TODO: set to default
 		
 		
 	}
+	*/
 	
 	public static String hash(File f) throws IOException, NoSuchAlgorithmException {
 		return hash(new FileInputStream(f));

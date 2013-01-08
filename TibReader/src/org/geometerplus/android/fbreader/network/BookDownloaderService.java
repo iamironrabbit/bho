@@ -105,6 +105,12 @@ public class BookDownloaderService extends Service {
 		super.onStart(intent, startId);
 		doStart();
 
+		if (intent == null)
+		{
+		    doStop();
+		    return;
+		}
+		
 		final Uri uri = intent.getData();
 		if (uri == null) {
 			doStop();

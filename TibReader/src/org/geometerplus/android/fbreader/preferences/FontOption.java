@@ -42,6 +42,7 @@ class FontOption extends ZLStringListPreference {
 		if (includeDummyValue) {
 			fonts.add(0, UNCHANGED);
 		}
+		
 		setList((String[])fonts.toArray(new String[fonts.size()]));
 
 		final String optionValue = option.getValue();

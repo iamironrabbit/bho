@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Chinese FBReaderJ resources, by http://shucang.com/ -->
 <resources>
-	<node name="library" value="FBReader 书库">
+	<node name="library" value="TibReader 书库">
 		<node name="unknownAuthor" value="佚名"/>
 		<node name="booksWithNoTags" value="未归类"/>
 		<node name="demo" value="试读本"/>
@@ -35,8 +35,8 @@
 		<node name="fileTreeCard" value="SD存储卡">
 			<node name="summary" value="插入设备的存储卡"/>
 		</node>
-		<node name="fileTreeLibrary" value="FBReader 文件夹">
-			<node name="summary" value="FBReader 存放书刊的文件夹"/>
+		<node name="fileTreeLibrary" value="TibReader 文件夹">
+			<node name="summary" value="TibReader 存放书刊的文件夹"/>
 		</node>
 		<node name="menu">
 			<node name="localSearch" value="本地搜索"/>
@@ -48,7 +48,7 @@
 		<node name="addToFavorites" value="收藏到我的超爱"/>
 		<node name="removeFromFavorites" value="从收藏列表中移除"/>
 	</node>
-	<node name="networkLibrary" value="FBReader 网络书库">
+	<node name="networkLibrary" value="TibReader 网络书库">
 		<node name="byAuthor" value="作者">
 			<node name="summary" value="按作者排序"/>
 		</node>
@@ -206,7 +206,7 @@
 		<node name="returnTo" value="返回到…"/>
 		<node name="back" value="后退"/>
 		<node name="forward" value="前进"/>
-		<node name="close" value="关闭FBReader"/>
+		<node name="close" value="关闭TibReader"/>
 	</node>
 	<node name="selection" value="选择">
 		<node name="copyToClipboard" value="复制到剪贴板"/>
@@ -641,12 +641,12 @@
 				<node name="summaryOff" value="不显示最近浏览的3处位置"/>
 			</node>
 			<node name="backKeyAction" value="回退键动作设定">
-				<node name="exit" value="关闭 FBReader"/>
+				<node name="exit" value="关闭 TibReader"/>
 				<node name="goBack" value="后退到前一个界面"/>
 				<node name="cancelMenu" value="显示取消菜单"/>
 			</node>
 			<node name="backKeyLongPressAction" value="长按回退键动作设定">
-				<node name="exit" value="关闭FBReader"/>
+				<node name="exit" value="关闭TibReader"/>
 				<node name="goBack" value="后退到前一个界面"/>
 				<node name="cancelMenu" value="显示取消菜单"/>
 				<node name="none" value="不做任何事"/>
@@ -659,7 +659,7 @@
 				<node name="summaryOff" value="不显示"/>
 			</node>
 		</node>
-		<node name="about" value="关于FBReader">
+		<node name="about" value="关于TibReader">
 			<node name="summary" value="版本信息, 联系人"/>
 			<node name="version" value="版本"/>
 			<node name="site" value="访问我们的网站">
@@ -795,17 +795,17 @@
 	</node>
 	<node name="crash">
 		<node name="fixBooksDirectory">
-			<node name="title" value="FBReader 问题"/>
-			<node name="text" value="FBReader缓存目录无法写入，或许你忘了插入或已拔出内存卡。请处理这个问题，或者进入下面的另一个文件夹。"/>
+			<node name="title" value="TibReader 问题"/>
+			<node name="text" value="TibReader缓存目录无法写入，或许你忘了插入或已拔出内存卡。请处理这个问题，或者进入下面的另一个文件夹。"/>
 		</node>
 		<node name="missingNativeLibrary">
-			<node name="title" value="FBReader 问题"/>
-			<node name="text" value="FBReader无法加载本地库. 可能未正确安装. 如果问题还存在, 请重新安装FBReader."/>
+			<node name="title" value="TibReader 问题"/>
+			<node name="text" value="TibReader无法加载本地库. 可能未正确安装. 如果问题还存在, 请重新安装TibReader."/>
 		</node>
 	</node>
 	<node name="error">
 		<node name="bookReading">
-			<node name="title" value="FBReader 问题"/>
+			<node name="title" value="TibReader 问题"/>
 		</node>
 	</node>
 	<node name="bookReadingException">

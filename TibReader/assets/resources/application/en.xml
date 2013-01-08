@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- English FBReaderJ resources, by Geometer Plus -->
 <resources>
-	<node name="library" value="FBReader library">
+	<node name="library" value="TibReader library">
 		<node name="unknownAuthor" value="Unknown author"/>
 		<node name="booksWithNoTags" value="Books with no tags"/>
 		<node name="demo" value="sample"/>
@@ -35,8 +35,8 @@
 		<node name="fileTreeCard" value="Memory card">
 			<node name="summary" value="Memory card inserted into the device"/>
 		</node>
-		<node name="fileTreeLibrary" value="FBReader library">
-			<node name="summary" value="FBReader books directory"/>
+		<node name="fileTreeLibrary" value="TibReader library">
+			<node name="summary" value="TibReader books directory"/>
 		</node>
 		<node name="menu">
 			<node name="localSearch" value="Search"/>
@@ -48,7 +48,7 @@
 		<node name="addToFavorites" value="Add to favorites"/>
 		<node name="removeFromFavorites" value="Remove from favorites"/>
 	</node>
-	<node name="networkLibrary" value="FBReader network library">
+	<node name="networkLibrary" value="TibReader network library">
 		<node name="byAuthor" value="By author">
 			<node name="summary" value="Books sorted by author"/>
 		</node>
@@ -216,7 +216,7 @@
 		<node name="returnTo" value="Return to …"/>
 		<node name="back" value="Back"/>
 		<node name="forward" value="Forward"/>
-		<node name="close" value="Close FBReader"/>
+		<node name="close" value="Close TibReader"/>
 	</node>
 	<node name="selection" value="Selection">
 		<node name="copyToClipboard" value="Copy to clipboard"/>
@@ -651,12 +651,12 @@
 				<node name="summaryOff" value="Don't show items for last 3 positions in the book"/>
 			</node>
 			<node name="backKeyAction" value="Back key action">
-				<node name="exit" value="Close FBReader"/>
+				<node name="exit" value="Close TibReader"/>
 				<node name="goBack" value="Navigate back"/>
 				<node name="cancelMenu" value="Show cancel menu"/>
 			</node>
 			<node name="backKeyLongPressAction" value="Back key long press action">
-				<node name="exit" value="Close FBReader"/>
+				<node name="exit" value="Close TibReader"/>
 				<node name="goBack" value="Navigate back"/>
 				<node name="cancelMenu" value="Show cancel menu"/>
 				<node name="none" value="No action"/>
@@ -669,7 +669,7 @@
 				<node name="summaryOff" value="Do not show"/>
 			</node>
 		</node>
-		<node name="about" value="About FBReader">
+		<node name="about" value="About TibReader">
 			<node name="summary" value="Version info, contacts"/>
 			<node name="version" value="Version"/>
 			<node name="site" value="Visit our website">
@@ -758,7 +758,7 @@
 			<node name="register" value="Sign up"/>
 		</node>
 		<node name="CustomCatalogDialog">
-			<node name="title" value="FBReader: add custom catalog"/>
+			<node name="title" value="TibReader: add custom catalog"/>
 			<node name="catalogTitle" value="Title"/>
 			<node name="catalogUrl" value="URL"/>
 			<node name="catalogSummary" value="Summary"/>
@@ -776,7 +776,7 @@
 		</node>
 		<node name="tips">
 			<node name="title" value="Tip of the day"/>
-			<node name="initializationText" value="Would you like to read FBReader daily tips? New tips would be downloaded from FBReader site. Expected network traffic is 1-2 kilobytes per week.&#10;&#10;Enable tips?"/>
+			<node name="initializationText" value="Would you like to read TibReader daily tips? New tips would be downloaded from TibReader site. Expected network traffic is 1-2 kilobytes per week.&#10;&#10;Enable tips?"/>
 			<node name="dontShowAgain" value="Don't show again"/>
 			<node name="more" value="Next tip"/>
 		</node>
@@ -805,17 +805,17 @@
 	</node>
 	<node name="crash">
 		<node name="fixBooksDirectory">
-			<node name="title" value="FBReader issue"/>
-			<node name="text" value="FBReader cache directory is not accessible for writing. May be you forget to insert or unmount your memory card. Please fix this issue or enter another directory name below."/>
+			<node name="title" value="TibReader issue"/>
+			<node name="text" value="TibReader cache directory is not accessible for writing. May be you forget to insert or unmount your memory card. Please fix this issue or enter another directory name below."/>
 		</node>
 		<node name="missingNativeLibrary">
-			<node name="title" value="FBReader issue"/>
-			<node name="text" value="FBReader can not load native library. May be it is not properly installed. If the issue persists please try to reinstall FBReader."/>
+			<node name="title" value="TibReader issue"/>
+			<node name="text" value="TibReader can not load native library. May be it is not properly installed. If the issue persists please try to reinstall TibReader."/>
 		</node>
 	</node>
 	<node name="error">
 		<node name="bookReading">
-			<node name="title" value="FBReader issue"/>
+			<node name="title" value="TibReader issue"/>
 		</node>
 	</node>
 	<node name="bookReadingException">

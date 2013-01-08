@@ -14,7 +14,7 @@ public class BhoZoomButton extends ZoomButton {
 		this.c = context;
 		
 		if(t == null)
-			t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+            t = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(context);
 		
 		//setTypeface(t);
 	}
@@ -24,7 +24,7 @@ public class BhoZoomButton extends ZoomButton {
 		this.c = context;
 		
 		if(t == null)
-			t = Typeface.createFromAsset(this.c.getAssets(), BhoTyper.FONT);
+            t = org.ironrabbit.type.CustomTypefaceManager.getCurrentTypeface(context);
 		
 		//setTypeface(t);
 	}
