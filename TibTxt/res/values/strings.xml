@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TibTxt</string>
+    <string name="app_name">YakChat</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="delete">Delete</string>   
     <!-- ApplicationExportManager -->
     <string name="ApplicationExportManager_import_database_and_settings_title">Import Database and Settings?</string>
-    <string name="ApplicationExportManager_import_database_and_settings_message">Import TibTxt database, keys, and settings from the SD Card?\n\nWARNING: This will clobber any existing messages, keys, and  settings!</string>
+    <string name="ApplicationExportManager_import_database_and_settings_message">Import YakChat database, keys, and settings from the SD Card?\n\nWARNING: This will clobber any existing messages, keys, and  settings!</string>
     <string name="ApplicationExportManager_importing_database_and_keys">Importing Database and Keys</string>
     <string name="ApplicationExportManager_importing_your_sms_database_keys_and_settings">Importing your SMS database, keys, and settings...</string>
     <string name="ApplicationExportManager_export_database_question">Export Database?</string>
-    <string name="ApplicationExportManager_export_textsecure_database_keys_and_settings_prompt">Export TibTxt database, keys, and settings to the SD Card?</string>
+    <string name="ApplicationExportManager_export_textsecure_database_keys_and_settings_prompt">Export YakChat database, keys, and settings to the SD Card?</string>
     <string name="ApplicationExportManager_exporting_database_and_keys">Exporting Database and Keys</string>
     <string name="ApplicationExportManager_exporting_your_sms_database_keys_and_settings">Exporting your SMS database, keys, and settings...</string>
     <string name="ApplicationExportManager_no_sd_card_found_exclamation">No SD card found!</string>
@@ -24,7 +24,7 @@
     <string name="ApplicationMigrationManager_migrating_database">Migrating Database</string>
     <string name="ApplicationMigrationManager_migrating_text_message_database">Migrating text message database...</string>
     <string name="ApplicationMigrationManager_copy_system_text_message_database_question">Copy System Text Message Database?</string>
-    <string name="ApplicationMigrationManager_copy_system_text_message_database_explanation">TibTxt uses an encrypted database that is separate from the default system database.  Would you like to copy your existing text messages into TibTxt\'s encrypted database?  Your default system database will be unaffected.</string>
+    <string name="ApplicationMigrationManager_copy_system_text_message_database_explanation">YakChat uses an encrypted database that is separate from the default system database.  Would you like to copy your existing text messages into YakChat\'s encrypted database?  Your default system database will be unaffected.</string>
     <string name="ApplicationMigrationManager_copy">Copy</string>
     <string name="ApplicationMigrationManager_dont_copy">Don\'t copy</string>
     
@@ -216,7 +216,7 @@
     <string name="ApplicationMigrationService_migrating_system_text_messages">Migrating System Text Messages</string>
     
     <!-- KeyCachingService -->
-    <string name="KeyCachingService_textsecure_passphrase_cached">TibTxt Passphrase Cached</string>
+    <string name="KeyCachingService_textsecure_passphrase_cached">YakChat Passphrase Cached</string>
     <string name="KeyCachingService_passphrase_cached">Passphrase Cached</string>
     
     <!-- MessageNotifier -->
@@ -225,7 +225,7 @@
     <string name="MessageNotifier_most_recent_from_s">Most recent from: %s</string>
     
     <!-- auto_initiate_activity -->
-    <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">You have received a message from someone who supports TibTxt encrypted sessions.  Would you like to initiate a secure session?</string>
+    <string name="auto_initiate_activity__you_have_received_a_message_from_someone_who_supports_textsecure_encrypted_sessions_would_you_like_to_initiate_a_secure_session">You have received a message from someone who supports YakChat encrypted sessions.  Would you like to initiate a secure session?</string>
     <string name="auto_initiate_activity__initiate_exchange">Initiate Exchange</string>
     
     <!-- change_passphrase_activity -->
@@ -293,7 +293,7 @@
     <string name="AndroidManifest__create_passphrase">Create Passphrase</string>
     <string name="AndroidManifest__enter_passphrase">Enter Passphrase</string>
     <string name="AndroidManifest__select_contacts">Select Contacts</string>
-    <string name="AndroidManifest__textsecure_detected">TibTxt Detected</string>
+    <string name="AndroidManifest__textsecure_detected">YakChat Detected</string>
     <string name="AndroidManifest__public_identity_key">Public Identity Key</string>
     <string name="AndroidManifest__change_passphrase">Change Passphrase</string>
     <string name="AndroidManifest__verify_session">Verify Session</string>
@@ -308,8 +308,8 @@
     <string name="preferences__use_settings">Use Settings</string>
     <string name="preferences__pref_all_sms_title">Use for all SMS</string>
     <string name="preferences__pref_all_mms_title">Use for all MMS</string> 
-    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Use TibTxt for viewing and storing all incoming text messages</string>
-    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Use TibTxt for viewing and storing all incoming multimedia messages</string>
+    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_text_messages">Use YakChat for viewing and storing all incoming text messages</string>
+    <string name="preferences__use_textsecure_for_viewing_and_storing_all_incoming_multimedia_messages">Use YakChat for viewing and storing all incoming multimedia messages</string>
     <string name="preferences__input_settings">Input Settings</string>
     <string name="preferences__pref_enter_sends_title">Enter sends</string>
     <string name="preferences__pressing_the_enter_key_will_send_text_messages">Pressing the enter key will send text messages</string>
@@ -430,7 +430,7 @@
     <string name="verify_keys__menu_verified">Verified</string>
 
     <!-- Misc. piggybacking -->
-    <string name="PlayStoreListing">TibTxt is a security enhanced text messaging application that serves as a full replacement for the default text messaging application.  Messages to other TibTxt users are encrypted over the air, and all text messages are stored in an encrypted database on the device. If your phone is lost or stolen, your messages will be safe, and communication with other TibTxt users can\'t be monitored over the air.</string>
+    <string name="PlayStoreListing">YakChat is a security enhanced text messaging application that serves as a full replacement for the default text messaging application.  Messages to other YakChat users are encrypted over the air, and all text messages are stored in an encrypted database on the device. If your phone is lost or stolen, your messages will be safe, and communication with other YakChat users can\'t be monitored over the air.</string>
     
     <!-- EOF -->
     <string name="conversation_item_sent__download">Download</string>
@@ -438,7 +438,7 @@
     <string name="conversation_item_received__download">Download</string>
     <string name="conversation_item_received__downloading">Downloading</string>
     
-    <!--  added for TibTxt -->
+    <!--  added for YakChat -->
     <string name="preferences__locale_bo_summary">Switch whole app to FULL TIBETAN STYLE! If you can see Tibetan writing here བོད then you can enable this</string>
     <string name="preferences__locale_bo_title">Tibetan Mode བོད</string>
     
