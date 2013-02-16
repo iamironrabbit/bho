@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="org.ironrabbit.tbtxt"
-      android:versionCode="34"
-      android:versionName="0.7.5-bo">
+      android:versionCode="35"
+      android:versionName="0.7.5.1-bo">
 
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16"/>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
 
     <permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"
                 android:label="Access to TextSecure Secrets"
@@ -13,7 +13,8 @@
 	<uses-permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"></uses-permission>
     <uses-permission android:name="android.permission.READ_PROFILE"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_PROFILE"></uses-permission>	
-    <uses-permission android:name="android.permission.BROADCAST_WAP_PUSH"></uses-permission>
+    <!-- <uses-permission android:name="android.permission.BROADCAST_WAP_PUSH"></uses-permission>-->
+    
     <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -30,7 +31,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         
-    <application android:icon="@drawable/ic_launcher"
+    <application android:icon="@drawable/yak"
                  android:label="@string/app_name"
                  android:theme="@style/Theme.yakster"
                  android:name="org.thoughtcrime.securesms.TextSecureApp"
