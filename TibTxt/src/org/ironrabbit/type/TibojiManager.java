@@ -19,7 +19,10 @@ import android.util.Log;
 public class TibojiManager {
 
 	Context mContext;
-	HashMap<String,Tiboji> hmTiboji;
+	
+	HashMap<String,Tiboji> mTiboji;
+	HashMap<String,Tiboji> mEmoji;
+	
 	
 	private static TibojiManager mInstance = null;
 	
@@ -42,8 +45,8 @@ public class TibojiManager {
 	private void init (Context context)
 	{
 		mContext = context;
-		hmTiboji = new HashMap<String,Tiboji>();
-		
+		mTiboji = new HashMap<String,Tiboji>();
+	
 		try {
 			String[] tibojiFiles = mContext.getAssets().list("tiboji");
 			
@@ -58,23 +61,47 @@ public class TibojiManager {
 				
 				t.bitmap = BitmapFactory.decodeStream(is);
 				
-				hmTiboji.put(t.symbol,t);
+				mTiboji.put(t.symbol,t);
 			}
 			
 		} catch (IOException e) {
 			
 			Log.e("Tiboji","error loading",e);
 		}
+		
+		mEmoji = new HashMap<String,Tiboji>();
+		
+		try {
+			String[] emojiFiles = mContext.getAssets().list("emoji");
+			
+			for (int i = 0; i < emojiFiles.length; i++)
+			{
+				InputStream is = mContext.getAssets().open("emoji/" + emojiFiles[i]);
+				
+				Tiboji t = new Tiboji();
+				
+				t.symbol =  new File(emojiFiles[i]).getName();
+				t.symbol = t.symbol.substring(0,t.symbol.indexOf('.'));
+				
+				t.bitmap = BitmapFactory.decodeStream(is);
+				
+				mEmoji.put(t.symbol,t);
+			}
+			
+		} catch (IOException e) {
+			
+			Log.e("Emoji","error loading",e);
+		}
 	}
 	
 	public Iterator<Entry<String,Tiboji>> getTiboji ()
 	{
-		return hmTiboji.entrySet().iterator();
+		return mTiboji.entrySet().iterator();
 		
 	}
 	public Tiboji getTiboji (String symbol)
 	{
-		return hmTiboji.get(symbol);
+		return mTiboji.get(symbol);
 	}
 	
 	public Iterator<Tiboji> findTiboji (String message)
@@ -90,8 +117,58 @@ public class TibojiManager {
 			if (token.startsWith("("))
 			{
 				token = token.substring(1,token.length()-1);
-				if (hmTiboji.containsKey(token))
-					result.add(hmTiboji.get(token));
+				if (mTiboji.containsKey(token))
+					result.add(mTiboji.get(token));
+			
+			}
+		}
+		
+		
+		return result.iterator();
+	}
+	
+	public Iterator<Entry<String,Tiboji>> getEmoji ()
+	{
+		return mEmoji.entrySet().iterator();
+		
+	}
+	public Tiboji getEmoji (String symbol)
+	{
+		return mEmoji.get(symbol);
+	}
+	
+	public final static String[][] EMOJI_ASCII_MAP = {
+			{"O:)","angel"},
+			{":)","smile"},
+			{"8)","cool"},
+			{";)","wink"},
+			{"<3","heart"},
+			{":|","plain"},
+			{":(","sad"},
+			{":/","smirk"},
+			{">O<","sunny"},
+			{"~]","candle"},
+			{"}8)","yak"},
+			{"}:)","yak"},
+			{"(O)","shabalep"},
+			{"/\\","hands"}
+	};
+	
+	public Iterator<Tiboji> findEmoji (String message)
+	{
+		
+		StringTokenizer st = new StringTokenizer (message," ");
+		String token = null;
+		ArrayList<Tiboji> result = new ArrayList<Tiboji>();
+				
+		while(st.hasMoreTokens())
+		{
+			token = st.nextToken();
+			if (token.startsWith("("))
+			{
+				token = token.substring(1,token.length()-1);
+				if (mEmoji.containsKey(token))
+					result.add(mEmoji.get(token));
 			
 			}
 		}

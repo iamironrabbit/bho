@@ -205,12 +205,13 @@ public class ConversationItem extends LinearLayout {
 	  while (it.hasNext())
 	  {
 		  Tiboji t = it.next();
-		  //mmsThumbnail.setVisibility(ImageView.VISIBLE);
-		  //mmsThumbnail.setImageBitmap(t.bitmap);
 		  ImageView iv = new ImageView(context);
 		  iv.setImageBitmap(t.bitmap);
+		  iv.setMinimumHeight(64);
+		  iv.setMinimumWidth(64);
+		  
 		  v.addView(iv);
-		  result = result.replace("(" + t.symbol + ")"," ");
+		  result = result.replace("(" + t.symbol + ")","");
 	  }
 	  
 	  return result;
