@@ -1622,6 +1622,7 @@ public class TibConvert {
 	
 	public static String convertUnicodeToPrecomposedTibetan( String pStrIn, int nStart, int nEnd )
 	{
+    
 		// If this is our first time, we may need to create an index
 		createTableIndex();
 		
@@ -1643,7 +1644,7 @@ public class TibConvert {
 			if ( chPending[0] == 0xFFFF )
 			{
 				// First time through, so initialize things
-				chInput[nCol] = pStrIn.charAt( i );
+				chInput[nCol] = pStrIn.charAt(i);
 				char[] chTib = {chInput[nCol], chPending[0], chPending[1]};
 				decomposeTibetan(chTib);
 				chInput[nCol] = chTib[0];
