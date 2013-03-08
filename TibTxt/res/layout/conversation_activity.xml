@@ -119,6 +119,7 @@
                        	android:contentDescription="emoticons"
                     />
                 </LinearLayout>
+                
                        <TextView android:id="@+id/space_left"
                                     android:paddingLeft="5dip"
                                      android:layout_width="fill_parent"
