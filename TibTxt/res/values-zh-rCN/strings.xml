@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="app_name">牦信</string>
+  <string name="app_name">Yak信</string>
   <string name="yes">是</string>
   <string name="no">否</string>
   <!--ApplicationExportManager-->
   <string name="ApplicationExportManager_import_database_and_settings_title">导入数据库和设置？</string>
-  <string name="ApplicationExportManager_import_database_and_settings_message">从 SD 卡导入 牦信 数据库、密钥和设置？ 警告： 这将覆盖所有现有消息、密钥和设置！</string>
+  <string name="ApplicationExportManager_import_database_and_settings_message">从 SD 卡导入 Yak信 数据库、密钥和设置？ 警告： 这将覆盖所有现有消息、密钥和设置！</string>
   <string name="ApplicationExportManager_importing_database_and_keys">正在导入数据库和密钥</string>
   <string name="ApplicationExportManager_importing_your_sms_database_keys_and_settings">正在导入您的短信数据库、密钥和设置...</string>
   <string name="ApplicationExportManager_export_database_question">导出数据库？</string>
-  <string name="ApplicationExportManager_export_textsecure_database_keys_and_settings_prompt">导出 牦信 数据库、密钥和设置到 SD 卡？</string>
+  <string name="ApplicationExportManager_export_textsecure_database_keys_and_settings_prompt">导出 Yak信 数据库、密钥和设置到 SD 卡？</string>
   <string name="ApplicationExportManager_exporting_database_and_keys">正在导出数据库和密钥</string>
   <string name="ApplicationExportManager_exporting_your_sms_database_keys_and_settings">正在导出您的短信数据库、密钥和设置...</string>
   <string name="ApplicationExportManager_no_sd_card_found_exclamation">未找到 SD 卡！</string>
@@ -20,7 +20,7 @@
   <string name="ApplicationMigrationManager_migrating_database">正在迁移数据库</string>
   <string name="ApplicationMigrationManager_migrating_text_message_database">正在迁移文本消息数据库...</string>
   <string name="ApplicationMigrationManager_copy_system_text_message_database_question">复制系统文本消息数据库？</string>
-  <string name="ApplicationMigrationManager_copy_system_text_message_database_explanation">牦信 使用与默认系统数据库分离的加密数据库。  是否要复制现有文本消息到 牦信 的加密数据库？  您的默认系统数据库将不受影响。</string>
+  <string name="ApplicationMigrationManager_copy_system_text_message_database_explanation">Yak信 使用与默认系统数据库分离的加密数据库。  是否要复制现有文本消息到 Yak信 的加密数据库？  您的默认系统数据库将不受影响。</string>
   <string name="ApplicationMigrationManager_copy">复制</string>
   <string name="ApplicationMigrationManager_dont_copy">不复制</string>
   <!--ApplicationPreferencesActivity-->
