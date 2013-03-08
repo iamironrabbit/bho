@@ -147,8 +147,8 @@ public class ConversationItem extends LinearLayout {
       setMediaMmsAttributes((MediaMmsMessageRecord)messageRecord);
     }
     
-    String out = showTiboji(messageRecord.getBody());
-    setBodyText(messageRecord,out);
+   // String out = showTiboji(messageRecord.getBody());
+    setBodyText(messageRecord, messageRecord.getBody());
   }
 
   public MessageRecord getMessageRecord() {
@@ -170,14 +170,17 @@ public class ConversationItem extends LinearLayout {
     else if (messageRecord.isKeyExchange() && !messageRecord.isOutgoing())          body = "\n" + getContext().getString(R.string.ConversationItem_received_key_exchange_message_click_to_process);
     else if (messageRecord.isOutgoing() && Tag.isTagged(body))                      body = Tag.stripTag(body);
 
+    
     bodyText.setText(body, TextView.BufferType.SPANNABLE);
-
+    
+    TibojiManager.getInstance(context).addSmiles(context,  ((Spannable)bodyText.getText()));
+    
     try
     {
 	    if (messageRecord.isKeyExchange() || messageRecord.getEmphasis()) {
 	    	int bodyLength = bodyText.getText().length();
-	      ((Spannable)bodyText.getText()).setSpan(new ForegroundColorSpan(context.getResources().getColor(android.R.color.darker_gray)), 0, bodyLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-	      ((Spannable)bodyText.getText()).setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, bodyLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+	      ((Spannable)bodyText).setSpan(new ForegroundColorSpan(context.getResources().getColor(android.R.color.darker_gray)), 0, bodyLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+	      ((Spannable)bodyText).setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, bodyLength, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 	    }
     }
     catch (Exception e)
@@ -194,7 +197,7 @@ public class ConversationItem extends LinearLayout {
     }
   }
 
-  
+  /*
   private String showTiboji (String body)
   {
 	  Iterator<Tiboji> it = TibojiManager.getInstance(context).findTiboji(body);
@@ -215,7 +218,7 @@ public class ConversationItem extends LinearLayout {
 	  }
 	  
 	  return result;
-  }
+  }*/
   
   private void setStatusIcons(MessageRecord messageRecord) {
     failedImage.setVisibility(messageRecord.isFailed() ? View.VISIBLE : View.GONE);

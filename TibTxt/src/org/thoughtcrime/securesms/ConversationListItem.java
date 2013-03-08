@@ -34,6 +34,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.ironrabbit.tbtxt.R;
+import org.ironrabbit.type.TibojiManager;
 import org.thoughtcrime.securesms.database.model.ThreadRecord;
 import org.thoughtcrime.securesms.recipients.Recipients;
 
@@ -94,7 +95,12 @@ public class ConversationListItem extends RelativeLayout {
       this.subjectView.setText(R.string.ConversationListItem_key_exchange_message,
                                TextView.BufferType.SPANNABLE);
     else
-      this.subjectView.setText(thread.getBody(), TextView.BufferType.SPANNABLE);
+    {
+    	this.subjectView.setText(thread.getBody(), TextView.BufferType.SPANNABLE);
+    	
+      TibojiManager.getInstance(getContext()).addSmiles(getContext(),  ((Spannable)subjectView.getText()));
+
+    }
 
     if (thread.getEmphasis())
       ((Spannable)this.subjectView.getText()).setSpan(new StyleSpan(android.graphics.Typeface.ITALIC), 0, this.subjectView.getText().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

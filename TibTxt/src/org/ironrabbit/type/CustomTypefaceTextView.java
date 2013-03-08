@@ -4,8 +4,10 @@ package org.ironrabbit.type;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.ClipboardManager;
+import android.text.Spannable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewDebug.CapturedViewProperty;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,9 +64,10 @@ public class CustomTypefaceTextView extends TextView {
         	init();
 		String newText = text.toString().trim();		
 		newText = TibConvert.convertUnicodeToPrecomposedTibetan(text.toString());
-		super.setText(newText, type);
+		super.setText(newText,  TextView.BufferType.SPANNABLE);
 	}
-	
+
+
 	
 
 }

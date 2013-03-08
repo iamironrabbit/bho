@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.telephony.PhoneNumberUtils;
 import android.text.Editable;
+import android.text.Spannable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -725,7 +726,7 @@ public class ConversationActivity extends SherlockFragmentActivity
 		  {
 			  Entry<String,Tiboji> entry = it.next();
 	
-			  ActionItem addItem 		= new ActionItem(i++, entry.getValue().symbol, new BitmapDrawable(getResources(),entry.getValue().bitmap));
+			  ActionItem addItem 		= new ActionItem(i++, entry.getKey(), new BitmapDrawable(getResources(),entry.getValue().bitmap));
 			  mQuickAction.addActionItem(addItem);
 		  }
 		  
@@ -738,6 +739,8 @@ public class ConversationActivity extends SherlockFragmentActivity
 					Tiboji t = TibojiManager.getInstance(ConversationActivity.this).getTiboji(actionItem.getTitle());
 					
 					composeText.append(" (" + t.symbol + ")");
+					
+				    TibojiManager.getInstance(ConversationActivity.this).addSmiles(ConversationActivity.this,  ((Spannable)composeText.getText()));
 				}
 			});
 		  

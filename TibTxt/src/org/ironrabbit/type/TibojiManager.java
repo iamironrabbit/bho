@@ -4,16 +4,21 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 import java.util.StringTokenizer;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.ironrabbit.tbtxt.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.text.Spannable;
+import android.text.style.ImageSpan;
 import android.util.Log;
 
 public class TibojiManager {
@@ -62,6 +67,11 @@ public class TibojiManager {
 				t.bitmap = BitmapFactory.decodeStream(is);
 				
 				mTiboji.put(t.symbol,t);
+				
+
+				addPattern(emoticons, '(' + t.symbol + ')', t.bitmap);
+				
+				
 			}
 			
 		} catch (IOException e) {
@@ -181,5 +191,40 @@ public class TibojiManager {
 	{
 		public String symbol;
 		public Bitmap bitmap;
+	}
+	
+	private final Map<Pattern, Bitmap> emoticons = new HashMap<Pattern, Bitmap>();
+
+
+	
+	private void addPattern(Map<Pattern, Bitmap> map, String smile,
+	Bitmap resource) {
+	map.put(Pattern.compile(Pattern.quote(smile)), resource);
+	}
+
+	public boolean addSmiles(Context context, Spannable spannable) {
+	boolean hasChanges = false;
+	for (Entry<Pattern, Bitmap> entry : emoticons.entrySet()) {
+	Matcher matcher = entry.getKey().matcher(spannable);
+	while (matcher.find()) {
+	boolean set = true;
+	for (ImageSpan span : spannable.getSpans(matcher.start(),
+	        matcher.end(), ImageSpan.class))
+	    if (spannable.getSpanStart(span) >= matcher.start()
+	            && spannable.getSpanEnd(span) <= matcher.end())
+	        spannable.removeSpan(span);
+	    else {
+	        set = false;
+	        break;
+	    }
+	if (set) {
+	    hasChanges = true;
+	    spannable.setSpan(new ImageSpan(context, entry.getValue()),
+	            matcher.start(), matcher.end(),
+	            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+	}
+	}
+	}
+	return hasChanges;
 	}
 }
