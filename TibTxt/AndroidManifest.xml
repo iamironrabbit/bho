@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="org.ironrabbit.tbtxt"
-      android:versionCode="35"
-      android:versionName="0.7.5.1-bo">
+      android:versionCode="37"
+      android:versionName="v1-RC1-ts-0.7.5.1-bo">
 
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
 
