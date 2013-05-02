@@ -36,9 +36,10 @@ public class MmsListener extends BroadcastReceiver {
     if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.DONUT)
       return false;
 		
-    if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean(ApplicationPreferencesActivity.ALL_MMS_PERF, true))
-      return true;
-		
+    //if (PreferenceManager.getDefaultSharedPreferences(context).getBoolean(ApplicationPreferencesActivity.ALL_MMS_PERF, true))
+     // return true;
+	return false; // do not do MMS ever
+/**
     byte[] mmsData   = intent.getByteArrayExtra("data");
     PduParser parser = new PduParser(mmsData);
     GenericPdu pdu   = parser.parse();
@@ -52,6 +53,7 @@ public class MmsListener extends BroadcastReceiver {
       return false;
         
     return WirePrefix.isEncryptedMmsSubject(notificationPdu.getSubject().getString());
+*/
   }
 	
   @Override

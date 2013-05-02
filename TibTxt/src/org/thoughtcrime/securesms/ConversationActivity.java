@@ -228,7 +228,7 @@ public class ConversationActivity extends SherlockFragmentActivity
     switch (item.getItemId()) {
     case R.id.menu_call:                 handleDial(getRecipients().getPrimaryRecipient()); return true;
     case R.id.menu_delete_thread:        handleDeleteThread();                              return true;
-    case R.id.menu_add_attachment:       handleAddAttachment();                             return true;
+    //case R.id.menu_add_attachment:       handleAddAttachment();                             return true;
     case R.id.menu_start_secure_session: handleStartSecureSession();                        return true;
     case R.id.menu_abort_session:        handleAbortSecureSession();                        return true;
     case R.id.menu_verify_recipient:     handleVerifyRecipient();                           return true;
@@ -358,6 +358,7 @@ public class ConversationActivity extends SherlockFragmentActivity
     builder.show();
   }
 
+	/*
   private void handleAddAttachment() {
     AlertDialog.Builder builder = new AlertDialog.Builder(this);
     builder.setIcon(R.drawable.ic_dialog_attach);
@@ -365,6 +366,7 @@ public class ConversationActivity extends SherlockFragmentActivity
     builder.setAdapter(attachmentAdapter, new AttachmentTypeListener());
     builder.show();
   }
+*/
 
   ///// Initializers
 
