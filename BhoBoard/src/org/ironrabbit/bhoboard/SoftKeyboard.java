@@ -529,9 +529,8 @@ public class SoftKeyboard extends InputMethodService
             mQwertyKeyboard.setShifted(false);
             
         } 
-        else if (primaryCode == 0x0F84) {
+        else if (primaryCode == -1234 ) { //0x0F84
           
-        	 
         	  
         	mCurKeyboard = (BhoKeyboard)mInputView.getKeyboard();
         	boolean isStacked = false;

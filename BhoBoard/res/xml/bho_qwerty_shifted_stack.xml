@@ -7,57 +7,59 @@
 Shift Key Board Layout
 
 Row 1:
-	Key 1: FUNCTION KEY
-	Key 2: 0x0FBA
+	Key 1: 0x0F84
+	Key 2: 0x0F5D
 	Key 3: 0x0F7B
 	Key 4: 0x0FB2
-	Key 5: 0x0FA0
+	Key 5: 0x0F50
 	Key 6: 0x0FB1
 	Key 7: 0x0FAD
 	Key 8: 0x0F80
 	Key 9: 0x0F7D
-	Key 10: 0x0FA5
+	Key 10: 0x0F55
 	-->
     <Row android:rowEdgeFlags="top" >
-<Key android:codes="0x0F84"  android:isModifier="true" android:horizontalGap=".9%p" android:keyEdgeFlags="left" android:isSticky="false" />        
-        <Key android:codes="0x0FBA" />
-        <Key android:codes="0x0F7B" />
-        <Key android:codes="0x0FB2" />
-        <Key android:codes="0x0FA0" />
-        <Key android:codes="0x0FB1" />
-        <Key android:codes="0x0FAD" />
-        <Key android:codes="0x0F80" />
-        <Key android:codes="0x0F7D" />
-        <Key android:codes="0x0FA5" android:keyEdgeFlags="right"/>
+        <Key android:codes="-1234"  android:keyIcon="@drawable/sym_keyboard_shift_down" android:isModifier="true" android:horizontalGap=".9%p" android:keyEdgeFlags="left" android:isSticky="false" />
+        
+        <Key android:codes="0x0F5D" />
+   
+        <Key android:codes="9676,3963" android:keyOutputText="\u0F7B" /> <!-- 0F7B -->
+        <Key android:codes="9676,4018" android:keyOutputText="\u0FB2"/><!--  0FB2 -->
+        <Key android:codes="0x0F50" />
+        <Key android:codes="9676,4017" android:keyOutputText="\u0FB1"/> <!--  0FB1 -->
+        <Key android:codes="9676,4013" android:keyOutputText="\u0FAD" /><!--  0FAD -->
+        <Key android:codes="9676,4000" android:keyOutputText="\u0F80"/><!--  0F80 -->
+        <Key android:codes="9676,3965" android:keyOutputText="\u0F7D"/><!--  0F7D -->
+        <Key android:codes="0x0F55" android:keyEdgeFlags="right"/>
     </Row>
     
     <!-- 
     
     
-Row 2:Row 2:
-	Key 1: 0x0FB8
-	Key 2: 0x0FB4
-	Key 3: 0x0F9C
-		Pop up key 1: 0x0F9C
-		Pop up key 2: 0x0F9D
-	Key 4: 0x0F9B
-	Key 5: 0x0F9A
-	Key 6: 0x0F7F
-	Key 7: 0x0F97
-	key 8: 0x0F91
+Row 2:
+	Key 1: 0x0F68
+	Key 2: 0x0F64
+	Key 3: 0x0F4C
+		Pop up key 1: 0x0F4C
+		Pop up key 2: 0x0F4D
+	Key 4: 0x0F4B
+	Key 5: 0x0F4A
+	Key 6: 0x0F7E
+	Key 7: 0x0F47
+	key 8: 0x0F41
 	Key 9: 0x0FB3
     -->
     <Row>
-        <Key android:codes="0x0FB8" android:horizontalGap="6.9%p" android:keyEdgeFlags="left"/>
-        <Key android:codes="0x0FB4" />
-        <Key android:codes="0x0F9C"  android:popupCharacters="\u0F9C\u0F9D" android:popupKeyboard="@xml/popup_template" />
-        <Key android:codes="0x0F9B" />
-        <Key android:codes="0x0F9A" />
+        <Key android:codes="0x0F68" android:horizontalGap="6.9%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="0x0F64" />
+        <Key android:codes="0x0F4C"  android:popupCharacters="\u0F4C\u0F4D" android:popupKeyboard="@xml/popup_template" />
+        <Key android:codes="0x0F4B" />
+        <Key android:codes="0x0F4A" />
         
         <Key android:codes="0x0F7F"/>
-        <Key android:codes="0x0F97" />
-        <Key android:codes="0x0F91" />
-        <Key android:codes="0x0FB3" android:keyEdgeFlags="right"/>
+        <Key android:codes="0x0F47" />
+        <Key android:codes="0x0F41" />
+        <Key android:codes="9676,4019"  android:keyOutputText="\u0FB3" android:keyEdgeFlags="right"/>
         
     </Row>
     
@@ -65,12 +67,12 @@ Row 2:Row 2:
     
 Row 3: 
 	Key 1: Shift key
-	Key 2: 0x0FAE
-	Key 3: 0x0FB5
-	Key 4: 0x0F96
-	Key 5: 0x0FAA
-	Key 6: 0x0FA6
-	Key 7: 0x0F9E
+	Key 2: 0x0F5E
+	Key 3: 0x0F65
+	Key 4: 0x0F46
+	Key 5: 0x0F5A
+	Key 6: 0x0F56
+	Key 7: 0x0F4E
 	Key 8: 0x0F7E
 		Pop up key 1: 0x0F8B
 		Pop up key 2: 0x0F85
@@ -89,13 +91,13 @@ Row 3:
        <Key android:codes="-1" android:keyIcon="@drawable/sym_keyboard_shift" 
                  android:keyWidth="15%p" android:isModifier="true"
                 android:isSticky="true" android:keyEdgeFlags="left"/>  
-        <Key android:codes="0x0FAE"/>
-        <Key android:codes="0x0FB5"/>
-        <Key android:codes="0x0F96"/>
-        <Key android:codes="0x0FAA"/>
-        <Key android:codes="0x0FA6" />
-        <Key android:codes="0x0F9E"/>
-        <Key android:codes="0x0F7E"  android:popupCharacters="\u0F8B\u0F85\u0F8A\u0F89\u0F88\u0F87\u0F86\u0F82\u0F7E\u0F83" android:popupKeyboard="@xml/popup_template" />
+        <Key android:codes="0x0F5E"/>
+        <Key android:codes="0x0F65"/>
+        <Key android:codes="0x0F46"/>
+        <Key android:codes="0x0F5A"/>
+        <Key android:codes="0x0F56" />
+        <Key android:codes="0x0F4E"/>
+        <Key android:codes="9676,3966"  android:keyOutputText="\u0F7E" android:popupCharacters="\u0F8B\u0F85\u0F8A\u0F89\u0F88\u0F87\u0F86\u0F82\u0F7E\u0F83" android:popupKeyboard="@xml/popup_template" />
         
     	 <Key android:codes="-5" android:keyEdgeFlags="right" 
    	     android:isRepeatable="true"  android:keyWidth="15%p" android:keyIcon="@drawable/sym_keyboard_delete" />
@@ -105,7 +107,7 @@ Row 3:
   
     <!-- 
     
-Row 4:Row 4:
+Row 4:
 	Key 1: Numbers key
 	Key 2: Language button
 	Key 3: 0x0F0B

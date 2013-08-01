@@ -66,11 +66,15 @@ public class BhoKeyboardView extends KeyboardView {
     	
     		if (key.codes[0] > 2000)
     		{
-	    		String keyCode = ((char)key.codes[0])+"";
 	    		boolean hasMult = key.popupCharacters != null && key.popupCharacters.length() > 0;
+	    		
+	    		int xOffset = -10;
+	    		int yOffset = 20;
+	    		float modHeight = 2f;
+	    		
 	    		key.label = null;
-	    		key.icon = new DynaDrawable (getContext(), key, mTypeface, keyCode, Color.WHITE, -8, 20, 1.8f, hasMult);
-	            key.iconPreview = new DynaDrawable (getContext(), key, mTypeface,  keyCode, Color.BLACK, -10, -25, 1.5f,false);
+	    		key.icon = new DynaDrawable (getContext(), key, mTypeface, Color.WHITE, xOffset, yOffset, modHeight, hasMult);
+	            key.iconPreview = new DynaDrawable (getContext(), key, mTypeface, Color.BLACK, -10, -25, 1.5f,false);
     		}
     		
     	}
