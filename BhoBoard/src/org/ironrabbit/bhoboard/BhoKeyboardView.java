@@ -25,8 +25,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.Keyboard.Key;
+import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -68,8 +68,8 @@ public class BhoKeyboardView extends KeyboardView {
     		{
 	    		boolean hasMult = key.popupCharacters != null && key.popupCharacters.length() > 0;
 	    		
-	    		int xOffset = -10;
-	    		int yOffset = 20;
+	    		int xOffset = -12;
+	    		int yOffset = 22;
 	    		float modHeight = 2f;
 	    		
 	    		key.label = null;

@@ -1,5 +1,7 @@
 package org.ironrabbit.bhoboard;
 
+import org.ironrabbit.type.CustomTypefaceManager;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -41,6 +43,8 @@ public class DynaDrawable extends Drawable {
      
 	}
 	
+	private final static int[] EXCLUDE_OFFSET_KEYS = {3963,3962,3954,3964,3965,3966};
+	
 	@Override
 	public void draw(Canvas canvas) {
 
@@ -48,8 +52,12 @@ public class DynaDrawable extends Drawable {
 		{
 			int xOffset = mXOffset;
 			
-			if (i > 0 && (mKey.codes[i]!=3993))
+			if (i > 0 && (mKey.codes[i]!=3993) && CustomTypefaceManager.precomposeRequired())
 				xOffset = 10;
+			
+			for (int n = 0; n < EXCLUDE_OFFSET_KEYS.length; n++)
+				if (EXCLUDE_OFFSET_KEYS[n]==mKey.codes[i])
+					xOffset = 10;
 			
 			canvas.drawText(((char)mKey.codes[i])+"", xOffset, mYOffset, mPaint);
 		}
