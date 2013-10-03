@@ -16,10 +16,14 @@
 
 package org.ironrabbit.bhoboard;
 
-import android.graphics.Typeface;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.ironrabbit.type.CustomTypefaceManager;
+import org.ironrabbit.type.TibConvert;
+
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
-import android.inputmethodservice.Keyboard.Key;
 import android.inputmethodservice.KeyboardView;
 import android.text.method.MetaKeyKeyListener;
 import android.util.Log;
@@ -29,10 +33,6 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
-import android.view.inputmethod.InputMethodManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -45,6 +45,7 @@ import java.util.List;
 public class SoftKeyboard extends InputMethodService 
         implements KeyboardView.OnKeyboardActionListener {
     static final boolean DEBUG = false;
+    static final String TAG = "TibKey";
     
     /**
      * This boolean indicates the optional example code for performing
@@ -63,6 +64,8 @@ public class SoftKeyboard extends InputMethodService
     private StringBuilder mComposing = new StringBuilder();
     private boolean mPredictionOn;
     private boolean mCompletionOn;
+    
+    private boolean mDoStacking = false;
   //  private int mLastDisplayWidth;
     private boolean mCapsLock;
     private long mLastShiftTime;
@@ -532,27 +535,8 @@ public class SoftKeyboard extends InputMethodService
         else if (primaryCode == -1234 ) { //0x0F84
           
         	  
-        	mCurKeyboard = (BhoKeyboard)mInputView.getKeyboard();
-        	boolean isStacked = false;
-        	
-        	boolean isShifted = mCurKeyboard.isShifted(); 
-            if (mCurKeyboard == mQwertyKeyboard)
-            {
-            	mCurKeyboard = mQwertyKeyboardStacked;
-                isStacked = true;
-            }
-            else if (mCurKeyboard == mQwertyKeyboardStacked)
-            	mCurKeyboard = mQwertyKeyboard;
-            else if (mCurKeyboard == mQwertyShiftedKeyboard)
-            {
-            	mCurKeyboard = mQwertyShiftedKeyboardStacked;
-                isStacked = true; 
-            }
-            else if (mCurKeyboard == mQwertyShiftedKeyboardStacked)            
-            	mCurKeyboard = mQwertyShiftedKeyboard;
+        	handleStackShift();
             
-            mCurKeyboard.setShifted(isShifted);
-            mInputView.setKeyboard(mCurKeyboard);
         } 
         else if (primaryCode == Keyboard.KEYCODE_MODE_CHANGE
                 && mInputView != null) {
@@ -584,6 +568,8 @@ public class SoftKeyboard extends InputMethodService
             	mCurKeyboard = mQwertyShiftedKeyboard;
             	mInputView.setKeyboard(mCurKeyboard);
             }
+            
+            mInputView.setKeyboard(mCurKeyboard);
             	
         }
     }
@@ -701,6 +687,38 @@ public class SoftKeyboard extends InputMethodService
         }*/
     }
     
+    private void handleStackShift ()
+    {
+    	mCurKeyboard = (BhoKeyboard)mInputView.getKeyboard();
+    	
+    	boolean isShifted = mCurKeyboard.isShifted(); 
+    	
+        if (mCurKeyboard == mQwertyKeyboard)
+        {
+        	mCurKeyboard = mQwertyKeyboardStacked;
+        	mDoStacking = true;
+        }
+        else if (mCurKeyboard == mQwertyKeyboardStacked)
+        {
+        	mCurKeyboard = mQwertyKeyboard;
+        	mDoStacking = false;
+        	
+        }
+        else if (mCurKeyboard == mQwertyShiftedKeyboard)
+        {
+        	mCurKeyboard = mQwertyShiftedKeyboardStacked;
+        	mDoStacking = true; 
+        }
+        else if (mCurKeyboard == mQwertyShiftedKeyboardStacked)     
+        {
+        	mCurKeyboard = mQwertyShiftedKeyboard;
+        	mDoStacking = false;
+        }
+        
+        mCurKeyboard.setShifted(isShifted);
+        mInputView.setKeyboard(mCurKeyboard);
+    }
+    
     private void handleCharacter(int primaryCode, int[] keyCodes) {
         if (isInputViewShown()) {
             if (mInputView.isShifted()) {
@@ -713,8 +731,12 @@ public class SoftKeyboard extends InputMethodService
             updateShiftKeyState(getCurrentInputEditorInfo());
             updateCandidates();
         } else {
-            getCurrentInputConnection().commitText(
+        	
+        	
+        	
+        		getCurrentInputConnection().commitText(
                     String.valueOf((char) primaryCode), 1);
+        	
         }
     }
 
@@ -798,11 +820,49 @@ public class SoftKeyboard extends InputMethodService
     public void swipeUp() {
     }
     
-    public void onPress(int primaryCode) {
+    private int mLastKey = -1;
     
+    public void onPress(int primaryCode) {
+    	
+    
+    	mLastKey = primaryCode;
     }
     
     public void onRelease(int primaryCode) {
+
+    	
+    	if (mDoStacking && primaryCode != -1234)
+    	{
+    		if (CustomTypefaceManager.precomposeRequired())
+    		{
+        		String charOne = String.valueOf(getCurrentInputConnection().getTextBeforeCursor(2, 0).charAt(0));
+        	//	String charTwo = String.valueOf(getCurrentInputConnection().getTextBeforeCursor(1, 0).charAt(0));
+        		String charTwo = String.valueOf((char)mLastKey);
+        		
+        	//	String charOneDecomp = TibConvert.convertPrecomposedTibetanToUnicode(String.valueOf(charOne), 0,1);
+        		
+        //		if (charOneDecomp.length() > 0)
+        	//		charOne = charOneDecomp;
+        		
+                String pair = charOne + charTwo + " ";
+                String pairComposed = TibConvert.convertUnicodeToPrecomposedTibetan(pair);
+                
+                if (pairComposed.length() > 1)
+                {
+                	pairComposed = pairComposed.substring(0,pairComposed.length()-1);
+                }
+                
+                if (pairComposed.length() > 0)
+                {
+                	getCurrentInputConnection().deleteSurroundingText(2, 0);
+                	getCurrentInputConnection().commitText(pairComposed, 1);
+                }
+    		}
+    		
+    		
+    		handleStackShift ();
+            
+    	}
     }
     	
     @Override

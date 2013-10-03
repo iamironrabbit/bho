@@ -43,21 +43,32 @@ public class DynaDrawable extends Drawable {
      
 	}
 	
-	private final static int[] EXCLUDE_OFFSET_KEYS = {3963,3962,3954,3964,3965,3966};
+	private final static int[] EXCLUDE_OFFSET_KEYS = {9676};//3963,3962,3954,3964,3965,3966,9676};
 	
 	@Override
 	public void draw(Canvas canvas) {
 
+		boolean isStack = (mKey.codes[mKey.codes.length-1]==9676);
+		
 		for (int i = 0; i < mKey.codes.length; i++)
 		{
 			int xOffset = mXOffset;
 			
-			if (i > 0 && (mKey.codes[i]!=3993) && CustomTypefaceManager.precomposeRequired())
-				xOffset = 10;
+			boolean excludeOffset = false;
 			
 			for (int n = 0; n < EXCLUDE_OFFSET_KEYS.length; n++)
 				if (EXCLUDE_OFFSET_KEYS[n]==mKey.codes[i])
-					xOffset = 10;
+				{
+					excludeOffset = true;
+					break;
+				}
+			
+			if (isStack && !(excludeOffset))
+			{
+				xOffset = 20;
+				
+			}
+			
 			
 			canvas.drawText(((char)mKey.codes[i])+"", xOffset, mYOffset, mPaint);
 		}

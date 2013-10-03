@@ -26,13 +26,13 @@ Row 1:
            
         <Key android:codes="3913" /><!-- 0x0F49 -->
     <!--   <Key android:codes="0x25CC,0x0F7A" /> -->  
-   	 <Key android:codes="9676,3962" android:keyOutputText="\u0F7A"/> 
+   	 <Key android:codes="3962,9676" android:keyOutputText="\u0F7A"/> 
         <Key android:codes="3938"  android:popupCharacters="\u0F62\u0F6A\u0F6C" android:popupKeyboard="@xml/popup_template"/><!-- 0x0F62 -->
         <Key android:codes="0x0F4F" />
         <Key android:codes="0x0F61" />
-        <Key android:codes="9676,3956" android:keyOutputText="\u0F74" /> <!--  0x0F74 -->
-        <Key android:codes="9676,3954" android:keyOutputText="\u0F72" /><!--  0x0F72 -->
-        <Key android:codes="9676,3964" android:keyOutputText="\u0F7C" /> <!--  0x0F7C -->
+        <Key android:codes="3956,9676" android:keyOutputText="\u0F74" /> <!--  0x0F74 -->
+        <Key android:codes="3954,9676" android:keyOutputText="\u0F72" /><!--  0x0F72 -->
+        <Key android:codes="3964,9676" android:keyOutputText="\u0F7C" /> <!--  0x0F7C -->
         <Key android:codes="0x0F54"  android:keyEdgeFlags="right"/>
         
     </Row>

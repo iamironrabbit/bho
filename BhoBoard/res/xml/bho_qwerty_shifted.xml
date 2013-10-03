@@ -23,13 +23,13 @@ Row 1:
         
         <Key android:codes="0x0F5D" />
    
-        <Key android:codes="9676,3963" android:keyOutputText="\u0F7B" /> <!-- 0F7B -->
-        <Key android:codes="9676,4018" android:keyOutputText="\u0FB2"/><!--  0FB2 -->
+        <Key android:codes="3963,9676" android:keyOutputText="\u0F7B" /> <!-- 0F7B -->
+        <Key android:codes="4018,9676" android:keyOutputText="\u0FB2"/><!--  0FB2 -->
         <Key android:codes="0x0F50" />
-        <Key android:codes="9676,4017" android:keyOutputText="\u0FB1"/> <!--  0FB1 -->
-        <Key android:codes="9676,4013" android:keyOutputText="\u0FAD" /><!--  0FAD -->
-        <Key android:codes="9676,4000" android:keyOutputText="\u0F80"/><!--  0F80 -->
-        <Key android:codes="9676,3965" android:keyOutputText="\u0F7D"/><!--  0F7D -->
+        <Key android:codes="4017,9676" android:keyOutputText="\u0FB1"/> <!--  0FB1 -->
+        <Key android:codes="4013,9676" android:keyOutputText="\u0FAD" /><!--  0FAD -->
+        <Key android:codes="4000,9676" android:keyOutputText="\u0F80"/><!--  0F80 -->
+        <Key android:codes="3965,9676" android:keyOutputText="\u0F7D"/><!--  0F7D -->
         <Key android:codes="0x0F55" android:keyEdgeFlags="right"/>
     </Row>
     
@@ -59,7 +59,7 @@ Row 2:
         <Key android:codes="0x0F7F"/>
         <Key android:codes="0x0F47" />
         <Key android:codes="0x0F41" />
-        <Key android:codes="9676,4019"  android:keyOutputText="\u0FB3" android:keyEdgeFlags="right"/>
+        <Key android:codes="4019,9676"  android:keyOutputText="\u0FB3" android:keyEdgeFlags="right"/>
         
     </Row>
     
@@ -97,7 +97,7 @@ Row 3:
         <Key android:codes="0x0F5A"/>
         <Key android:codes="0x0F56" />
         <Key android:codes="0x0F4E"/>
-        <Key android:codes="9676,3966"  android:keyOutputText="\u0F7E" android:popupCharacters="\u0F8B\u0F85\u0F8A\u0F89\u0F88\u0F87\u0F86\u0F82\u0F7E\u0F83" android:popupKeyboard="@xml/popup_template" />
+        <Key android:codes="3966,9676"  android:keyOutputText="\u0F7E" android:popupCharacters="\u0F8B\u0F85\u0F8A\u0F89\u0F88\u0F87\u0F86\u0F82\u0F7E\u0F83" android:popupKeyboard="@xml/popup_template" />
         
     	 <Key android:codes="-5" android:keyEdgeFlags="right" 
    	     android:isRepeatable="true"  android:keyWidth="15%p" android:keyIcon="@drawable/sym_keyboard_delete" />
