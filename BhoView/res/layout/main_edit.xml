@@ -4,7 +4,8 @@
     android:id="@+id/sv_weight_tell_us"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:fillViewport="true" >
-<org.ironrabbit.type.CustomTypefaceEditText  
+    
+<org.ironrabbit.type.CustomTypefaceEditText
 	android:id="@+id/editor"
     android:layout_width="match_parent" 
     android:layout_height="wrap_content" 

@@ -1,0 +1,9 @@
+[submodule "external/actionbarsherlock"]
+	path = external/actionbarsherlock
+	url = https://github.com/JakeWharton/ActionBarSherlock.git
+[submodule "external/quickaction"]
+	path = external/quickaction
+	url = https://github.com/lorensiuswlt/NewQuickAction.git
+[submodule "external/httplib"]
+	path = external/httplib
+	url = https://github.com/survivingwithandroid/Surviving-with-android.git

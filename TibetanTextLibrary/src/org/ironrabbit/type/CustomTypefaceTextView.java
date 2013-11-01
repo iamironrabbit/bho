@@ -11,13 +11,11 @@ import android.widget.Toast;
 
 public class CustomTypefaceTextView extends TextView {
 
-    Context mContext;
-    private boolean mDidInit = false;
+    boolean mInit = false;
     
     public CustomTypefaceTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
-
+   
        init();
     }
 
@@ -25,8 +23,7 @@ public class CustomTypefaceTextView extends TextView {
     
     public CustomTypefaceTextView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-		  mContext = context;
-
+	
 	       init();
 	}
 
@@ -34,23 +31,21 @@ public class CustomTypefaceTextView extends TextView {
 
 	public CustomTypefaceTextView(Context context) {
 		super(context);
-		  mContext = context;
-
+	
 	       init();
 	}
 
 
 
 	private void init() {
-    	mDidInit = true;
     	
-
-    	if (mContext == null)
-    		mContext = getContext();
-    	
-    
-        setTypeface(CustomTypefaceManager.getCurrentTypeface(getContext()));
+		if (!mInit)
+        {
+			setTypeface(CustomTypefaceManager.getCurrentTypeface(getContext()));
+			mInit = true;
+        }
         
+        /*
         setOnLongClickListener(new View.OnLongClickListener() {
 
 			@Override
@@ -66,29 +61,19 @@ public class CustomTypefaceTextView extends TextView {
 	              Toast.makeText(mContext, "Text copied", Toast.LENGTH_SHORT).show();
 	            return true;
 			}
-        });
+        });*/
         
     }
-    
+
 
 
 	@Override
 	public void setText(CharSequence text, BufferType type) {
-		if (!mDidInit)
-        	init();
-		
-		String result = text.toString();
-		
-		if (CustomTypefaceManager.precomposeRequired())
-		{
-			result = CustomTypefaceManager.handlePrecompose(result);
-		
-			super.setText(result, type);
-		}
-		
-		super.setText(result,type);
+		init();
+		super.setText(text, type);
 	}
-	
-	
+    
+
+
 
 }

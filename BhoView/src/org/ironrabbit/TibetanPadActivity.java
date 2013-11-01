@@ -64,8 +64,6 @@ public class TibetanPadActivity extends SherlockActivity implements Runnable {
         }
        
 
-    	
-    	setupEditor();
         
     }
     
@@ -151,28 +149,7 @@ public class TibetanPadActivity extends SherlockActivity implements Runnable {
 	}
     
     
-    public void setupEditor ()
-    {
-    	ev.setOnEditorActionListener(new OnEditorActionListener()
-    	{
-
-			@Override
-			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
-				
-				int selidx = ev.getSelectionStart();
-				
-				String text = ev.getText().toString();
-                text = TibConvert.convertUnicodeToPrecomposedTibetan(text + " ").trim();
-
-                ev.setText(text);
-				ev.setSelection(Math.min(text.length(),selidx));
-				
-				return false;
-			}
-    		
-    	});
- 	}
-
+    
 	@Override
 	protected void onResume() {
 		super.onResume();

@@ -16,25 +16,37 @@ public class CustomTypefaceManager {
 
 	private static Typeface mTypeface = null;
 	
-//	public final static int mTypefaceIds[] = {R.raw.jomolhari,R.raw.monlamuniouchan2,R.raw.tcrcunicode,R.raw.tibmachuni};
-//	public final static String mTypefaceStrings[] = {"jomolhari.ttf","monlamuniouchan2.ttf","tcrcunicode.ttf","tibmachuni.ttf"};
-//	public final static String mTypefaceNames[] = {"Jomolhari","Monlam Uni Ouchan2","TCRC Unicode","Tibetan Machine Uni"};
+//	
+//	public final static int mTypefaceIds[] = {R.raw.jomolhari};
+//	public final static String mTypefaceStrings[] = {"DDC_Uchen.ttf","jomolhari.ttf","Kailasa.ttf"};
+//	public final static String mTypefaceNames[] = {"DDC_Uchen","jomolhari","Kailasa"};
+
+	public final static String mTypefaceStrings[] = {"DDC_Uchen.ttf"};
+	public final static String mTypefaceNames[] = {"DDC_Uchen"};
+
+//	public final static String mTypefaceStrings[] = {"jomolhari.ttf"};
+//	public final static String mTypefaceNames[] = {"jomolhari"};
 	
+	private static int currentTypeIdx = 0;
 	
-	public final static int mTypefaceIds[] = {R.raw.jomolhari};
-	public final static String mTypefaceStrings[] = {"jomolhari.ttf"};
-	public final static String mTypefaceNames[] = {"Jomolhari"};
-	
-	private final static String FONT_FOLDER = "Fonts";	
+	//private final static String FONT_FOLDER = "Fonts";	
 	
 	public synchronized static Typeface getCurrentTypeface (Context context)
 	{
 		if (mTypeface == null)
-			loadTypeface(context);
+		{
+			loadTypeface(context,mTypefaceStrings[currentTypeIdx]);
+		}
 		
 		return mTypeface;
 	}
 	
+	private static void loadTypeface (Context context, String path)
+	{
+		mTypeface = Typeface.createFromAsset(context.getAssets(), path);
+		
+	}
+	/*
 	public static void loadTypeface (Context context)
 	{
     	File fileFolder = new File(context.getExternalFilesDir(null),FONT_FOLDER);
@@ -59,7 +71,7 @@ public class CustomTypefaceManager {
     	   	int typeFaceId = prefs.getInt("pref_typeface",0);
     	
     	mTypeface = Typeface.createFromFile(new File(fileFolder,mTypefaceStrings[typeFaceId]));
-	}
+	}*/
 	
 	/**
 	 * Copies a raw resource file, given its ID to the given location
@@ -92,7 +104,7 @@ public class CustomTypefaceManager {
 	
 	public static boolean precomposeRequired ()
 	{
-		return true;
+		return (android.os.Build.VERSION.SDK_INT < 17);
 	}
 	
 	public static String handlePrecompose (String text)
