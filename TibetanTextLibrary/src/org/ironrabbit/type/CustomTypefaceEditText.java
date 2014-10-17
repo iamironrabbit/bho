@@ -2,15 +2,12 @@ package org.ironrabbit.type;
 
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
 public class CustomTypefaceEditText extends EditText {
 
-    private boolean mInit = false;
-    
     public CustomTypefaceEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
       
@@ -39,9 +36,10 @@ public class CustomTypefaceEditText extends EditText {
 
 	private void init() {
         
-    	mInit = true;
-    	
-        setTypeface(CustomTypefaceManager.getCurrentTypeface(getContext()));
+		Typeface t = CustomTypefaceManager.getCurrentTypeface(getContext());
+		
+		if (t != null)
+			setTypeface(t);
     	 
     	
         if (CustomTypefaceManager.precomposeRequired())

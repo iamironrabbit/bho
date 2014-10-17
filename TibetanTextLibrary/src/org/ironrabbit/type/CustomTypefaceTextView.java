@@ -3,11 +3,8 @@ package org.ironrabbit.type;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.ClipboardManager;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CustomTypefaceTextView extends TextView {
 
@@ -41,7 +38,11 @@ public class CustomTypefaceTextView extends TextView {
     	
 		if (!mInit)
         {
-			setTypeface(CustomTypefaceManager.getCurrentTypeface(getContext()));
+			Typeface t = CustomTypefaceManager.getCurrentTypeface(getContext());
+			
+			if (t != null)
+				setTypeface(t);
+	    	 
 			mInit = true;
         }
         
